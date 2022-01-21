@@ -349,7 +349,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return rotation;
 }
 
-void oled_task_user(void) {
+bool oled_task_user(void) {
     oled_clear();
     if (is_keyboard_master()) {
         print_layers();
@@ -359,6 +359,7 @@ void oled_task_user(void) {
         // render_logo();
         // print_mods();
     }
+    return false;
 }
 
 #endif

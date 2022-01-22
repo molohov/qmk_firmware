@@ -272,6 +272,7 @@ bool oled_task_user(void) {
 #endif
 
 // Two Encoder Support
+// TODO push into userspace code
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         switch(biton32(layer_state)) {

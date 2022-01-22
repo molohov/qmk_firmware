@@ -4,7 +4,7 @@ qmk compile -kb avalanche/rev2 -km default_rev2
 qmk flash -kb avalanche/rev2 -km default_rev2
 */
 
-#include QMK_KEYBOARD_H
+#include "molohov.h"
 
 enum layer {
     _HANDS_DOWN,
@@ -16,102 +16,11 @@ enum layer {
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
-enum custom_keycodes {
-    KC_HANDS_DOWN = SAFE_RANGE,
-    KC_QWERTY_GAME,
-    VIMWRITE,
-    VIMWRITEQUIT,
-    VIMQUIT,
-    VIMQUITALL,
-    VIPASTE,
-    LNX_LAST,
-    KU_QU,
-    DLSIM,
-    SLACK_CODE,
-    SLACK_CODE_PASTE,
-    COPY_PASTE,
-    IMPORT_PDB,
-};
 
 #define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
-#define  SFTBSP         SFT_T(KC_BSPC)
-#define  CTLTAB         CTL_T(KC_TAB)
-#define  ALTENT         ALT_T(KC_ENT)
-#define  GUIDEL         GUI_T(KC_DEL)
 #define  QWERTY_GAME    TG(_QWERTY_GAME)
 #define  NUMTOG         TG(_NAV_NUM_SYM)
-#define  PC_UNDO        C(KC_Z)
-#define  PC_SALL        C(KC_A)
-#define  PC_CUT         C(KC_X)
-#define  PC_COPY        C(KC_C)
-#define  PC_PASTE       C(KC_V)
-#define  PC_FIND        C(KC_F)
-#define  PC_LOCK        G(KC_L)
-#define  PC_BSWD        C(KC_BSPC)
-#define  PC_SLACK       A(KC_Q)
-#define  PC_SCSH        G(S(KC_S))
-#define  PC_LWRD        C(KC_LEFT)
-#define  PC_RWRD        C(KC_RIGHT)
-#define  ALTESC         ALT_T(KC_ESC)
-#define  WINRUN         C(A(KC_K))
-#define  LNX_PASTE      S(C(KC_V))
-#define  LNX_LWD        A(KC_B)
-#define  LNX_RWD        A(KC_F)
-// reverse search
-#define  LNX_RSR        C(KC_R)
-// vertical split
-#define  BY_VSPL        C(KC_F2)
-// horizontal split
-#define  BY_HSPL        S(KC_F2)
-// change layout
-#define  BY_CLYT        S(KC_F8)
-// fullscreen pane
-#define  BY_FPNE        S(KC_F11)
-// kill pane
-#define  BY_KPNE        C(KC_F6)
-// disable function keys
-#define  BY_DISF        S(KC_F12)
-// move window left
-#define  BY_MVWL        S(C(KC_F3))
-// move window right
-#define  BY_MVWR        S(C(KC_F4))
-// shift pane focus left
-#define  BY_FSPL        S(KC_F3)
-// shift pane focus right
-#define  BY_FSPR        S(KC_F4)
-// new pane
-#define  BY_NWIN        KC_F2
-// focus on left window
-#define  BY_FSWL        KC_F3
-// focus on right window
-#define  BY_FSWR        KC_F4
-// refresh settings
-#define  BY_RFSH        KC_F5
-// exit server
-#define  BY_KSRV        KC_F6
-// rename window
-#define  BY_RNWN        KC_F8
-#define  VS_CTLP        C(KC_P)
-#define  VS_SCTP        S(C(KC_P))
-#define  VS_COMT        C(KC_SLSH)
-// focus on terminal
-#define  VS_TERM        C(KC_GRV)
-// focus on code area
-#define  VS_EDIT        C(KC_1)
-// go to next editor
-#define  VS_NEDT        C(KC_PGDN)
-// go to prev editor
-#define  VS_PEDT        C(KC_PGUP)
-
-// to-do
-#define ON_TODO         C(KC_1)
-// important
-#define ON_IMPT         C(KC_2)
-// question
-#define ON_QUES         C(KC_3)
-
-#define PY_IPDB         IMPORT_PDB
 
 #ifdef HRM
 #define HRM_N CTL_T(KC_N)
@@ -128,13 +37,6 @@ enum custom_keycodes {
 #define HRM_I KC_I
 #define HRM_H KC_H
 #endif
-#define MODS_SHIFT (get_mods() & MOD_BIT(KC_LSHIFT) || get_mods() & MOD_BIT(KC_RSHIFT))
-#define SEND_CAP_STRING(str, capitalized) if (MODS_SHIFT) { \
-                                            clear_mods(); \
-                                            SEND_STRING(capitalized); \
-                                          } else { \
-                                            SEND_STRING(str); \
-                                          }
 
 /*
  * Base Layer: SAMPLE
@@ -169,7 +71,7 @@ enum custom_keycodes {
  */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-                VS_EDIT,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       VS_TERM,
+                RESET,      KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       VS_TERM,
                 VS_CTLP,    KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       LNX_RSR,
     PC_SCSH,    KC_Z,       KC_R,       KC_S,       HRM_N,      HRM_T,      KC_G,       PC_LOCK,    KC_MPLY,    KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      HRM_H,      KC_J,       VIPASTE,
                 KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       PC_BSWD,    PC_SLACK,   KC_EQL,     KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
@@ -292,6 +194,11 @@ static void print_layers(void) {
                 oled_write_P(   PSTR("SCRN Z R S N T G LOCK"), false);
                 oled_write_P(   PSTR("  HOME W C L D V CBSP"), false);
                 oled_write_P(   PSTR("NUM VC GDEL SBSP CTAB"), false);
+            } else {
+                oled_write_P(   PSTR("        - . / , Q LRS"), false);
+                oled_write_P(   PSTR("   PLAY ' A E I H J"), false);
+                oled_write_P(   PSTR("   SLCK = U O Y K END"), false);
+                oled_write_P(   PSTR("AEN LSPC LESC VCM QWE"), false);
             }
             break;
         case _QWERTY_GAME:
@@ -364,481 +271,20 @@ bool oled_task_user(void) {
 
 #endif
 
-// #ifdef COMBO_ENABLE
-// COMBOS
-enum combo_events {
-    COMBO_VIM_WRITE,
-    COMBO_VIM_WRITEQUIT,
-    COMBO_VIM_QUIT,
-    COMBO_VIM_QUITALL,
-    COMBO_VIM_SHIFTV,
-    COMBO_PC_COPY,
-    COMBO_PC_CUT,
-    COMBO_PC_PASTE,
-    COMBO_PC_FIND,
-    COMBO_PC_UNDO,
-    COMBO_PC_SELECTALL,
-    COMBO_PC_COPYPASTE,
-    COMBO_WIN_BLUETOOTH,
-    COMBO_WIN_CLIP,
-    COMBO_LNX_CLS,
-    COMBO_LNX_LAST,
-    COMBO_SLACK_CODE,
-    COMBO_SLACK_CODE_PASTE,
-    COMBO_KU_QU,
-    // COMBO_EXCLAMATION,
-    COMBO_AT,
-    COMBO_DOLLAR,
-    COMBO_DEL_WORD,
-    COMBO_SEMICOLON,
-    // COMBO_ESC,
-    COMBO_DLSIM,
-    COMBO_NEWTAB,
-    COMBO_LENGTH
-};
-uint16_t COMBO_LEN = COMBO_LENGTH;
-
-// vim combos rooted from left home row middle finger
-// const uint16_t PROGMEM vimwrite[] =     {KC_N, KC_T, COMBO_END};
-// const uint16_t PROGMEM vimwritequit[] = {KC_N, KC_D, COMBO_END};
-// const uint16_t PROGMEM vimquit[] =      {KC_N, KC_G, COMBO_END};
-// const uint16_t PROGMEM vimquitall[] =   {KC_N, KC_B, COMBO_END};
-// const uint16_t PROGMEM vimshiftv[] =    {KC_N, KC_P, COMBO_END};
-
-// LEFT HAND
-// copy/paste combos on left bottom row
-const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_C, COMBO_END};
-const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
-const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
-const uint16_t PROGMEM pc_cut[]       = {KC_C, KC_N, COMBO_END};
-const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
-const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
-const uint16_t PROGMEM pc_find[]      = {KC_L, KC_T, COMBO_END};
-const uint16_t PROGMEM pc_clip[]      = {KC_D, KC_V, COMBO_END};
-
-// this combo mirrors the DW action in vim!
-const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
-// keep shift+V on the left side
-const uint16_t PROGMEM vimshiftv[]  = {KC_N, KC_D, COMBO_END};
-const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
-const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
-// const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
-const uint16_t PROGMEM dlsim[]      = {KC_N, KC_T, COMBO_END};
-const uint16_t PROGMEM newtab[]     = {KC_T, KC_G, COMBO_END};
-
-// RIGHT HAND
-// vim combos rooted from right home row middle finger
-const uint16_t PROGMEM vimwrite[]     = {KC_E, KC_A, COMBO_END};
-const uint16_t PROGMEM vimwritequit[] = {KC_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {KC_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {KC_E, KC_MINS, COMBO_END};
-// linux combos
-const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
-const uint16_t PROGMEM lnx_last[] = {KC_I, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
-const uint16_t PROGMEM at[]     = {KC_DOT, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM dollar[] = {KC_SLSH, KC_MINS, COMBO_END};
-// . + , = ;
-const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
-const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
-
-combo_t key_combos[] = {
-    [COMBO_VIM_WRITE]       = COMBO(vimwrite,       VIMWRITE),
-    [COMBO_VIM_WRITEQUIT]   = COMBO(vimwritequit,   VIMWRITEQUIT),
-    [COMBO_VIM_QUIT]        = COMBO(vimquit,        VIMQUIT),
-    [COMBO_VIM_QUITALL]     = COMBO(vimquitall,     VIMQUITALL),
-    [COMBO_VIM_SHIFTV]      = COMBO(vimshiftv,      S(KC_V)),
-    [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
-    [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
-    [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
-    [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
-    [COMBO_PC_UNDO]         = COMBO(pc_undo,        PC_UNDO),
-    [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
-    [COMBO_PC_COPYPASTE]    = COMBO(pc_copypaste,   COPY_PASTE),
-    [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
-    [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
-    [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
-    [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
-    [COMBO_AT]              = COMBO(at,             KC_AT),
-    [COMBO_DOLLAR]          = COMBO(dollar,         KC_DLR),
-    [COMBO_SEMICOLON]       = COMBO(semicolon,      KC_SCLN),
-    [COMBO_DEL_WORD]        = COMBO(del_word,       C(KC_DEL)),
-    // [COMBO_ESC]             = COMBO(escape,         KC_ESC),
-    [COMBO_DLSIM]           = COMBO(dlsim,          DLSIM),
-    [COMBO_SLACK_CODE]      = COMBO(slack_code,     SLACK_CODE),
-    [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
-    [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
-    [COMBO_WIN_CLIP]        = COMBO(pc_clip,        G(KC_V)),
-};
-
-// #endif
-
-
-// CUSTOM MODIFIER OVERRIDES
-// shift () gives {}
-const key_override_t left_paran_override  = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LCBR);
-const key_override_t right_paran_override = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RCBR);
-// shift [] gives <>
-const key_override_t left_squarebracket_override  = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_LABK);
-const key_override_t right_squarebracket_override = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, KC_RABK);
-// shift . gives ?
-const key_override_t period_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_QUES);
-// shift / gives !
-const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_EXLM);
-// shift , gives :
-const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_COLN);
-// shift * gives #
-const key_override_t asterisk_override = ko_make_basic(MOD_MASK_SHIFT, KC_PAST, KC_HASH);
-// shift : gives ;
-const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
-
-// This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
-    &left_paran_override,
-    &right_paran_override,
-    &left_squarebracket_override,
-    &right_squarebracket_override,
-    &period_override,
-    &slash_override,
-    &comma_override,
-    &asterisk_override,
-    &colon_override,
-    NULL // Null terminate the array of overrides!
-};
-
-// CUSTOM KEYSTROKES
-bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
-    bool return_state = true; // assume we don't do anything.
-    static uint16_t prior_keycode = KC_NO; // for process_adaptive_key
-    static uint16_t prior_keydown = 0;
-
-    if (record->event.pressed) {
-        keycode = keycode & 0xFF; // ignore all mods? or just shift?
-        if ((timer_elapsed(prior_keydown) < ADAPTIVE_TERM)) {
-            switch (keycode) {
-                case KC_M:
-                    switch (prior_keycode) {
-                        case KC_F: // FM -> FL
-                        case KC_P: // PM -> PL
-                        case KC_B: // BM -> BL
-                        case KC_X: // XM -> XL
-                            tap_code(KC_L);
-                            return_state = false; // done.
-                    }
-                    break;
-                case KC_F:
-                    switch (prior_keycode) {
-                        case KC_X: //XF -> XC
-                            tap_code(KC_C);
-                            return_state = false; // done.
-                    }
-                    break;
-                case KC_C:
-                    switch (prior_keycode) {
-                        case KC_L: //LC -> LF
-                            tap_code(KC_F);
-                            return_state = false; // done.
-                    }
-                    break;
-                // case KC_V:
-                //     switch (prior_keycode) {
-                //         case KC_L: //LV -> LB
-                //             tap_code(KC_B);
-                //             return_state = false; // done.
-                //     }
-                //     break;
-                // case KC_W:
-                //     switch (prior_keycode) {
-                //         case KC_C: //CW -> CR
-                //             tap_code(KC_R);
-                //             return_state = false; // done.
-                //     }
-                //     break;
-/*
-// Left hand adaptives (most are single-handed, bc speed, dexterity limits)
-*/
-
-                // case KC_D:
-                // case KC_F:
-                //     switch (prior_keycode) {
-                //         case KC_B:
-                //         case KC_K:
-                //             unregister_code(KC_LSFT); // remove shift here.
-                //             unregister_code(KC_RSFT); // remove shift here.
-                //             tap_code(KC_L);
-                //             return_state = false; // done.
-                //             break;
-                //         case KC_M: // LF
-                //             tap_code(KC_BSPC);
-                //             tap_code(KC_L);
-                //             tap_code16(keycode);
-                //             return_state = false; // done.
-                //             break;
-                //         case KC_P:
-                //             tap_code(KC_S);
-                //             return_state = false; // done.
-                //     }
-                //     break;
-                // case KC_G:
-                //     switch (prior_keycode) {
-                //         case KC_I: // IG =
-                //             send_string("ng ");
-                //             return_state = false; // done.
-                //     }
-                //     break;
-                // case KC_L:
-                //     switch (prior_keycode) {
-                //         case KC_M: // ML = LL
-                //             tap_code(KC_BSPC);
-                //             tap_code(KC_L);
-                //             tap_code16(keycode);
-                //             return_state = false; // done.
-                //     }
-                //     break;
-
-//                 case KC_N: // Do we need to watch for more?
-//                     switch (prior_keycode) {
-//                         case KC_P: // is this needed?
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             tap_code(KC_H); // quickly typing "?n" yields "?h"
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_T: // demonstrator. TN combo is "TH" digraph
-//                             send_string("ion");
-//                             return_state = false; // done.
-//                             break;
-//                     }
-//                     break;
-//                 case KC_P:
-//                     switch (prior_keycode) {
-//                         case KC_J: // "jp" is "Japan"…ese? A demonstrator AK
-//                             tap_code(KC_BSPC);
-//                             register_code(KC_LSFT); // shift here.
-//                             tap_code(KC_J); // this should always be cap
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             send_string("apan");
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_H: // "hp" is "lp" on Platinum
-//                             tap_code(KC_BSPC);
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             tap_code(KC_L);
-//                             tap_code16(keycode);
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_B:
-//                         case KC_K:
-//                         case KC_V: // quickly typing "?p" yields "?l"
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             tap_code(KC_L);
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_M:
-//                         case KC_F: // "f?" is really uncommon, we prolly want "l?"
-//                             tap_code(KC_BSPC);
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             tap_code(KC_L);
-//                             tap_code16(keycode);
-//                             return_state = false; // done.
-//                     }
-//                     break;
-//                 case KC_T:
-//                     switch (prior_keycode) {
-//                         case KC_K: // ML = LL
-//                             tap_code(KC_L);
-//                             return_state = false; // done.
-//                     }
-//                     break;
-//                 case KC_U:
-//                     switch (prior_keycode) {
-//                         case KC_Y: // YU = You bc YO is a tad awk, but yu is easy, and uncommon
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             tap_code(KC_O);
-//                             tap_code(KC_U);
-//                             return_state = false; // done.
-//                     }
-//                     break;
-//                 case KC_B: // take advantage of B & V being phonotacically similar
-//                 case KC_V: // (and in same finger/column) to process as adaptive key
-//                     switch (prior_keycode) {
-//                         case KC_M:
-//                         case KC_N:
-//                             tap_code(KC_B); // "v" is likely a "b"
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_F:
-//                         case KC_P:  /* this is for bronze */
-//                             tap_code(KC_BSPC); // get rid of the prior
-//                             tap_code(KC_L); // quickly typing "p?" yields "l?"
-//                             tap_code16(keycode); //
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_H: /* mostly for platinum */
-//                            tap_code(KC_L); // quickly typing "hv" yields "lh"
-//                     }
-//                     break;
-
-//                 case KC_S:
-//                     switch (prior_keycode) { // demonstrator. SN combo is "SH" digraph
-//                         case KC_T:
-//                             tap_code(KC_N);
-//                         case KC_N:
-//                             send_string("ess");
-//                             return_state = false; // done.
-//                             break;
-//                     }
-//                     break;
-
-//                 case KC_J: // SAME-HAND TOWARD PINKY ISSUES
-//                 case KC_W: // adjacent fingers don't do next row as easily,
-//                 case KC_X: // especially on ring to pinky.
-//                     switch (prior_keycode) {
-//                         case KC_B: //
-//                         case KC_C: // RING TO PINKY This softens the burden,
-//                         case KC_D: //
-//                         case KC_F: // and equalizes column-stagger & ortho boards.
-//                         case KC_G: //
-//                         case KC_M: // anything that is statistically much more frequent
-//                         case KC_P: // bc why not?
-//                         case KC_V: //
-//                             unregister_code(KC_LSFT); // remove shift here.
-//                             unregister_code(KC_RSFT); // remove shift here.
-//                             tap_code16(KC_R);
-//                             return_state = false; // done.
-//                             break;
-//                         case KC_L: // repeater (For Platinum's thumb-L)
-//                             tap_code16(KC_L); // LW isn't likely, so we'll leave it for the sake of smaller code
-//                             return_state = false; // done.
-//                             break;
-//                     }
-//                     break;
-
-// /*
-// // right hand adaptives
-// */
-
-//                case KC_A:
-//                     switch (prior_keycode) {
-//                         case KC_COMM:
-//                             tap_code(KC_BSPC); // get rid of the prior
-//                             tap_code(KC_U); // quickly typing ",A" yields "UA"
-//                             tap_code16(keycode); //
-//                             return_state = false; // done.
-//                             break;
-//                     }
-//                     break;
-//                 case KC_MINS:
-//                      switch (prior_keycode) {
-//                          case KC_L:
-//                              tap_code16(prior_keycode); // repeater (For Platinum's thumb-L)
-//                              return_state = false; // done.
-//                              break;
-//                      }
-//                      break;
-//                 case KC_COMM:
-//                     switch (prior_keycode) {
-//                         case KC_A:
-//                             tap_code(KC_U); // quickly typing "A," yields "AU"
-//                             return_state = false; // done.
-//                             break;
-//                     }
-//                     break;
-            }
-        }
-        prior_keycode = keycode;
-        prior_keydown = timer_read(); // (re)start prior_key timing
-    }
-    return return_state; //
-}
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    // Do we handle an adaptive key?
-    if (!process_adaptive_key(keycode, record)) {
-        return false; // took care of that key
-    }
-    switch (keycode) {
-        case VIMWRITE:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_ENTER));
-            }
-            break;
-
-        case VIMWRITEQUIT:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_ENTER));
-            }
-            break;
-
-        case VIMQUIT:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_TAP(X_ENTER));
-            }
-            break;
-
-        case VIMQUITALL:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_TAP(X_A) SS_DELAY(100) SS_TAP(X_ENTER));
-            }
-            break;
-
-        case VIPASTE:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_V) SS_DELAY(100) SS_TAP(X_SPACE) SS_DELAY(100) SS_LCTL(SS_LSFT(SS_TAP(X_V))) SS_DELAY(100) SS_TAP(X_ENTER));
-            }
-        case LNX_LAST:
-            if (record->event.pressed) {
-              SEND_STRING(SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_LSFT(SS_TAP(X_4)) SS_DELAY(100) SS_TAP(X_SPACE));
-            }
-            break;
-        case KU_QU:
-            if (record->event.pressed) {
-                SEND_CAP_STRING("qu", "Qu");
-            }
-            break;
-        case DLSIM:
-            if (record->event.pressed) {
-                SEND_CAP_STRING("dlsim", "DLSim")
-            }
-            break;
-        case SLACK_CODE:
-            if (record->event.pressed) {
-                SEND_STRING("```");
-            }
-            break;
-        case SLACK_CODE_PASTE:
-            if (record->event.pressed) {
-                SEND_STRING("```" SS_DELAY(100) SS_LCTL(SS_TAP(X_V)));
-            }
-            break;
-        case COPY_PASTE:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LCTL(SS_TAP(X_C)) SS_DELAY(100) SS_LCTL(SS_TAP(X_V)));
-            }
-            break;
-        case IMPORT_PDB:
-            if (record->event.pressed) {
-                SEND_STRING("import pdb; pdb.set_trace()");
-            }
-            break;
-    }
-    return true;
-}
-
-
 // Two Encoder Support
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         switch(biton32(layer_state)) {
         case _HANDS_DOWN:
+            alt_tab_timer = timer_read();
+            if (!is_alt_tab_active) {
+                is_alt_tab_active = true;
+                register_code(KC_LALT);
+            }
             if (clockwise) {
-                tap_code(KC_PGDN);
+                tap_code16(KC_TAB);
             } else {
-                tap_code(KC_PGUP);
+                tap_code16(S(KC_TAB));
             }
             break;
         case _NAV_NUM_SYM:
@@ -853,15 +299,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 1) {
         switch(biton32(layer_state)) {
         case _HANDS_DOWN:
-            alt_tab_timer = timer_read();
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                register_code(KC_LALT);
-            }
             if (clockwise) {
-                tap_code16(KC_TAB);
+                tap_code(KC_PGDN);
             } else {
-                tap_code16(S(KC_TAB));
+                tap_code(KC_PGUP);
             }
             break;
         case _NAV_NUM_SYM:

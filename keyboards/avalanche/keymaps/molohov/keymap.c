@@ -6,16 +6,6 @@ qmk flash -kb avalanche/rev2 -km default_rev2
 
 #include "molohov.h"
 
-enum layer {
-    _HANDS_DOWN,
-    _NAV_NUM_SYM,
-    _QWERTY_GAME,
-    _BYO_ONOTE_VSC,
-};
-
-bool is_alt_tab_active = false;
-uint16_t alt_tab_timer = 0;
-
 
 #define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
@@ -75,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 VS_CTLP,    KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       LNX_RSR,
     PC_SCSH,    KC_Z,       KC_R,       KC_S,       HRM_N,      HRM_T,      KC_G,       PC_LOCK,    KC_MPLY,    KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      HRM_H,      KC_J,       VIPASTE,
                 KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       PC_BSWD,    PC_SLACK,   KC_EQL,     KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                                        WINRUN,     ALTESC,     GUIDEL,     SFTBSP,     CTLTAB,     ALTENT,     SPCNAV,     ESCBYO,     VS_COMT,    QWERTY_GAME
+                                        WINRUN,     ALTESC,     GUIDEL,     SFTBSP,     CTLTAB,     ALTENT,     SPCNAV,     KC_ESC,     VS_COMT,    QWERTY_GAME
     ),
 
     [_NAV_NUM_SYM] = LAYOUT(
@@ -86,13 +76,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,    KC_LALT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
 
-    [_BYO_ONOTE_VSC] = LAYOUT(
-                CMB_OFF,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-                CMB_ON,     _______,    _______,    _______,    _______,    _______,                            BY_FPNE,    BY_CLYT,    BY_HSPL,    BY_VSPL,    BY_DISF,    BY_KPNE,
-    XXXXXXX,    _______,    ON_QUES,    ON_IMPT,    ON_TODO,    PY_IPDB,    _______,    _______,    _______,    BY_RNWN,    BY_FSPL,    BY_NWIN,    BY_FSPR,    BY_RFSH,    BY_KSRV,    XXXXXXX,
-                _______,    VS_PEDT,    VS_NEDT,    VS_EDIT,    VS_TERM,    _______,    _______,    _______,    _______,    BY_FSWL,    BY_FSWR,    BY_MVWL,    BY_MVWR,    _______,
-                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
-    ),
+    // [_BYO_ONOTE_VSC] = LAYOUT(
+    //             CMB_OFF,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
+    //             CMB_ON,     _______,    _______,    _______,    _______,    _______,                            BY_FPNE,    BY_CLYT,    BY_HSPL,    BY_VSPL,    BY_DISF,    BY_KPNE,
+    // XXXXXXX,    _______,    ON_QUES,    ON_IMPT,    ON_TODO,    PY_IPDB,    _______,    _______,    _______,    BY_RNWN,    BY_FSPL,    BY_NWIN,    BY_FSPR,    BY_RFSH,    BY_KSRV,    XXXXXXX,
+    //             _______,    VS_PEDT,    VS_NEDT,    VS_EDIT,    VS_TERM,    _______,    _______,    _______,    _______,    BY_FSWL,    BY_FSWR,    BY_MVWL,    BY_MVWR,    _______,
+    //                                     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    // ),
 
     [_QWERTY_GAME] = LAYOUT(
                 KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,
@@ -271,52 +261,6 @@ bool oled_task_user(void) {
 
 #endif
 
-// Two Encoder Support
-// TODO push into userspace code
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        switch(biton32(layer_state)) {
-        case _HANDS_DOWN:
-            alt_tab_timer = timer_read();
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                register_code(KC_LALT);
-            }
-            if (clockwise) {
-                tap_code16(KC_TAB);
-            } else {
-                tap_code16(S(KC_TAB));
-            }
-            break;
-        case _NAV_NUM_SYM:
-            if (clockwise) {
-                tap_code16(C(G(KC_RIGHT)));
-            } else {
-                tap_code16(C(G(KC_LEFT)));
-            }
-            break;
-        }
-
-    } else if (index == 1) {
-        switch(biton32(layer_state)) {
-        case _HANDS_DOWN:
-            if (clockwise) {
-                tap_code(KC_PGDN);
-            } else {
-                tap_code(KC_PGUP);
-            }
-            break;
-        case _NAV_NUM_SYM:
-            if (clockwise) {
-                tap_code(KC_VOLU);
-            } else {
-                tap_code(KC_VOLD);
-            }
-            break;
-        }
-    }
-    return true;
-}
 
 
 // Lighting layers
@@ -368,21 +312,4 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 //     return state;
 // }
 
-// Runs just one time when the keyboard initializes.
-void matrix_scan_user(void) {
-    static bool has_ran_yet = false;
-    if (!has_ran_yet) {
-        has_ran_yet = true;
-        // rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 3);
-        // rgblight_mode(RGBLIGHT_MODE_BREATHING + 1);
-        // rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-        // rgblight_sethsv(HSV_WHITE);
-    }
-    if (is_alt_tab_active) {
-      if (timer_elapsed(alt_tab_timer) > 1000) {
-        unregister_code(KC_LALT);
-        is_alt_tab_active = false;
-      }
-    }
-};
 

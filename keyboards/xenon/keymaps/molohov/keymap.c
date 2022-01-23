@@ -15,13 +15,6 @@
  */
 #include "molohov.h"
 
-enum layers {
-    _HANDS_DOWN = 0,
-    _NAV_NUM_SYM,
-    _RAISE,
-    _ADJUST
-};
-
 #define M_LWR MO(_LOWER)
 #define M_RSE MO(_RAISE)
 #define L(kc) (LSFT(kc))
@@ -34,26 +27,26 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-      RESET,     KC_X,   KC_F,    KC_M,    KC_P,    KC_B,                          KC_MINS,    KC_DOT,  KC_SLSH, KC_COMM, KC_Q,    KC_LBRC,
-      KC_Z,      KC_R,   KC_S,    KC_N,    KC_T,    KC_G,                          KC_QUOT,    KC_A,    KC_E,    KC_I,    KC_H,    KC_J,
-      KC_HOME,   KC_W,   KC_C,    KC_L,    KC_D,    KC_V,                          KC_EQL,     KC_U,    KC_O,    KC_Y,    KC_K,    KC_END,
-                         PC_LOCK, ALTESC,  GUIDEL,  SFTBSP,  CTLTAB,      ALTENT,  SPCNAV,     KC_ESC,  VS_COMT,  KC_MPLY,
-                                  KC_DEL , KC_PGDN, VS_EDIT, PC_BSWD,    PC_SLACK, VS_TERM, KC_UP,   KC_RGHT
+    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       XXXXXXX,
+    KC_Z,       KC_R,       KC_S,       KC_N,       KC_T,       KC_G,                               KC_QUOT,    KC_A,       KC_E,       KC_I,       KC_H,       KC_J,
+    KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_EQL,     KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
+                            PC_LOCK,    ALT_UP,     GUIDEL,     SFTBSP,     CTLTAB,     ALTENT,     SPCNAV,     ESCBYO,     VS_COMT,    KC_MPLY,
+                                        KC_DEL ,    VS_PEDT,    VS_EDIT,    PC_BSWD,    PC_SLACK,   VS_TERM,    VS_NEDT,    KC_RGHT
     ),
     [_NAV_NUM_SYM] = LAYOUT(
-      _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,        _______,    _______,    KC_UP,      _______,    _______,    _______,
-      KC_SLSH,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,        _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
-      _______,    KC_7,       KC_3,       KC_1,       KC_5,       KC_9,           KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
-                         _______, _______, _______,_______,_______,       KC_ENT, KC_SPC,  _______,  _______, KC_RALT,
-                                  _______, _______,_______,_______,       KC_ENT, KC_SPC,  KC_TAB,  KC_BSPC
+    _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    KC_UP,      _______,    _______,    _______,
+    KC_SLSH,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
+    _______,    KC_7,       KC_3,       KC_1,       KC_5,       KC_9,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
+                            _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
-    [_RAISE] = LAYOUT(
-      KC_F1,     KC_F2,  KC_F3,   KC_F4,  KC_F5,  KC_F6,                        KC_F7,    KC_F8,    KC_F9,    KC_F10,    KC_F11,    KC_F12,
-      KC_LCTL,   KC_A,   KC_S,    KC_D,   KC_F,   KC_G,                         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-      KC_LSFT,   KC_Z,   KC_X,    KC_C,   KC_V,   KC_B,                         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
-                         KC_LGUI, KC_DEL, KC_ENT, KC_SPC, KC_ESC,       KC_ENT, KC_SPC,  KC_TAB,  KC_BSPC, KC_RALT,
-                                  KC_DEL, KC_ENT, KC_SPC, KC_ESC,       KC_ENT, KC_SPC,  KC_TAB,  KC_BSPC
-    )
+    [_BYO_ONOTE_VSC] = LAYOUT(
+    KC_F11,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,
+    _______,    ON_QUES,    ON_IMPT,    ON_TODO,    PY_IPDB,    _______,                            BY_FPNE,    BY_CLYT,    BY_HSPL,    BY_VSPL,    BY_DISF,    BY_KPNE,
+    _______,    _______,    _______,    _______,    _______,    _______,                            BY_FSWL,    BY_FSWR,    BY_NWIN,    BY_MVWL,    BY_MVWR,    _______,
+                            _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    ),
 };
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -96,10 +89,10 @@ static void render_status(void) {
     oled_write_P(PSTR("Base \n"), false);
     break;
   case _NAV_NUM_SYM:
-    oled_write_P(PSTR("Lower\n"), false);
+    oled_write_P(PSTR("Nav\n"), false);
     break;
-  case _RAISE:
-    oled_write_P(PSTR("Raise\n"), false);
+  case _BYO_ONOTE_VSC:
+    oled_write_P(PSTR("Macro\n"), false);
     break;
   default:
     oled_write_P(PSTR("Undef\n"), false);
@@ -112,29 +105,6 @@ bool oled_task_user(void) {
     render_status(); // Renders the current keyboard state (layer, lock, caps, scroll, etc)
   } else {
     // render_named_logo();
-  }
-
-  return true;
-}
-#endif
-
-#ifdef ENCODER_ENABLE
-bool encoder_update_user(uint8_t index, bool clockwise) {
-  if (index == 0) {
-    // Volume control
-    if (clockwise) {
-      tap_code(KC_VOLD);
-    } else {
-      tap_code(KC_VOLU);
-    }
-  }
-  else if (index == 1) {
-    // Page up/Page down
-    if (clockwise) {
-      tap_code(KC_PGDN);
-    } else {
-      tap_code(KC_PGUP);
-    }
   }
 
   return true;

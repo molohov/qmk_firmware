@@ -21,8 +21,6 @@
 #define R(kc) (RALT(kc))
 
 #define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
-#define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
-#define  QWERTY_GAME    TG(_QWERTY_GAME)
 #define  NUMTOG         TG(_NAV_NUM_SYM)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -31,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z,       KC_R,       KC_S,       KC_N,       KC_T,       KC_G,                               KC_QUOT,    KC_A,       KC_E,       KC_I,       KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_EQL,     KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             PC_LOCK,    ALT_UP,     GUIDEL,     SFTBSP,     CTLTAB,     ALTENT,     SPCNAV,     ESCBYO,     VS_COMT,    KC_MPLY,
-                                        PC_SCSH,    VS_PEDT,    VS_EDIT,    PC_BSWD,    PC_SLACK,   VS_TERM,    VS_NEDT,    LNX_RSR
+                                        PC_SCSH,    VS_PEDT,    PC_BSWD,    VS_EDIT,    VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     ),
     [_NAV_NUM_SYM] = LAYOUT(
     _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    KC_UP,      _______,    _______,    _______,

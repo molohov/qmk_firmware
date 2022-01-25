@@ -32,10 +32,14 @@ enum layer {
 
 
 #define  SFTBSP         SFT_T(KC_BSPC)
+#define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
+
 #define  CTLTAB         CTL_T(KC_TAB)
 #define  ALTENT         ALT_T(KC_ENT)
+
 #define  GUIDEL         GUI_T(KC_DEL)
 #define  ALTESC         ALT_T(KC_ESC)
+
 #define  ALT_UP         ALT_T(KC_UP)
 
 #define  PC_UNDO        C(KC_Z)

@@ -123,6 +123,8 @@ const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_
 const key_override_t asterisk_override = ko_make_basic(MOD_MASK_SHIFT, KC_PAST, KC_HASH);
 // shift : gives ;
 const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
+// shift space gives _
+// const key_override_t shift_space_underscore = ko_make_basic(MOD_MASK_SHIFT, SPCNAV, KC_UNDS);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
@@ -135,6 +137,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &comma_override,
     &asterisk_override,
     &colon_override,
+    // &shift_space_underscore,
     NULL // Null terminate the array of overrides!
 };
 

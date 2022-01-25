@@ -7,8 +7,6 @@ qmk flash -kb avalanche/rev2 -km default_rev2
 #include "molohov.h"
 
 
-#define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
-#define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
 #define  QWERTY_GAME    TG(_QWERTY_GAME)
 #define  NUMTOG         TG(_NAV_NUM_SYM)
 

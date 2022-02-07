@@ -22,14 +22,24 @@
 
 #define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
 #define  NUMTOG         TG(_NAV_NUM_SYM)
+#define  SPCSFT        SFT_T(KC_SPC)
+#define  L_NAV         LT(_NAV_NUM_SYM, KC_L)
+#define  CTLBSP         CTL_T(KC_BSPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       XXXXXXX,
+    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       TG(_HANDS_DOWN_PLAT),
     KC_Z,       KC_R,       KC_S,       KC_N,       KC_T,       KC_G,                               KC_QUOT,    KC_A,       KC_E,       KC_I,       KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_EQL,     KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             PC_LOCK,    ALT_UP,     GUIDEL,     SFTBSP,     CTLTAB,     ALTENT,     SPCNAV,     ESCBYO,     VS_COMT,    KC_MPLY,
-                                        PC_SCSH,    VS_PEDT,    PC_BSWD,    VS_EDIT,    VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
+                                        PC_SCSH,    VS_CTLP,    PC_BSWD,    VS_EDIT,    VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
+    ),
+    [_HANDS_DOWN_PLAT] = LAYOUT(
+    RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
+    KC_Z,       KC_R,       KC_S,       KC_N,       KC_T,       KC_B,                               KC_QUOT,    KC_A,       KC_E,       KC_I,       KC_C,       KC_J,
+    KC_HOME,    KC_X,       KC_G,       KC_H,       KC_D,       KC_V,                               KC_EQL,     KC_U,       KC_O,       KC_Y,       KC_W,       KC_END,
+                            PC_LOCK,    ALT_UP,     GUIDEL,     L_NAV,      CTLBSP,     ALTENT,     SPCSFT,     ESCBYO,     VS_COMT,    KC_MPLY,
+                                        PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     ),
     [_NAV_NUM_SYM] = LAYOUT(
     _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    KC_UP,      _______,    _______,    _______,

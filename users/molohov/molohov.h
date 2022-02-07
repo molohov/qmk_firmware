@@ -25,11 +25,11 @@ enum custom_keycodes {
 
 enum layer {
     _HANDS_DOWN,
+    _HANDS_DOWN_PLAT,
     _NAV_NUM_SYM,
     _BYO_ONOTE_VSC,
     _QWERTY_GAME,
 };
-
 
 #define  SFTBSP         SFT_T(KC_BSPC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)

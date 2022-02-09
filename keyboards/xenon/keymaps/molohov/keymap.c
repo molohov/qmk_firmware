@@ -38,7 +38,7 @@ enum layer {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       TG(_HANDS_DOWN_PLAT),
+    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_UNDS,    KC_COMM,    KC_Q,       TG(_HANDS_DOWN_PLAT),
     KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      HRM_H,      KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             PC_LOCK,    KC_UP,      KC_DEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     VS_COMT,    KC_MPLY,
@@ -60,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            VS_EGRP,    KC_LEFT,    KC_UP,      KC_RGHT,    KC_EQL,     _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    VS_PEDT,    KC_DOWN,    VS_NEDT,    VS_TERM,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),

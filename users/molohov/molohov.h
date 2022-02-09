@@ -26,14 +26,14 @@ enum custom_keycodes {
 
 #define  HRM_R          GUI_T(KC_R)
 #define  HRM_S          CTL_T(KC_S)
-#define  HRM_N          SFT_T(KC_N)
+#define  HRM_N          ALT_T(KC_N)
 // ALT on left index for AltDrag and AltTab
-#define  HRM_T          ALT_T(KC_T)
+#define  HRM_T          LSFT_T(KC_T)
 
 #define  HRM_H          GUI_T(KC_H)
 #define  HRM_I          ALT_T(KC_I)
-#define  HRM_E          SFT_T(KC_E)
-#define  HRM_A          CTL_T(KC_A)
+#define  HRM_E          CTL_T(KC_E)
+#define  HRM_A          RSFT_T(KC_A)
 
 #define  SFTBSP         SFT_T(KC_BSPC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)

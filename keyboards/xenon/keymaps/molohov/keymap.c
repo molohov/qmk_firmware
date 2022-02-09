@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      HRM_H,      KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             PC_LOCK,    KC_UP,      KC_DEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     VS_COMT,    KC_MPLY,
-                                        _______,    _______,    PC_SCSH,    CAPSWD,     VS_TERM,    PC_SLACK,   VS_COMT,    _______
+                                        _______,    _______,    CAPSWD,     PC_SCSH,    VS_COMT,    PC_SLACK,   _______,    _______
     ),
     [_HANDS_DOWN_PLAT] = LAYOUT(
     RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
@@ -52,16 +52,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     ),
     [_NUM_SYM] = LAYOUT(
-    _______,    _______,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    _______,    _______,    _______,    _______,
-    KC_AMPR,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            KC_RBRC,    KC_LBRC,    KC_BSLS,    KC_PERC,    KC_EQL,     _______,
+    _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_RCBR,                            KC_RABK,    KC_LABK,    KC_PIPE,    KC_AMPR,    _______,    _______,
+    _______,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            KC_RBRC,    KC_LBRC,    KC_BSLS,    KC_PERC,    KC_EQL,     _______,
     _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    KC_UP,      _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            VS_EGRP,    KC_LEFT,    KC_UP,      KC_RGHT,    KC_EQL,     _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    VS_PEDT,    KC_DOWN,    VS_NEDT,    VS_TERM,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),

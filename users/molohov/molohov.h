@@ -108,6 +108,7 @@ enum custom_keycodes {
 #define  VS_NEDT        C(KC_PGDN)
 // go to prev editor
 #define  VS_PEDT        C(KC_PGUP)
+#define  VS_EGRP        C(A(KC_PGUP))
 
 // to-do
 #define ON_TODO         C(KC_1)

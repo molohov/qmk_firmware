@@ -7,25 +7,6 @@ qmk flash -kb avalanche/rev2 -km default_rev2
 #include "molohov.h"
 
 
-#define  QWERTY_GAME    TG(_QWERTY_GAME)
-#define  NUMTOG         TG(_NAV_NUM_SYM)
-
-#ifdef HRM
-#define HRM_N CTL_T(KC_N)
-#define HRM_T ALT_T(KC_T)
-#define HRM_A SFT_T(KC_A)
-#define HRM_E CTL_T(KC_E)
-#define HRM_I ALT_T(KC_I)
-#define HRM_H GUI_T(KC_H)
-#else
-#define HRM_N KC_N
-#define HRM_T KC_T
-#define HRM_A KC_A
-#define HRM_E KC_E
-#define HRM_I KC_I
-#define HRM_H KC_H
-#endif
-
 /*
  * Base Layer: SAMPLE
  *                                     ╭────────╮                                                                         ╭────────╮
@@ -62,6 +43,9 @@ enum layer {
     _NAV_NUM_SYM,
     _QWERTY_GAME,
 };
+#define  QWERTY_GAME    TG(_QWERTY_GAME)
+#define  NUMTOG         TG(_NAV_NUM_SYM)
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
@@ -212,13 +196,13 @@ static void print_layers(void) {
             oled_write_ln_P(PSTR("/ :  `  *  (  )"), false);
             oled_write_ln_P(PSTR("  7  3  1  5  9  F11"), false);
             break;
-        case _BYO_ONOTE_VSC:
-            // oled_write_P(PSTR("Byobu"), false);
-            // oled_write_P(PSTR("ONote"), false);
-            // oled_write_P(PSTR("VCode"), false);
-            oled_write_P(PSTR("      OIM OTO OQS PDB"), false);
-            oled_write_P(PSTR("KL DSF VSP HSP CL FPN"), false);
-            break;
+        // case _BYO_ONOTE_VSC:
+        //     // oled_write_P(PSTR("Byobu"), false);
+        //     // oled_write_P(PSTR("ONote"), false);
+        //     // oled_write_P(PSTR("VCode"), false);
+        //     oled_write_P(PSTR("      OIM OTO OQS PDB"), false);
+        //     oled_write_P(PSTR("KL DSF VSP HSP CL FPN"), false);
+        //     break;
         default:
             oled_write_P(PSTR("Undef"), false);
     }

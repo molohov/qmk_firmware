@@ -49,11 +49,11 @@ const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
 const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
 const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
 const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
-const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
-const uint16_t PROGMEM pc_clip[]      = {KC_L, KC_T, COMBO_END};
+// const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
+const uint16_t PROGMEM pc_clip[]      = {KC_L, HRM_T, COMBO_END};
 
 // this combo mirrors the DW action in vim!
-const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
+// const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
 // keep shift+V on the left side
 const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
@@ -69,14 +69,14 @@ const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
 const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
 // linux combos
-const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
+// const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 const uint16_t PROGMEM at[]     = {KC_DOT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM dollar[] = {KC_SLSH, KC_MINS, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
-const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
+// const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
 
 combo_t key_combos[] = {
     [COMBO_VIM_WRITE]       = COMBO(vimwrite,       VIMWRITE),
@@ -89,7 +89,7 @@ combo_t key_combos[] = {
     [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
     // [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
     [COMBO_PC_UNDO]         = COMBO(pc_undo,        PC_UNDO),
-    [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
+    // [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
     [COMBO_PC_COPYPASTE]    = COMBO(pc_copypaste,   COPY_PASTE),
     // [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
     // [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
@@ -98,7 +98,7 @@ combo_t key_combos[] = {
     [COMBO_AT]              = COMBO(at,             KC_AT),
     [COMBO_DOLLAR]          = COMBO(dollar,         KC_DLR),
     [COMBO_SEMICOLON]       = COMBO(semicolon,      KC_SCLN),
-    [COMBO_DEL_WORD]        = COMBO(del_word,       C(KC_DEL)),
+    // [COMBO_DEL_WORD]        = COMBO(del_word,       C(KC_DEL)),
     // [COMBO_ESC]             = COMBO(escape,         KC_ESC),
     [COMBO_DLSIM]           = COMBO(dlsim,          DLSIM),
     [COMBO_SLACK_CODE]      = COMBO(slack_code,     SLACK_CODE),
@@ -263,74 +263,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
-
-bool is_alt_tab_active = false;
-uint16_t alt_tab_timer = 0;
-
-
-
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        switch(biton32(layer_state)) {
-        case _HANDS_DOWN:
-            alt_tab_timer = timer_read();
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                register_code(KC_LALT);
-            }
-            if (clockwise) {
-                tap_code16(KC_TAB);
-            } else {
-                tap_code16(S(KC_TAB));
-            }
-            break;
-        case _NAV_NUM_SYM:
-            if (clockwise) {
-                tap_code16(C(G(KC_RIGHT)));
-            } else {
-                tap_code16(C(G(KC_LEFT)));
-            }
-            break;
-        }
-
-    } else if (index == 1) {
-        switch(biton32(layer_state)) {
-        case _HANDS_DOWN:
-            if (clockwise) {
-                tap_code(KC_PGDN);
-            } else {
-                tap_code(KC_PGUP);
-            }
-            break;
-        case _NAV_NUM_SYM:
-            if (clockwise) {
-                tap_code(KC_VOLU);
-            } else {
-                tap_code(KC_VOLD);
-            }
-            break;
-        }
-    }
-    return true;
-}
-
-// Runs just one time when the keyboard initializes.
-void matrix_scan_user(void) {
-    static bool has_ran_yet = false;
-    if (!has_ran_yet) {
-        has_ran_yet = true;
-        // rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 3);
-        // rgblight_mode(RGBLIGHT_MODE_BREATHING + 1);
-        // rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-        // rgblight_sethsv(HSV_WHITE);
-    }
-    if (is_alt_tab_active) {
-      if (timer_elapsed(alt_tab_timer) > 1000) {
-        unregister_code(KC_LALT);
-        is_alt_tab_active = false;
-      }
-    }
-};
 
 void my_custom_function(void) {
 

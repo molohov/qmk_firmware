@@ -15,47 +15,67 @@
  */
 #include "molohov.h"
 
-#define M_LWR MO(_LOWER)
-#define M_RSE MO(_RAISE)
-#define L(kc) (LSFT(kc))
-#define R(kc) (RALT(kc))
-
-#define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
+#define  BSPNAV         LT(_NAV, KC_BSPC)
 #define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)
 #define  TABNUM         LT(_NUMPAD, KC_TAB)
+#define  SPCNUM         LT(_NUM_SYM, KC_SPC)
 
-// for HDPL
+// for HD Platinum
 #define  SPCSFT         SFT_T(KC_SPC)
-#define  L_NAV          LT(_NAV_NUM_SYM, KC_L)
-#define  BSPNAV         LT(_NAV_NUM_SYM, KC_BSPC)
+#define  L_NAV          LT(_NAV, KC_L)
 #define  CTLBSP         CTL_T(KC_BSPC)
+
+enum layer {
+    _HANDS_DOWN,
+    _HANDS_DOWN_PLAT,
+    _NUM_SYM,
+    _NAV,
+    _NUMPAD,
+    _BYO_ONOTE_VSC,
+    _QWERTY_GAME,
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
     RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       TG(_HANDS_DOWN_PLAT),
     KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      HRM_H,      KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                            PC_LOCK,    KC_UP,      KC_DEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNAV,     KC_ESC,     VS_COMT,    KC_MPLY,
-                                        _______,    _______,    PC_SCSH,    CAPSWD,     VS_TERM,    PC_SLACK,   _______,    _______
+                            PC_LOCK,    KC_UP,      KC_DEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     VS_COMT,    KC_MPLY,
+                                        _______,    _______,    PC_SCSH,    CAPSWD,     VS_TERM,    PC_SLACK,   VS_COMT,    _______
     ),
     [_HANDS_DOWN_PLAT] = LAYOUT(
     RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
-    KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_B,                               KC_QUOT,    KC_A,       KC_E,       KC_I,       KC_C,       KC_J,
+    KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_B,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_C,       KC_J,
     KC_HOME,    KC_X,       KC_G,       KC_H,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_W,       KC_END,
-                            PC_LOCK,    ALT_UP,     GUIDEL,     L_NAV,      CTLBSP,     ALTENT,     SPCSFT,     ESCBYO,     VS_COMT,    KC_MPLY,
+                            PC_LOCK,    ALT_UP,     GUIDEL,     L_NAV,      CTLBSP,     ENTBYO,     SPCSFT,     KC_ESC,     VS_COMT,    KC_MPLY,
                                         PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     ),
-    [_NAV_NUM_SYM] = LAYOUT(
-    _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    KC_UP,      _______,    _______,    _______,
-    KC_SLSH,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
+    [_NUM_SYM] = LAYOUT(
+    _______,    _______,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    _______,    _______,    _______,    _______,
+    KC_AMPR,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            KC_RBRC,    KC_LBRC,    KC_BSLS,    KC_PERC,    KC_EQL,     _______,
     _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
+    [_NAV] = LAYOUT(
+    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    KC_UP,      _______,    _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
+                            _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    ),
+    // [_NAV_NUM_SYM] = LAYOUT(
+    // _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    KC_UP,      _______,    _______,    _______,
+    // KC_SLSH,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
+    // _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
+    //                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    //                                     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    // ),
     [_NUMPAD] = LAYOUT(
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_7,       KC_8,       KC_9,       _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_4,       KC_5,       KC_6,       KC_EQL,     _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_1,       KC_2,       KC_3,       _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PSLS,    KC_7,       KC_8,       KC_9,       _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PPLS,    KC_4,       KC_5,       KC_6,       KC_EQL,     _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PAST,    KC_1,       KC_2,       KC_3,       KC_PMNS,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,       _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
@@ -107,8 +127,11 @@ static void render_status(void) {
   case _HANDS_DOWN:
     oled_write_P(PSTR("Base \n"), false);
     break;
-  case _NAV_NUM_SYM:
+  case _NAV:
     oled_write_P(PSTR("Nav\n"), false);
+    break;
+  case _NUM_SYM:
+    oled_write_P(PSTR("NumSy\n"), false);
     break;
   case _BYO_ONOTE_VSC:
     oled_write_P(PSTR("Macro\n"), false);
@@ -129,3 +152,68 @@ bool oled_task_user(void) {
   return true;
 }
 #endif
+
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) {
+        switch(biton32(layer_state)) {
+        case _HANDS_DOWN:
+            alt_tab_timer = timer_read();
+            if (!is_alt_tab_active) {
+                is_alt_tab_active = true;
+                register_code(KC_LALT);
+            }
+            if (clockwise) {
+                tap_code16(KC_TAB);
+            } else {
+                tap_code16(S(KC_TAB));
+            }
+            break;
+        case _NAV:
+            if (clockwise) {
+                tap_code16(C(G(KC_RIGHT)));
+            } else {
+                tap_code16(C(G(KC_LEFT)));
+            }
+            break;
+        }
+
+    } else if (index == 1) {
+        switch(biton32(layer_state)) {
+        case _HANDS_DOWN:
+            if (clockwise) {
+                tap_code(KC_PGDN);
+            } else {
+                tap_code(KC_PGUP);
+            }
+            break;
+        case _NAV:
+            if (clockwise) {
+                tap_code(KC_VOLU);
+            } else {
+                tap_code(KC_VOLD);
+            }
+            break;
+        }
+    }
+    return true;
+}
+
+// Runs just one time when the keyboard initializes.
+void matrix_scan_user(void) {
+    static bool has_ran_yet = false;
+    if (!has_ran_yet) {
+        has_ran_yet = true;
+        // rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 3);
+        // rgblight_mode(RGBLIGHT_MODE_BREATHING + 1);
+        // rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+        // rgblight_sethsv(HSV_WHITE);
+    }
+    if (is_alt_tab_active) {
+      if (timer_elapsed(alt_tab_timer) > 1000) {
+        unregister_code(KC_LALT);
+        is_alt_tab_active = false;
+      }
+    }
+};

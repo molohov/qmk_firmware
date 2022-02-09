@@ -24,16 +24,6 @@ enum custom_keycodes {
     CAPSWD,
 };
 
-enum layer {
-    _HANDS_DOWN,
-    _HANDS_DOWN_PLAT,
-    _NAV_NUM_SYM,
-    _NUMPAD,
-    _BYO_ONOTE_VSC,
-    _QWERTY_GAME,
-};
-
-
 #define  HRM_R          GUI_T(KC_R)
 #define  HRM_S          CTL_T(KC_S)
 #define  HRM_N          SFT_T(KC_N)

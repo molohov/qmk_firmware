@@ -57,6 +57,12 @@ qmk flash -kb avalanche/rev2 -km default_rev2
                                         XXXXXXX,    KC_LCTL,    KC_SPC,     KC_LSFT,    KC_ENT,     _______,    _______,    _______,    _______,    KC_MUTE
  * ),
  */
+enum layer {
+    _HANDS_DOWN,
+    _NAV_NUM_SYM,
+    _QWERTY_GAME,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
                 RESET,      KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       VS_TERM,
@@ -309,5 +315,68 @@ bool oled_task_user(void) {
 //     rgblight_set_layer_state(3, layer_state_cmp(state, _NAV_NUM_SYM));
 //     return state;
 // }
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) {
+        switch(biton32(layer_state)) {
+        case _HANDS_DOWN:
+            alt_tab_timer = timer_read();
+            if (!is_alt_tab_active) {
+                is_alt_tab_active = true;
+                register_code(KC_LALT);
+            }
+            if (clockwise) {
+                tap_code16(KC_TAB);
+            } else {
+                tap_code16(S(KC_TAB));
+            }
+            break;
+        case _NAV_NUM_SYM:
+            if (clockwise) {
+                tap_code16(C(G(KC_RIGHT)));
+            } else {
+                tap_code16(C(G(KC_LEFT)));
+            }
+            break;
+        }
 
+    } else if (index == 1) {
+        switch(biton32(layer_state)) {
+        case _HANDS_DOWN:
+            if (clockwise) {
+                tap_code(KC_PGDN);
+            } else {
+                tap_code(KC_PGUP);
+            }
+            break;
+        case _NAV_NUM_SYM:
+            if (clockwise) {
+                tap_code(KC_VOLU);
+            } else {
+                tap_code(KC_VOLD);
+            }
+            break;
+        }
+    }
+    return true;
+}
+
+// Runs just one time when the keyboard initializes.
+void matrix_scan_user(void) {
+    static bool has_ran_yet = false;
+    if (!has_ran_yet) {
+        has_ran_yet = true;
+        // rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 3);
+        // rgblight_mode(RGBLIGHT_MODE_BREATHING + 1);
+        // rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+        // rgblight_sethsv(HSV_WHITE);
+    }
+    if (is_alt_tab_active) {
+      if (timer_elapsed(alt_tab_timer) > 1000) {
+        unregister_code(KC_LALT);
+        is_alt_tab_active = false;
+      }
+    }
+};
 

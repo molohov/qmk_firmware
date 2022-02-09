@@ -1,10 +1,10 @@
 #pragma once
 
-// For home row mods
 #define TAPPING_TERM 200
-#define PERMISSIVE_HOLD
+// For home row mods
+// #define PERMISSIVE_HOLD
 //#define HRM
-// #define IGNORE_MOD_TAP_INTERRUPT
+#define IGNORE_MOD_TAP_INTERRUPT
 
 #define ADAPTIVE_TERM 300
 

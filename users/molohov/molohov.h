@@ -21,15 +21,29 @@ enum custom_keycodes {
     SLACK_CODE_PASTE,
     COPY_PASTE,
     IMPORT_PDB,
+    CAPSWD,
 };
 
 enum layer {
     _HANDS_DOWN,
     _HANDS_DOWN_PLAT,
     _NAV_NUM_SYM,
+    _NUMPAD,
     _BYO_ONOTE_VSC,
     _QWERTY_GAME,
 };
+
+
+#define  HRM_R          GUI_T(KC_R)
+#define  HRM_S          CTL_T(KC_S)
+#define  HRM_N          SFT_T(KC_N)
+// ALT on left index for AltDrag and AltTab
+#define  HRM_T          ALT_T(KC_T)
+
+#define  HRM_H          GUI_T(KC_H)
+#define  HRM_I          ALT_T(KC_I)
+#define  HRM_E          SFT_T(KC_E)
+#define  HRM_A          CTL_T(KC_A)
 
 #define  SFTBSP         SFT_T(KC_BSPC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)

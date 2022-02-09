@@ -1,4 +1,5 @@
 #include "molohov.h"
+#include "caps_word.h"
 
 // COMBOS
 enum combo_events {
@@ -34,42 +35,42 @@ enum combo_events {
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
 // vim combos rooted from left home row middle finger
-// const uint16_t PROGMEM vimwrite[] =     {KC_N, KC_T, COMBO_END};
-// const uint16_t PROGMEM vimwritequit[] = {KC_N, KC_D, COMBO_END};
-// const uint16_t PROGMEM vimquit[] =      {KC_N, KC_G, COMBO_END};
-// const uint16_t PROGMEM vimquitall[] =   {KC_N, KC_B, COMBO_END};
-// const uint16_t PROGMEM vimshiftv[] =    {KC_N, KC_P, COMBO_END};
+// const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
+// const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
+// const uint16_t PROGMEM vimquit[] =      {HRM_N, KC_G, COMBO_END};
+// const uint16_t PROGMEM vimquitall[] =   {HRM_N, KC_B, COMBO_END};
+// const uint16_t PROGMEM vimshiftv[] =    {HRM_N, KC_P, COMBO_END};
 
 // LEFT HAND
 // copy/paste combos on left bottom row
 const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_C, COMBO_END};
 const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
 const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
-const uint16_t PROGMEM pc_cut[]       = {KC_C, KC_N, COMBO_END};
+const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
 const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
 const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
-const uint16_t PROGMEM pc_find[]      = {KC_L, KC_T, COMBO_END};
-const uint16_t PROGMEM pc_clip[]      = {KC_D, KC_V, COMBO_END};
+const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
+const uint16_t PROGMEM pc_clip[]      = {KC_L, KC_T, COMBO_END};
 
 // this combo mirrors the DW action in vim!
 const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
 // keep shift+V on the left side
-const uint16_t PROGMEM vimshiftv[]  = {KC_N, KC_D, COMBO_END};
+const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
 const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
 // const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
-const uint16_t PROGMEM dlsim[]      = {KC_N, KC_T, COMBO_END};
-const uint16_t PROGMEM newtab[]     = {KC_T, KC_G, COMBO_END};
+const uint16_t PROGMEM dlsim[]      = {HRM_N, HRM_T, COMBO_END};
+const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
 
 // RIGHT HAND
 // vim combos rooted from right home row middle finger
-const uint16_t PROGMEM vimwrite[]     = {KC_E, KC_A, COMBO_END};
-const uint16_t PROGMEM vimwritequit[] = {KC_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {KC_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {KC_E, KC_MINS, COMBO_END};
+const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
+const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
+const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
 // linux combos
 const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
-const uint16_t PROGMEM lnx_last[] = {KC_I, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 const uint16_t PROGMEM at[]     = {KC_DOT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM dollar[] = {KC_SLSH, KC_MINS, COMBO_END};
@@ -86,13 +87,13 @@ combo_t key_combos[] = {
     [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
     [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
     [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
-    [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
+    // [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
     [COMBO_PC_UNDO]         = COMBO(pc_undo,        PC_UNDO),
     [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
     [COMBO_PC_COPYPASTE]    = COMBO(pc_copypaste,   COPY_PASTE),
-    [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
-    [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
-    [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
+    // [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
+    // [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
+    // [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
     [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
     [COMBO_AT]              = COMBO(at,             KC_AT),
     [COMBO_DOLLAR]          = COMBO(dollar,         KC_DLR),
@@ -102,7 +103,7 @@ combo_t key_combos[] = {
     [COMBO_DLSIM]           = COMBO(dlsim,          DLSIM),
     [COMBO_SLACK_CODE]      = COMBO(slack_code,     SLACK_CODE),
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
-    [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
+    // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
     [COMBO_WIN_CLIP]        = COMBO(pc_clip,        G(KC_V)),
 };
 
@@ -187,6 +188,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_adaptive_key(keycode, record)) {
         return false; // took care of that key
     }
+    if (!process_caps_word(keycode, record)) {
+        return false; // took care of that key
+    }
     switch (keycode) {
         case VIMWRITE:
             if (record->event.pressed) {
@@ -251,6 +255,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("import pdb; pdb.set_trace()");
             }
             break;
+        case CAPSWD:
+            if (record->event.pressed) {
+                caps_word_set(true);  // Activate Caps Word!
+            }
+            break;
     }
     return true;
 }
@@ -269,7 +278,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 is_alt_tab_active = true;
                 register_code(KC_LALT);
             }
-            if (!clockwise) {
+            if (clockwise) {
                 tap_code16(KC_TAB);
             } else {
                 tap_code16(S(KC_TAB));

@@ -19,21 +19,22 @@ enum custom_keycodes {
     DLSIM,
     SLACK_CODE,
     SLACK_CODE_PASTE,
+    SLACK_FUNC_PASTE,
     COPY_PASTE,
     IMPORT_PDB,
     CAPSWD,
 };
 
 #define  HRM_R          GUI_T(KC_R)
-#define  HRM_S          CTL_T(KC_S)
-#define  HRM_N          ALT_T(KC_N)
+#define  HRM_S          ALT_T(KC_S)
+#define  HRM_N          LSFT_T(KC_N)
 // ALT on left index for AltDrag and AltTab
-#define  HRM_T          LSFT_T(KC_T)
+#define  HRM_T          CTL_T(KC_T)
 
 #define  HRM_H          GUI_T(KC_H)
 #define  HRM_I          ALT_T(KC_I)
-#define  HRM_E          CTL_T(KC_E)
-#define  HRM_A          RSFT_T(KC_A)
+#define  HRM_E          RSFT_T(KC_E)
+#define  HRM_A          CTL_T(KC_A)
 
 #define  SFTBSP         SFT_T(KC_BSPC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
@@ -58,6 +59,9 @@ enum custom_keycodes {
 #define  PC_SCSH        G(S(KC_S))
 #define  PC_LWRD        C(KC_LEFT)
 #define  PC_RWRD        C(KC_RIGHT)
+#define  PC_EXIT        A(KC_F4)
+#define  PC_CLIP        G(KC_V)
+#define  SLKFPS         SLACK_FUNC_PASTE
 #define  WINRUN         C(A(KC_K))
 
 #define  LNX_PASTE      S(C(KC_V))

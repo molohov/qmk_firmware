@@ -1,8 +1,8 @@
 #pragma once
 
-#define TAPPING_TERM 200
-// For home row mods
+#define TAPPING_TERM 220
 // #define PERMISSIVE_HOLD
+// For home row mods
 //#define HRM
 #define IGNORE_MOD_TAP_INTERRUPT
 
@@ -13,3 +13,5 @@
 #define NO_ACTION_ONESHOT
 // #define SPLIT_MODS_ENABLE
 #define SPLIT_LAYER_STATE_ENABLE
+
+#define LSPO_KEYS KC_LCTL, LSPO_MOD, LSPO_KEY

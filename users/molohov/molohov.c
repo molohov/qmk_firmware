@@ -43,14 +43,14 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 
 // LEFT HAND
 // copy/paste combos on left bottom row
-const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_C, COMBO_END};
-const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
-const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
-const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
-const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
-const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
+// const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_C, COMBO_END};
+// const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
+// const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
+// const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
+// const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
+// const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
 // const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
-const uint16_t PROGMEM pc_clip[]      = {KC_L, HRM_T, COMBO_END};
+// const uint16_t PROGMEM pc_clip[]      = {KC_L, HRM_T, COMBO_END};
 
 // this combo mirrors the DW action in vim!
 // const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
@@ -60,7 +60,7 @@ const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
 const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
 // const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
 const uint16_t PROGMEM dlsim[]      = {HRM_N, HRM_T, COMBO_END};
-const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
+// const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
 
 // RIGHT HAND
 // vim combos rooted from right home row middle finger
@@ -84,13 +84,13 @@ combo_t key_combos[] = {
     [COMBO_VIM_QUIT]        = COMBO(vimquit,        VIMQUIT),
     [COMBO_VIM_QUITALL]     = COMBO(vimquitall,     VIMQUITALL),
     [COMBO_VIM_SHIFTV]      = COMBO(vimshiftv,      S(KC_V)),
-    [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
-    [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
-    [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
+    // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
+    // [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
+    // [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
     // [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
-    [COMBO_PC_UNDO]         = COMBO(pc_undo,        PC_UNDO),
+    // [COMBO_PC_UNDO]         = COMBO(pc_undo,        PC_UNDO),
     // [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
-    [COMBO_PC_COPYPASTE]    = COMBO(pc_copypaste,   COPY_PASTE),
+    // [COMBO_PC_COPYPASTE]    = COMBO(pc_copypaste,   COPY_PASTE),
     // [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
     // [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
     // [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
@@ -104,7 +104,7 @@ combo_t key_combos[] = {
     [COMBO_SLACK_CODE]      = COMBO(slack_code,     SLACK_CODE),
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
     // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
-    [COMBO_WIN_CLIP]        = COMBO(pc_clip,        G(KC_V)),
+    // [COMBO_WIN_CLIP]        = COMBO(pc_clip,        PC_CLIP),
 };
 
 // CUSTOM MODIFIER OVERRIDES
@@ -246,6 +246,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case SLACK_CODE_PASTE:
             if (record->event.pressed) {
                 SEND_STRING("```" SS_DELAY(100) SS_LCTL(SS_TAP(X_V)));
+            }
+            break;
+        case SLACK_FUNC_PASTE:
+            if (record->event.pressed) {
+                SEND_STRING("`" SS_DELAY(100) SS_LCTL(SS_TAP(X_V)) "`");
             }
             break;
         case COPY_PASTE:

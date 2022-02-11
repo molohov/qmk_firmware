@@ -25,6 +25,16 @@
 #define  L_NAV          LT(_NAV, KC_L)
 #define  CTLBSP         CTL_T(KC_BSPC)
 
+#define  HRM_COLN       GUI_T(KC_COLN)
+#define  HRM_MINS       ALT_T(KC_MINS)
+#define  HRM_PAST       LSFT_T(KC_PAST)
+// #define  HRM_LPRN       ALT_T(KC_LPRN)
+#define  HRM_LPRN       KC_LSPO
+
+#define  HRM_EQL        GUI_T(KC_EQL)
+#define  HRM_GRV        ALT_T(KC_GRV)
+#define  HRM_BSLS       RSFT_T(KC_BSLS)
+#define  HRM_LBRC       CTL_T(KC_LBRC)
 enum layer {
     _HANDS_DOWN,
     _HANDS_DOWN_PLAT,
@@ -38,30 +48,30 @@ enum layer {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_UNDS,    KC_COMM,    KC_Q,       TG(_HANDS_DOWN_PLAT),
+    RESET,      KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_UNDS,    KC_COMM,    KC_Q,       _______,
     KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      HRM_H,      KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                            PC_LOCK,    KC_UP,      KC_DEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     VS_COMT,    KC_MPLY,
-                                        _______,    _______,    CAPSWD,     PC_SCSH,    VS_COMT,    PC_SLACK,   _______,    _______
+                            PC_LOCK,    KC_UP,      GUIDEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     VS_COMT,    KC_MPLY,
+                                        _______,    WINRUN,     CAPSWD,     PC_SCSH,    VS_COMT,    PC_SLACK,   _______,    _______
     ),
-    [_HANDS_DOWN_PLAT] = LAYOUT(
-    RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
-    KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_B,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_C,       KC_J,
-    KC_HOME,    KC_X,       KC_G,       KC_H,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_W,       KC_END,
-                            PC_LOCK,    ALT_UP,     GUIDEL,     L_NAV,      CTLBSP,     ENTBYO,     SPCSFT,     KC_ESC,     VS_COMT,    KC_MPLY,
-                                        PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
-    ),
+    // [_HANDS_DOWN_PLAT] = LAYOUT(
+    // RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
+    // KC_Z,       HRM_R,      HRM_S,      HRM_N,      HRM_T,      KC_B,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_C,       KC_J,
+    // KC_HOME,    KC_X,       KC_G,       KC_H,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_W,       KC_END,
+    //                         PC_LOCK,    ALT_UP,     GUIDEL,     L_NAV,      CTLBSP,     ENTBYO,     SPCSFT,     KC_ESC,     VS_COMT,    KC_MPLY,
+    //                                     PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
+    // ),
     [_NUM_SYM] = LAYOUT(
     _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_RCBR,                            KC_RABK,    KC_LABK,    KC_PIPE,    KC_AMPR,    _______,    _______,
-    _______,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            KC_RBRC,    KC_LBRC,    KC_BSLS,    KC_PERC,    KC_EQL,     _______,
+    _______,    KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_RPRN,                            KC_RBRC,    HRM_LBRC,   HRM_BSLS,   HRM_GRV,    HRM_EQL,     _______,
     _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
+    _______,    _______,    _______,    PC_EXIT,    SLKFPS,     _______,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   _______,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
+    _______,    PC_SALL,    _______,    PC_FIND,    PC_CLIP,    _______,                            VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),

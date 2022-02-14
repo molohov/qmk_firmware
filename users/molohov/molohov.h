@@ -28,7 +28,6 @@ enum custom_keycodes {
 #define  HRM_R          GUI_T(KC_R)
 #define  HRM_S          ALT_T(KC_S)
 #define  HRM_N          LSFT_T(KC_N)
-// ALT on left index for AltDrag and AltTab
 #define  HRM_T          CTL_T(KC_T)
 
 #define  HRM_H          GUI_T(KC_H)

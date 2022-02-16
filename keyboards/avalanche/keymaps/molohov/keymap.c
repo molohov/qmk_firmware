@@ -42,6 +42,7 @@ enum layer {
     _HANDS_DOWN,
     _NUM_SYM,
     _NAV,
+    _NUMPAD,
     _QWERTY_GAME,
 };
 #define  QWERTY     TG(_QWERTY_GAME)
@@ -53,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______,    KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_UNDS,    KC_COMM,    KC_Q,       _______,
     PC_SCSH,    KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,       PC_LOCK,    KC_MPLY,    KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,       _______,
                 KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       PC_BSWD,    CAPSWD,     KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                                        QWERTY,     ALTESC,     GUIDEL,     BSPNAV,     KC_TAB,     KC_ENT,     SPCNUM,     KC_ESC,     VS_COMT,    WINRUN
+                                        QWERTY,     ALTESC,     GUIDEL,     BSPNAV,     TABNUM,     KC_ENT,     SPCNUM,     KC_ESC,     VS_COMT,    WINRUN
     ),
 
     [_NUM_SYM] = LAYOUT(
@@ -61,15 +62,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_LABK,                            KC_RABK,    KC_RCBR,    KC_PIPE,    KC_AMPR,    _______,    _______,
     _______,    _______,    KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,    _______,    _______,    KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     _______,    _______,
                 _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,       KC_F11,     KC_F12,     KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
-                                        _______,    KC_LALT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
 
     [_NAV] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-                _______,    _______,    _______,    PC_EXIT,    SLKFPS,     _______,                            _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    KC_SLSH,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   _______,    _______,    _______,    VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,    _______,
-                KC_QUES,    PC_SALL,    _______,    PC_FIND,    PC_CLIP,    _______,    _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
+                _______,    _______,    PC_SALL,    PC_EXIT,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   _______,    _______,    _______,    VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,    _______,
+                _______,    KC_SLSH,    KC_QUES,    PC_FIND,    PC_CLIP,    _______,    _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    ),
+
+    [_NUMPAD] = LAYOUT(
+                _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
+                _______,    _______,    _______,    _______,    _______,    _______,                            KC_PSLS,    KC_7,       KC_8,       KC_9,       _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PPLS,    KC_4,       KC_5,       KC_6,       KC_EQL,     KC_COMM,    _______,
+                _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PAST,    KC_1,       KC_2,       KC_3,       KC_PMNS,    KC_DOT,
+                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,       _______,    _______
     ),
 
     [_QWERTY_GAME] = LAYOUT(

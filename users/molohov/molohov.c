@@ -71,7 +71,7 @@ const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_SLSH, COMBO_END};
 // linux combos
 // const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_UNDS, COMBO_END};
-const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
+// const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 const uint16_t PROGMEM at[]     = {KC_DOT, KC_UNDS, COMBO_END};
 const uint16_t PROGMEM dollar[] = {KC_UNDS, KC_SLSH, COMBO_END};
 // . + , = ;
@@ -94,7 +94,7 @@ combo_t key_combos[] = {
     // [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
     // [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
     // [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
-    [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
+    // [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
     [COMBO_AT]              = COMBO(at,             KC_AT),
     [COMBO_DOLLAR]          = COMBO(dollar,         KC_DLR),
     [COMBO_SEMICOLON]       = COMBO(semicolon,      KC_SCLN),
@@ -176,6 +176,13 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     switch (prior_keycode) {
                         case KC_L: //LC -> LF
                             tap_code(KC_F);
+                            return_state = false; // done.
+                    }
+                    break;
+                case KC_DOT:
+                    switch (prior_keycode) {
+                        case KC_Q: //Q. -> QU
+                            tap_code(KC_U);
                             return_state = false; // done.
                     }
                     break;

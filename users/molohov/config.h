@@ -1,7 +1,8 @@
 #pragma once
 
 #define TAPPING_TERM 220
-// #define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD_PER_KEY
 // For home row mods
 //#define HRM
 #define IGNORE_MOD_TAP_INTERRUPT
@@ -14,5 +15,6 @@
 // #define SPLIT_MODS_ENABLE
 #define SPLIT_LAYER_STATE_ENABLE
 
+// to give CTL_T(KC_L/RPRN) for HRM
 #define LSPO_KEYS KC_LCTL, LSPO_MOD, LSPO_KEY
 #define RSPC_KEYS KC_RCTL, RSPC_MOD, RSPC_KEY

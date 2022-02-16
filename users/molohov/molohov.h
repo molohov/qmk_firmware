@@ -35,6 +35,22 @@ enum custom_keycodes {
 #define  HRM_E          RSFT_T(KC_E)
 #define  HRM_A          CTL_T(KC_A)
 
+#define  HRM_COLN       GUI_T(KC_COLN)
+#define  HRM_MINS       ALT_T(KC_MINS)
+#define  HRM_PAST       LSFT_T(KC_PAST)
+// #define  HRM_LPRN       ALT_T(KC_LPRN)
+#define  HRM_LPRN       KC_LSPO
+
+#define  HRM_EQL        GUI_T(KC_EQL)
+#define  HRM_GRV        ALT_T(KC_GRV)
+#define  HRM_BSLS       RSFT_T(KC_BSLS)
+#define  HRM_RPRN       KC_RSPC
+
+#define  BSPNAV         LT(_NAV, KC_BSPC)
+#define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)
+#define  TABNUM         LT(_NUMPAD, KC_TAB)
+#define  SPCNUM         LT(_NUM_SYM, KC_SPC)
+
 #define  SFTBSP         SFT_T(KC_BSPC)
 #define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
 

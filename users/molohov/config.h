@@ -3,6 +3,7 @@
 #define TAPPING_TERM 220
 #define PERMISSIVE_HOLD
 #define PERMISSIVE_HOLD_PER_KEY
+#define BILATERAL_COMBINATIONS
 // For home row mods
 //#define HRM
 #define IGNORE_MOD_TAP_INTERRUPT

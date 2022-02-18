@@ -21,6 +21,8 @@ enum custom_keycodes {
     SLACK_CODE_PASTE,
     SLACK_FUNC_PASTE,
     COPY_PASTE,
+    VIM_FSEARCH_PASTE,
+    VIM_RSEARCH_PASTE,
     IMPORT_PDB,
     CAPSWD,
 };
@@ -128,6 +130,10 @@ enum custom_keycodes {
 // go to prev editor
 #define  VS_PEDT        C(KC_PGUP)
 #define  VS_EGRP        C(A(KC_PGUP))
+
+// vim forward/reverse search, paste, then enter
+#define  VIM_FSP        VIM_FSEARCH_PASTE
+#define  VIM_RSP        VIM_RSEARCH_PASTE
 
 // to-do
 #define ON_TODO         C(KC_1)

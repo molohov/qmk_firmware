@@ -40,7 +40,7 @@ qmk flash -kb avalanche/rev2 -km default_rev2
  */
 enum layer {
     _HANDS_DOWN,
-    _NUM_SYM,
+    _SYM_NUM,
     _NAV,
     _NUMPAD,
     _QWERTY_GAME,
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         QWERTY,     ALTESC,     GUIDEL,     BSPNAV,     TABNUM,     KC_ENT,     SPCNUM,     KC_ESC,     VS_COMT,    WINRUN
     ),
 
-    [_NUM_SYM] = LAYOUT(
+    [_SYM_NUM] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
                 _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_LABK,                            KC_RABK,    KC_RCBR,    KC_PIPE,    KC_AMPR,    _______,    _______,
     _______,    _______,    KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,    _______,    _______,    KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     _______,    _______,
@@ -196,7 +196,7 @@ static void print_layers(void) {
             oled_write_ln_P(PSTR("CTL Z X C V B"), false);
             oled_write_ln_P(PSTR("XXX CTL SPC SFT ENT"), false);
             break;
-        case _NUM_SYM:
+        case _SYM_NUM:
             // oled_write_P(PSTR("Navig"), false);
             // oled_write_P(PSTR("Symbs"), false);
             // oled_write_P(PSTR("Numbs"), false);
@@ -305,7 +305,7 @@ bool oled_task_user(void) {
 // // Raise and Lower states
 // layer_state_t layer_state_set_user(layer_state_t state) {
 //     rgblight_set_layer_state(2, layer_state_cmp(state, _RAISE));
-//     rgblight_set_layer_state(3, layer_state_cmp(state, _NAV_NUM_SYM));
+//     rgblight_set_layer_state(3, layer_state_cmp(state, _NAV_SYM_NUM));
 //     return state;
 // }
 bool is_alt_tab_active = false;
@@ -325,7 +325,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 tap_code16(S(KC_TAB));
             }
             break;
-        case _NUM_SYM:
+        case _SYM_NUM:
             if (clockwise) {
                 tap_code16(C(G(KC_RIGHT)));
             } else {
@@ -343,7 +343,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 tap_code(KC_PGUP);
             }
             break;
-        case _NUM_SYM:
+        case _SYM_NUM:
             if (clockwise) {
                 tap_code(KC_VOLU);
             } else {

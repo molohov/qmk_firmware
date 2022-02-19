@@ -51,10 +51,10 @@ enum custom_keycodes {
 #define  BSPNAV         LT(_NAV, KC_BSPC)
 #define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)
 #define  TABNUM         LT(_NUMPAD, KC_TAB)
-#define  SPCNUM         LT(_NUM_SYM, KC_SPC)
+#define  SPCNUM         LT(_SYM_NUM, KC_SPC)
 
 #define  SFTBSP         SFT_T(KC_BSPC)
-#define  SPCNAV         LT(_NAV_NUM_SYM, KC_SPC)
+#define  SPCNAV         LT(_NAV_SYM_NUM, KC_SPC)
 
 #define  CTLTAB         CTL_T(KC_TAB)
 #define  ALTENT         ALT_T(KC_ENT)

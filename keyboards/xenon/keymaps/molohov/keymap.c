@@ -24,7 +24,7 @@
 enum layer {
     _HANDS_DOWN,
     _HANDS_DOWN_PLAT,
-    _NUM_SYM,
+    _SYM_NUM,
     _NAV,
     _NUMPAD,
     _BYO_ONOTE_VSC,
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     PC_SLACK,   KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_COLN,    KC_COMM,    KC_Q,       RESET,
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                            PC_LOCK,    KC_ESC,     GUIDEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     ON_TODO,    KC_MPLY,
+                            KC_MPLY,    KC_ESC,     GUIDEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     ON_TODO,    PC_LOCK,
                                         WINRUN,     VS_COMT,    CAPSWD,     PC_SCSH,    VS_COMT,    KC_UNDS,    VS_CTLP,    PY_IPDB
     ),
     // [_HANDS_DOWN_PLAT] = LAYOUT(
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                         PC_LOCK,    ALT_UP,     GUIDEL,     L_NAV,      CTLBSP,     ENTBYO,     SPCSFT,     KC_ESC,     VS_COMT,    KC_MPLY,
     //                                     PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     // ),
-    [_NUM_SYM] = LAYOUT(
+    [_SYM_NUM] = LAYOUT(
     _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_LABK,                            KC_RABK,    KC_RCBR,    KC_PIPE,    KC_AMPR,    _______,    _______,
     _______,    KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,                            KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     _______,
     _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
@@ -61,13 +61,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
-    // [_NAV_NUM_SYM] = LAYOUT(
-    // _______,    KC_AMPR,    KC_PERC,    KC_BSLS,    KC_LBRC,    KC_RBRC,                            _______,    _______,    KC_UP,      _______,    _______,    _______,
-    // KC_SLSH,    KC_COLN,    KC_GRV,     KC_PAST,    KC_LPRN,    KC_RPRN,                            _______,    KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_EQL,     _______,
-    // _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
-    //                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    //                                     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
-    // ),
     [_NUMPAD] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,                            KC_PSLS,    KC_7,       KC_8,       KC_9,       _______,    _______,
     _______,    _______,    _______,    _______,    _______,    _______,                            KC_PPLS,    KC_4,       KC_5,       KC_6,       KC_EQL,     KC_COMM,
@@ -124,10 +117,13 @@ static void render_status(void) {
     oled_write_P(PSTR("Base \n"), false);
     break;
   case _NAV:
-    oled_write_P(PSTR("Nav\n"), false);
+    oled_write_P(PSTR("Nav  \n"), false);
     break;
-  case _NUM_SYM:
-    oled_write_P(PSTR("NumSy\n"), false);
+  case _SYM_NUM:
+    oled_write_P(PSTR("SymNm\n"), false);
+    break;
+  case _NUMPAD:
+    oled_write_P(PSTR("Numpd\n"), false);
     break;
   case _BYO_ONOTE_VSC:
     oled_write_P(PSTR("Macro\n"), false);
@@ -149,24 +145,26 @@ bool oled_task_user(void) {
 }
 #endif
 
-bool is_alt_tab_active = false;
-uint16_t alt_tab_timer = 0;
+// bool is_alt_tab_active = false;
+// uint16_t alt_tab_timer = 0;
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         switch(biton32(layer_state)) {
         case _HANDS_DOWN:
-            alt_tab_timer = timer_read();
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                register_code(KC_LALT);
-            }
+            // alt_tab_timer = timer_read();
+            // if (!is_alt_tab_active) {
+            //     is_alt_tab_active = true;
+            //     register_code(KC_LALT);
+            // }
+            // volume rocker
             if (clockwise) {
-                tap_code16(KC_TAB);
+                tap_code(KC_VOLD);
             } else {
-                tap_code16(S(KC_TAB));
+                tap_code(KC_VOLU);
             }
             break;
         case _NAV:
+            // virtual desktop switching
             if (clockwise) {
                 tap_code16(C(G(KC_RIGHT)));
             } else {
@@ -178,18 +176,22 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 1) {
         switch(biton32(layer_state)) {
         case _HANDS_DOWN:
+            // vscode tab switching
             if (clockwise) {
-                tap_code(KC_PGDN);
+                tap_code16(VS_NEDT);
             } else {
-                tap_code(KC_PGUP);
+                tap_code16(VS_PEDT);
             }
             break;
         case _NAV:
-            if (clockwise) {
-                tap_code(KC_VOLU);
-            } else {
-                tap_code(KC_VOLD);
-            }
+            // same hand as NAV toggle, so hard to use
+            // if (clockwise) {
+            //     tap_code(KC_VOLU);
+            // } else {
+            //     tap_code(KC_VOLD);
+            // }
+            break;
+        case _SYM_NUM:
             break;
         }
     }
@@ -206,10 +208,10 @@ void matrix_scan_user(void) {
         // rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
         // rgblight_sethsv(HSV_WHITE);
     }
-    if (is_alt_tab_active) {
-      if (timer_elapsed(alt_tab_timer) > 1000) {
-        unregister_code(KC_LALT);
-        is_alt_tab_active = false;
-      }
-    }
+    // if (is_alt_tab_active) {
+    //   if (timer_elapsed(alt_tab_timer) > 1000) {
+    //     unregister_code(KC_LALT);
+    //     is_alt_tab_active = false;
+    //   }
+    // }
 };

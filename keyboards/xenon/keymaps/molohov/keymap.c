@@ -149,6 +149,7 @@ bool oled_task_user(void) {
 // uint16_t alt_tab_timer = 0;
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
+        // left side
         switch(biton32(layer_state)) {
         case _HANDS_DOWN:
             // alt_tab_timer = timer_read();
@@ -164,16 +165,15 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             }
             break;
         case _NAV:
-            // virtual desktop switching
-            if (clockwise) {
-                tap_code16(C(G(KC_RIGHT)));
-            } else {
-                tap_code16(C(G(KC_LEFT)));
-            }
+            // same hand as toggle, hard to use
+            break;
+        case _SYM_NUM:
+            // TODO
             break;
         }
 
     } else if (index == 1) {
+        // right side
         switch(biton32(layer_state)) {
         case _HANDS_DOWN:
             // vscode tab switching
@@ -184,14 +184,15 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             }
             break;
         case _NAV:
-            // same hand as NAV toggle, so hard to use
-            // if (clockwise) {
-            //     tap_code(KC_VOLU);
-            // } else {
-            //     tap_code(KC_VOLD);
-            // }
+            // virtual desktop switching
+            if (clockwise) {
+                tap_code16(C(G(KC_RIGHT)));
+            } else {
+                tap_code16(C(G(KC_LEFT)));
+            }
             break;
         case _SYM_NUM:
+            // same hand as layer toggle, hard to use
             break;
         }
     }
@@ -203,10 +204,6 @@ void matrix_scan_user(void) {
     static bool has_ran_yet = false;
     if (!has_ran_yet) {
         has_ran_yet = true;
-        // rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 3);
-        // rgblight_mode(RGBLIGHT_MODE_BREATHING + 1);
-        // rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-        // rgblight_sethsv(HSV_WHITE);
     }
     // if (is_alt_tab_active) {
     //   if (timer_elapsed(alt_tab_timer) > 1000) {

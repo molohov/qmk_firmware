@@ -38,13 +38,6 @@ qmk flash -kb avalanche/rev2 -km default_rev2
                                         XXXXXXX,    KC_LCTL,    KC_SPC,     KC_LSFT,    KC_ENT,     _______,    _______,    _______,    _______,    KC_MUTE
  * ),
  */
-enum layer {
-    _HANDS_DOWN,
-    _SYM_NUM,
-    _NAV,
-    _NUMPAD,
-    _QWERTY_GAME,
-};
 #define  QWERTY     TG(_QWERTY_GAME)
 
 

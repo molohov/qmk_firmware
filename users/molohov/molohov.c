@@ -189,6 +189,27 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                             return_state = false; // done.
                     }
                     break;
+                case KC_A:
+                    switch (prior_keycode) {
+                        case KC_K: // KA -> CA
+                            SEND_STRING(SS_TAP(X_BSPC)"ca");
+                            return_state = false; // done.
+                    }
+                    break;
+                case KC_O:
+                    switch (prior_keycode) {
+                        case KC_K: // KO -> CO
+                            SEND_STRING(SS_TAP(X_BSPC)"co");
+                            return_state = false; // done.
+                    }
+                    break;
+                case KC_U:
+                    switch (prior_keycode) {
+                        case KC_K: // KU -> CU
+                            SEND_STRING(SS_TAP(X_BSPC)"cu");
+                            return_state = false; // done.
+                    }
+                    break;
             }
         }
         prior_keycode = keycode;
@@ -296,6 +317,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case HRM_N:
         case HRM_E:
+        case SPCNUM:
+        case BSPNAV:
             // Immediately select the hold action when another key is tapped.
             return true;
         default:

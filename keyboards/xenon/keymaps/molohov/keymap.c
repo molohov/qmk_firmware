@@ -21,16 +21,6 @@
 #define  L_NAV          LT(_NAV, KC_L)
 #define  CTLBSP         CTL_T(KC_BSPC)
 
-enum layer {
-    _HANDS_DOWN,
-    _HANDS_DOWN_PLAT,
-    _SYM_NUM,
-    _NAV,
-    _NUMPAD,
-    _BYO_ONOTE_VSC,
-    _QWERTY_GAME,
-};
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(

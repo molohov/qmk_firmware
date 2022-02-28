@@ -6,6 +6,16 @@
 
 #include QMK_KEYBOARD_H
 
+enum layer {
+    _HANDS_DOWN,
+    _HANDS_DOWN_PLAT,
+    _SYM_NUM,
+    _NAV,
+    _NUMPAD,
+    _BYO_ONOTE_VSC,
+    _QWERTY_GAME,
+};
+
 enum custom_keycodes {
     KC_HANDS_DOWN = SAFE_RANGE,
     KC_QWERTY_GAME,

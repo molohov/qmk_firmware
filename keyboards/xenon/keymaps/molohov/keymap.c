@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             KC_MPLY,    KC_ESC,     GUIDEL,     BSPNAV,     TABNUM,     ENTBYO,     SPCNUM,     KC_ESC,     ON_TODO,    PC_LOCK,
-                                        WINRUN,     VS_COMT,    CAPSWD,     PC_SCSH,    VS_COMT,    KC_UNDS,    VS_CTLP,    PY_IPDB
+                                        WINRUN,     SLK_CDP,    CAPSWD,     PC_SCSH,    VS_COMT,    KC_UNDS,    VS_CTLP,    PY_IPDB
     ),
     // [_HANDS_DOWN_PLAT] = LAYOUT(
     // RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
@@ -62,11 +62,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NUMPAD] = LAYOUT(
-    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PSLS,    KC_7,       KC_8,       KC_9,       _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PPLS,    KC_4,       KC_5,       KC_6,       KC_EQL,     KC_COMM,
-    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PAST,    KC_1,       KC_2,       KC_3,       KC_PMNS,    KC_DOT,
-                            _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,       _______,    _______,
-                                        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PSLS,    KC_7,       KC_8,       KC_9,       KC_PMNS,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PPLS,    KC_4,       KC_5,       KC_6,       KC_DOT,     KC_COMM,
+    _______,    _______,    _______,    _______,    _______,    _______,                            KC_PAST,    KC_1,       KC_2,       KC_3,       KC_EQL,     _______,
+                            _______,    _______,    _______,    _______,    _______,    KC_ENT,     KC_SPC,     KC_0,       _______,    _______,
+                                        _______,    _______,    _______,    _______,    KC_BSPC,    _______,    _______,    _______
     ),
     [_BYO_ONOTE_VSC] = LAYOUT(
     KC_F11,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,

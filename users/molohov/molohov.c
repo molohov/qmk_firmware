@@ -127,9 +127,9 @@ const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_
 // shift : gives ;
 const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_EXLM);
 // shift / gives -
-const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_MINS);
+const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_SCLN);
 // shift - gives ;
-const key_override_t dash_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_SCLN);
+const key_override_t dash_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_GRV);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){

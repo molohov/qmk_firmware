@@ -143,6 +143,7 @@ enum custom_keycodes {
 #define ON_QUES         C(KC_3)
 
 #define PY_IPDB         IMPORT_PDB
+#define SLK_CDP         SLACK_CODE_PASTE
 
 
 #define MODS_SHIFT (get_mods() & MOD_BIT(KC_LSHIFT) || get_mods() & MOD_BIT(KC_RSHIFT))

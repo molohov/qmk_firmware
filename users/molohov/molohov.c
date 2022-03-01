@@ -1,4 +1,5 @@
 #include "molohov.h"
+#include "swapper.h"
 #include "caps_word.h"
 
 // COMBOS
@@ -220,6 +221,10 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
     }
     return return_state; //
 }
+
+bool sw_win_active = false;
+
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Do we handle an adaptive key?
     if (!process_adaptive_key(keycode, record)) {
@@ -228,6 +233,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_caps_word(keycode, record)) {
         return false; // took care of that key
     }
+    update_swapper(
+        &sw_win_active, KC_LALT, KC_TAB, SW_WIN,
+        keycode, record
+    );
     switch (keycode) {
         case VIMWRITE:
             if (record->event.pressed) {

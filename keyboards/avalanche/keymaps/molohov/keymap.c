@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-                _______,    OS_SFT,     OS_ALT,     OS_GUI,     OS_CTL,     VIM_RSP,                            _______,    _______,    _______,    _______,    _______,    _______,
+                _______,    OS_SFT,     OS_ALT,     SW_WIN,     OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
     _______,    PC_SALL,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,    _______,    _______,    VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,    _______,
                 PC_EXIT,    KC_SLSH,    KC_QUES,    PC_FIND,    PC_CLIP,    _______,    _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______

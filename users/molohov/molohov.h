@@ -35,6 +35,7 @@ enum custom_keycodes {
     VIM_RSEARCH_PASTE,
     IMPORT_PDB,
     CAPSWD,
+    SW_WIN,
 };
 
 #ifdef HRM

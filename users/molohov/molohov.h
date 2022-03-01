@@ -37,26 +37,43 @@ enum custom_keycodes {
     CAPSWD,
 };
 
+#ifdef HRM
 #define  HRM_R          GUI_T(KC_R)
 #define  HRM_S          ALT_T(KC_S)
 #define  HRM_N          LSFT_T(KC_N)
 #define  HRM_T          CTL_T(KC_T)
-
 #define  HRM_H          GUI_T(KC_H)
 #define  HRM_I          ALT_T(KC_I)
 #define  HRM_E          RSFT_T(KC_E)
 #define  HRM_A          CTL_T(KC_A)
-
 #define  HRM_COLN       GUI_T(KC_COLN)
 #define  HRM_MINS       ALT_T(KC_MINS)
 #define  HRM_PAST       LSFT_T(KC_PAST)
-// #define  HRM_LPRN       ALT_T(KC_LPRN)
 #define  HRM_LPRN       KC_LSPO
-
 #define  HRM_EQL        GUI_T(KC_EQL)
 #define  HRM_GRV        ALT_T(KC_GRV)
 #define  HRM_BSLS       RSFT_T(KC_BSLS)
 #define  HRM_RPRN       KC_RSPC
+#else
+#define  HRM_R          KC_R
+#define  HRM_S          KC_S
+#define  HRM_N          KC_N
+#define  HRM_T          KC_T
+#define  HRM_H          KC_H
+#define  HRM_I          KC_I
+#define  HRM_E          KC_E
+#define  HRM_A          KC_A
+#define  HRM_COLN       KC_COLN
+#define  HRM_MINS       KC_MINS
+#define  HRM_PAST       KC_PAST
+#define  HRM_LPRN       KC_LPRN
+#define  HRM_EQL        KC_EQL
+#define  HRM_GRV        KC_GRV
+#define  HRM_BSLS       KC_BSLS
+#define  HRM_RPRN       KC_RPRN
+#endif
+
+// #define  HRM_LPRN       ALT_T(KC_LPRN)
 
 #define  BSPNAV         LT(_NAV, KC_BSPC)
 #define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)
@@ -154,6 +171,10 @@ enum custom_keycodes {
 
 #define PY_IPDB         IMPORT_PDB
 #define SLK_CDP         SLACK_CODE_PASTE
+#define OS_SFT          OSM(MOD_LSFT)
+#define OS_CTL          OSM(MOD_LCTL)
+#define OS_ALT          OSM(MOD_LALT)
+#define OS_GUI          OSM(MOD_LGUI)
 
 
 #define MODS_SHIFT (get_mods() & MOD_BIT(KC_LSHIFT) || get_mods() & MOD_BIT(KC_RSHIFT))

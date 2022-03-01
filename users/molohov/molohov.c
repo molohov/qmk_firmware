@@ -30,6 +30,7 @@ enum combo_events {
     // COMBO_ESC,
     COMBO_DLSIM,
     // COMBO_NEWTAB,
+    // COMBO_OSS,
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
@@ -77,6 +78,7 @@ const uint16_t PROGMEM dollar[] = {KC_COLN, KC_SLSH, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
+// const uint16_t PROGMEM oneshotshift[]     = {HRM_E, HRM_I, COMBO_END};
 
 combo_t key_combos[] = {
     [COMBO_VIM_WRITE]       = COMBO(vimwrite,       VIMWRITE),
@@ -105,6 +107,7 @@ combo_t key_combos[] = {
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
     // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
     // [COMBO_WIN_CLIP]        = COMBO(pc_clip,        PC_CLIP),
+    // [COMBO_OSS]             = COMBO(oneshotshift,      OS_SFT),
 };
 
 // CUSTOM MODIFIER OVERRIDES

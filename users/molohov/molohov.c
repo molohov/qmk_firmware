@@ -26,22 +26,25 @@ enum combo_events {
     // COMBO_EXCLAMATION,
     COMBO_AT,
     COMBO_DOLLAR,
+    COMBO_ASTERISK,
     // COMBO_DEL_WORD,
     COMBO_SEMICOLON,
     // COMBO_ESC,
     COMBO_DLSIM,
     // COMBO_NEWTAB,
-    // COMBO_OSS,
+    COMBO_OS_SFT,
+    COMBO_OS_CTL,
+    COMBO_OS_ALT,
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
 // vim combos rooted from left home row middle finger
-// const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
-// const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
-// const uint16_t PROGMEM vimquit[] =      {HRM_N, KC_G, COMBO_END};
-// const uint16_t PROGMEM vimquitall[] =   {HRM_N, KC_B, COMBO_END};
-// const uint16_t PROGMEM vimshiftv[] =    {HRM_N, KC_P, COMBO_END};
+const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
+const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
+const uint16_t PROGMEM vimquit[] =      {HRM_N, KC_G, COMBO_END};
+const uint16_t PROGMEM vimquitall[] =   {HRM_N, KC_B, COMBO_END};
+const uint16_t PROGMEM vimshiftv[] =    {HRM_T, KC_V, COMBO_END};
 
 // LEFT HAND
 // copy/paste combos on left bottom row
@@ -57,29 +60,32 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 // this combo mirrors the DW action in vim!
 // const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
 // keep shift+V on the left side
-const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
+// const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
 const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
 // const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
-const uint16_t PROGMEM dlsim[]      = {HRM_N, HRM_T, COMBO_END};
+const uint16_t PROGMEM dlsim[]      = {KC_D, KC_L, COMBO_END};
 // const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
 
 // RIGHT HAND
 // vim combos rooted from right home row middle finger
-const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
-const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_SLSH, COMBO_END};
+// const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
+// const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
+// const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
+// const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_SLSH, COMBO_END};
 // linux combos
 // const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_COLN, COMBO_END};
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 const uint16_t PROGMEM at[]     = {KC_DOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM dollar[] = {KC_COLN, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM asterisk[] = {KC_COLN, KC_A, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
-// const uint16_t PROGMEM oneshotshift[]     = {HRM_E, HRM_I, COMBO_END};
+const uint16_t PROGMEM oneshotsft[]     = {HRM_E, HRM_A, COMBO_END};
+const uint16_t PROGMEM oneshotctl[]     = {HRM_E, HRM_I, COMBO_END};
+const uint16_t PROGMEM oneshotalt[]     = {KC_O, KC_Y, COMBO_END};
 
 combo_t key_combos[] = {
     [COMBO_VIM_WRITE]       = COMBO(vimwrite,       VIMWRITE),
@@ -101,6 +107,7 @@ combo_t key_combos[] = {
     [COMBO_AT]              = COMBO(at,             KC_AT),
     [COMBO_DOLLAR]          = COMBO(dollar,         KC_DLR),
     [COMBO_SEMICOLON]       = COMBO(semicolon,      KC_SCLN),
+    [COMBO_ASTERISK]        = COMBO(asterisk,       KC_PAST),
     // [COMBO_DEL_WORD]        = COMBO(del_word,       C(KC_DEL)),
     // [COMBO_ESC]             = COMBO(escape,         KC_ESC),
     [COMBO_DLSIM]           = COMBO(dlsim,          DLSIM),
@@ -108,7 +115,9 @@ combo_t key_combos[] = {
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
     // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
     // [COMBO_WIN_CLIP]        = COMBO(pc_clip,        PC_CLIP),
-    // [COMBO_OSS]             = COMBO(oneshotshift,      OS_SFT),
+    [COMBO_OS_SFT]             = COMBO(oneshotsft,     OS_SFT),
+    [COMBO_OS_CTL]             = COMBO(oneshotctl,     OS_CTL),
+    [COMBO_OS_ALT]             = COMBO(oneshotalt,     OS_ALT),
 };
 
 // CUSTOM MODIFIER OVERRIDES

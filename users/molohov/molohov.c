@@ -33,7 +33,7 @@ enum combo_events {
     COMBO_DLSIM,
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
-    COMBO_OS_LGUI,
+    // COMBO_OS_LGUI,
     COMBO_OS_LCTL,
     COMBO_OS_LALT,
     COMBO_OS_RCTL,
@@ -92,7 +92,7 @@ const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
 
 // one shot mods
 // const uint16_t PROGMEM oneshotsft[]     = {HRM_E, HRM_A, COMBO_END};
-const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
+// const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM oneshot_lctl[]     = {HRM_N, HRM_S, COMBO_END};
 const uint16_t PROGMEM oneshot_lalt[]     = {KC_L, KC_C, COMBO_END};
 const uint16_t PROGMEM oneshot_rctl[]     = {HRM_E, HRM_I, COMBO_END};
@@ -127,7 +127,7 @@ combo_t key_combos[] = {
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
     // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
     // [COMBO_OS_SFT]             = COMBO(oneshotsft,     OS_SFT),
-    [COMBO_OS_LGUI]             = COMBO(oneshot_lgui,     OS_GUI),
+    // [COMBO_OS_LGUI]             = COMBO(oneshot_lgui,     OS_GUI),
     [COMBO_OS_LCTL]             = COMBO(oneshot_lctl,     OS_CTL),
     [COMBO_OS_LALT]             = COMBO(oneshot_lalt,     OS_ALT),
     [COMBO_OS_RCTL]             = COMBO(oneshot_rctl,     OS_CTL),
@@ -230,13 +230,13 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                 //             return_state = false; // done.
                 //     }
                 //     break;
-                case KC_U:
-                    switch (prior_keycode) {
-                        case KC_K: // KU -> CU
-                            SEND_STRING(SS_TAP(X_BSPC)"qu");
-                            return_state = false; // done.
-                    }
-                    break;
+                // case KC_U:
+                //     switch (prior_keycode) {
+                //         case KC_K: // KU -> CU
+                //             SEND_STRING(SS_TAP(X_BSPC)"qu");
+                //             return_state = false; // done.
+                //     }
+                //     break;
             }
         }
         prior_keycode = keycode;

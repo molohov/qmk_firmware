@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_COLN,    KC_COMM,    KC_Q,       _______,
     PC_SCSH,    KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,       PC_LOCK,    KC_MPLY,    KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,       ON_TODO,
                 KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       CAPSWD,     KC_UNDS,    KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                                        QWERTY,     ALTESC,     GUIDEL,     BSPNAV,     TABSFT,     ENTSFT,     SPCNUM,     KC_ESC,     VS_COMT,    WINRUN
+                                        WINRUN,     ALTESC,     GUIDEL,     BSPNAV,     TABSFT,     ENTSFT,     SPCNUM,     KC_ESC,     VS_COMT,    QWERTY
     ),
 
     [_SYM_NUM] = LAYOUT(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-                _______,    OS_SFT,     OS_ALT,     PC_FIND,    OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
+                _______,    OS_ALT,     OS_GUI,     PC_FIND,    OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
     _______,    PC_SALL,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,    _______,    _______,    VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,    _______,
                 PC_EXIT,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    _______,    _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_TAB,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_BSPC,
     XXXXXXX,    KC_LSFT,    KC_A,       KC_S,       KC_D,       KC_F,       KC_G,       _______,    _______,    KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,    KC_BSLS,
                 KC_LCTL,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       _______,    _______,    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    XXXXXXX,
-                                        XXXXXXX,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+                                        XXXXXXX,    KC_LALT,    KC_SPC,     KC_ENT,     _______,    _______,    _______,    _______,    _______,    _______
     ),
 };
 

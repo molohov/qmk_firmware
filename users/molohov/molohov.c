@@ -12,12 +12,12 @@ enum combo_events {
     // COMBO_PC_COPY,
     // COMBO_PC_CUT,
     // COMBO_PC_PASTE,
-    // COMBO_PC_FIND,
     // COMBO_PC_UNDO,
-    // COMBO_PC_SELECTALL,
     // COMBO_PC_COPYPASTE,
-    // COMBO_WIN_BLUETOOTH,
     // COMBO_WIN_CLIP,
+    // COMBO_PC_FIND,
+    // COMBO_PC_SELECTALL,
+    // COMBO_WIN_BLUETOOTH,
     // COMBO_LNX_CLS,
     COMBO_LNX_LAST,
     COMBO_SLACK_CODE,
@@ -48,14 +48,14 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 
 // LEFT HAND
 // copy/paste combos on left bottom row
-// const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_C, COMBO_END};
-// const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
+// const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_D, COMBO_END};
 // const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
 // const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
 // const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
 // const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
-// const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
 // const uint16_t PROGMEM pc_clip[]      = {KC_L, HRM_T, COMBO_END};
+// const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
+// const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
 
 // this combo mirrors the DW action in vim!
 // const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
@@ -96,10 +96,11 @@ combo_t key_combos[] = {
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
     // [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
     // [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
-    // [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
     // [COMBO_PC_UNDO]         = COMBO(pc_undo,        PC_UNDO),
-    // [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
     // [COMBO_PC_COPYPASTE]    = COMBO(pc_copypaste,   COPY_PASTE),
+    // [COMBO_WIN_CLIP]        = COMBO(pc_clip,        PC_CLIP),
+    // [COMBO_PC_FIND]         = COMBO(pc_find,        PC_FIND),
+    // [COMBO_PC_SELECTALL]    = COMBO(pc_selectall,   PC_SALL),
     // [COMBO_WIN_BLUETOOTH]   = COMBO(win_bluetooth,  G(KC_K)),
     [COMBO_LNX_LAST]        = COMBO(lnx_last,       LNX_LAST),
     // [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
@@ -114,7 +115,6 @@ combo_t key_combos[] = {
     [COMBO_SLACK_CODE]      = COMBO(slack_code,     SLACK_CODE),
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
     // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
-    // [COMBO_WIN_CLIP]        = COMBO(pc_clip,        PC_CLIP),
     // [COMBO_OS_SFT]             = COMBO(oneshotsft,     OS_SFT),
     [COMBO_OS_CTL]             = COMBO(oneshotctl,     OS_CTL),
     [COMBO_OS_ALT]             = COMBO(oneshotalt,     OS_ALT),

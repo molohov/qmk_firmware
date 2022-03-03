@@ -83,6 +83,10 @@ enum custom_keycodes {
 
 #define  BSPSFT         SFT_T(KC_BSPC)
 #define  TABNAV         LT(_NAV, KC_TAB)
+
+#define  TABSFT         LSFT_T(KC_TAB)
+#define  ENTSFT         RSFT_T(KC_ENT)
+#define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
 // #define  SPCNAV         LT(_NAV_SYM_NUM, KC_SPC)
 
 #define  CTLTAB         CTL_T(KC_TAB)

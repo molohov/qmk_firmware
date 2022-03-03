@@ -27,8 +27,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     PC_SLACK,   KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_COLN,    KC_COMM,    KC_Q,       RESET,
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                            KC_MPLY,    KC_ESC,     GUIDEL,     BSPSFT,     TABNAV,     ENTBYO,     SPCNUM,     KC_ESC,     ON_TODO,    PC_LOCK,
-                                        WINRUN,     PC_SCSH,    CAPSWD,     VS_COMT,    KC_UNDS,    _______,    VS_CTLP,    PY_IPDB
+                            KC_MPLY,    KC_ESC,     GUIDEL,     BSPNAV,     TABSFT,     ENTSFT,     SPCNUM,     ESCBYO,     ON_TODO,    PC_LOCK,
+                                        WINRUN,     PC_SCSH,    VS_COMT,    CAPSWD,     KC_UNDS,    PC_SLACK,   VS_CTLP,    PY_IPDB
     ),
     // [_HANDS_DOWN_PLAT] = LAYOUT(
     // RESET,      KC_Z,       KC_F,       KC_M,       KC_P,       KC_K,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
@@ -40,14 +40,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM_NUM] = LAYOUT(
     _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_LABK,                            KC_RABK,    KC_RCBR,    KC_PIPE,    KC_AMPR,    _______,    _______,
     KC_DLR,     KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,                            KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     KC_AT,
-    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
+    KC_DOT,     KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
-    _______,    OS_SFT,     OS_ALT,     SW_WIN,     OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
+    _______,    OS_SFT,     OS_ALT,     PC_FIND,    OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
     PC_SALL,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
-    PC_EXIT,    KC_SLSH,    KC_QUES,    PC_FIND,    PC_CLIP,    SLKFPS,                             VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
+    PC_EXIT,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    SLKFPS,                             VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),

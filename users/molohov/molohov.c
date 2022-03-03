@@ -32,13 +32,17 @@ enum combo_events {
     // COMBO_ESC,
     COMBO_DLSIM,
     // COMBO_NEWTAB,
-    COMBO_OS_SFT,
-    COMBO_OS_CTL,
-    COMBO_OS_ALT,
+    // COMBO_OS_SFT,
+    COMBO_OS_LGUI,
+    COMBO_OS_LCTL,
+    COMBO_OS_LALT,
+    COMBO_OS_RCTL,
+    COMBO_OS_RALT,
     COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
+// LEFT HAND
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
 // const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
@@ -46,7 +50,6 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 // const uint16_t PROGMEM vimquitall[] =   {HRM_N, KC_B, COMBO_END};
 // const uint16_t PROGMEM vimshiftv[] =    {HRM_T, KC_V, COMBO_END};
 
-// LEFT HAND
 // copy/paste combos on left bottom row
 // const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_D, COMBO_END};
 // const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
@@ -63,8 +66,8 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
 const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
-// const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
 const uint16_t PROGMEM dlsim[]      = {KC_D, KC_L, COMBO_END};
+// const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
 // const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
 
 // RIGHT HAND
@@ -76,16 +79,24 @@ const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_SLSH, COMBO_END};
 // linux combos
 // const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_COLN, COMBO_END};
+
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
+// punctuation
 const uint16_t PROGMEM at[]     = {KC_DOT, KC_COLN, COMBO_END};
 const uint16_t PROGMEM dollar[] = {KC_COLN, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM asterisk[] = {KC_COLN, KC_A, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
+
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
+
+// one shot mods
 // const uint16_t PROGMEM oneshotsft[]     = {HRM_E, HRM_A, COMBO_END};
-const uint16_t PROGMEM oneshotctl[]     = {HRM_E, HRM_I, COMBO_END};
-const uint16_t PROGMEM oneshotalt[]     = {KC_O, KC_Y, COMBO_END};
+const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
+const uint16_t PROGMEM oneshot_lctl[]     = {HRM_N, HRM_S, COMBO_END};
+const uint16_t PROGMEM oneshot_lalt[]     = {KC_L, KC_C, COMBO_END};
+const uint16_t PROGMEM oneshot_rctl[]     = {HRM_E, HRM_I, COMBO_END};
+const uint16_t PROGMEM oneshot_ralt[]     = {KC_O, KC_Y, COMBO_END};
 
 combo_t key_combos[] = {
     [COMBO_VIM_WRITE]       = COMBO(vimwrite,       VIMWRITE),
@@ -116,8 +127,11 @@ combo_t key_combos[] = {
     [COMBO_SLACK_CODE_PASTE] = COMBO(slack_code_paste, SLACK_CODE_PASTE),
     // [COMBO_NEWTAB]          = COMBO(newtab,         C(KC_T)),
     // [COMBO_OS_SFT]             = COMBO(oneshotsft,     OS_SFT),
-    [COMBO_OS_CTL]             = COMBO(oneshotctl,     OS_CTL),
-    [COMBO_OS_ALT]             = COMBO(oneshotalt,     OS_ALT),
+    [COMBO_OS_LGUI]             = COMBO(oneshot_lgui,     OS_GUI),
+    [COMBO_OS_LCTL]             = COMBO(oneshot_lctl,     OS_CTL),
+    [COMBO_OS_LALT]             = COMBO(oneshot_lalt,     OS_ALT),
+    [COMBO_OS_RCTL]             = COMBO(oneshot_rctl,     OS_CTL),
+    [COMBO_OS_RALT]             = COMBO(oneshot_ralt,     OS_ALT),
 };
 
 // CUSTOM MODIFIER OVERRIDES

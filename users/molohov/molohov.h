@@ -9,9 +9,9 @@
 enum layer {
     _HANDS_DOWN,
     _HANDS_DOWN_PLAT,
+    _NUMPAD,
     _SYM_NUM,
     _NAV,
-    _NUMPAD,
     _BYO_ONOTE_VSC,
     _QWERTY_GAME,
 };

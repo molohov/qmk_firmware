@@ -43,7 +43,7 @@ qmk flash -kb avalanche/rev2 -km default_rev2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-                RESET,      KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       RESET,
+                _______,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       RESET,
                 NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_COLN,    KC_COMM,    KC_Q,       _______,
     PC_SCSH,    KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,       PC_LOCK,    KC_MPLY,    KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,       ON_TODO,
                 KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       CAPSWD,     KC_UNDS,    KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
@@ -60,19 +60,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-                _______,    OS_SFT,     OS_ALT,     SW_WIN,     OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
+                _______,    OS_SFT,     OS_ALT,     PC_FIND,    OS_CTL,     VIM_RSP,                            _______,    OS_CTL,     OS_ALT,     OS_GUI,     OS_SFT,     _______,
     _______,    PC_SALL,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,    _______,    _______,    VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,    _______,
-                PC_EXIT,    KC_SLSH,    KC_QUES,    PC_FIND,    PC_CLIP,    _______,    _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
+                PC_EXIT,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    _______,    _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
 
     [_NUMPAD] = LAYOUT(
                 _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
-                _______,    _______,    _______,    _______,    _______,    _______,                            KC_PSLS,    KC_7,       KC_8,       KC_9,       KC_PMNS,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PPLS,    KC_4,       KC_5,       KC_6,       KC_DOT,     KC_COMM,    _______,
-                _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PAST,    KC_1,       KC_2,       KC_3,       KC_EQL,     _______,
+                _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_7,       KC_8,       KC_9,       _______,    _______,
+    _______,    _______,    _______,    KC_EQL,     KC_PAST,    KC_PPLS,    _______,    _______,    _______,    _______,    KC_4,       KC_5,       KC_6,       KC_DOT,     _______,    _______,
+                _______,    _______,    _______,    KC_PSLS,    KC_PMNS,    _______,    _______,    _______,    _______,    KC_1,       KC_2,       KC_3,       KC_COMM,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_0,       _______,    _______
     ),
+
+
 
     [_QWERTY_GAME] = LAYOUT(
                 KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,

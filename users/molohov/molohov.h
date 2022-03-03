@@ -96,6 +96,7 @@ enum custom_keycodes {
 #define  ALTESC         ALT_T(KC_ESC)
 
 #define  ALT_UP         ALT_T(KC_UP)
+#define  NUMPAD         TG(_NUMPAD)
 
 #define  PC_UNDO        C(KC_Z)
 #define  PC_SALL        C(KC_A)

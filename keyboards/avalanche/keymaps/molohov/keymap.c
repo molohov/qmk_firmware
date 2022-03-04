@@ -53,8 +53,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM_NUM] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
                 _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_LABK,                            KC_RABK,    KC_RCBR,    KC_PIPE,    KC_AMPR,    _______,    _______,
-    _______,    _______,    KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,    _______,    _______,    KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     _______,    _______,
-                _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,       KC_F11,     KC_F12,     KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
+    _______,    KC_DLR,     KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,    _______,    _______,    KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     KC_AT,      _______,
+                KC_DOT,     KC_9,       KC_3,       KC_1,       KC_5,       KC_7,       KC_F11,     KC_F12,     KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
 
@@ -157,96 +157,79 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // }
 
 static void print_layers(void) {
-    // Print current mode
-    // oled_write_P(PSTR("\n\n"), false);
-    // Print current layer
-    // oled_write_ln_P(PSTR("layer"), false);
-    // render_face();
-    // oled_set_cursor(0,12);
-    // oled_write_P(PSTR("BUH'S"), false);
-    // oled_write_P(PSTR("BOARD"), false);
-    // oled_write_P(PSTR("\n"), false);
+    oled_write_P(PSTR("-----\nAva62\n-----\n"), false);
     switch (get_highest_layer(layer_state)) {
         case _HANDS_DOWN:
-            // oled_write_P(PSTR("Hands"), false);
-            // oled_write_ln_P(PSTR("Down"), false);
-            // oled_write_ln_P(PSTR("Neu"), false);
-            if (is_keyboard_master()) {
-                oled_write_ln_P(PSTR("  VSCP X F M P B"), false);
-                oled_write_P(   PSTR("SCRN Z R S N T G LOCK"), false);
-                oled_write_P(   PSTR("  HOME W C L D V CBSP"), false);
-                oled_write_P(   PSTR("NUM VC GDEL SBSP CTAB"), false);
-            } else {
-                oled_write_P(   PSTR("        - . / , Q LRS"), false);
-                oled_write_P(   PSTR("   PLAY ' A E I H J"), false);
-                oled_write_P(   PSTR("   SLCK = U O Y K END"), false);
-                oled_write_P(   PSTR("AEN LSPC LESC VCM QWE"), false);
-            }
+            oled_write_P(PSTR("Hands"), false);
+            oled_write_ln_P(PSTR("Down"), false);
+            oled_write_ln_P(PSTR("Neu"), false);
             break;
         case _QWERTY_GAME:
-            // oled_write_P(PSTR("QWERT"), false);
-            // oled_write_ln_P(PSTR("Game"), false);
-            oled_write_ln_P(PSTR("ESC Q W E R T"), false);
-            oled_write_ln_P(PSTR("SFT A S D F G"), false);
-            oled_write_ln_P(PSTR("CTL Z X C V B"), false);
-            oled_write_ln_P(PSTR("XXX CTL SPC SFT ENT"), false);
+            oled_write_P(PSTR("QWERT"), false);
+            oled_write_ln_P(PSTR("Game"), false);
             break;
         case _SYM_NUM:
-            // oled_write_P(PSTR("Navig"), false);
-            // oled_write_P(PSTR("Symbs"), false);
-            // oled_write_P(PSTR("Numbs"), false);
-            oled_write_ln_P(PSTR("  F1 F2 F3 F4 F5"), false);
-            oled_write_ln_P(PSTR("  &  \%  \\  [  ]"), false);
-            oled_write_ln_P(PSTR("/ :  `  *  (  )"), false);
-            oled_write_ln_P(PSTR("  7  3  1  5  9  F11"), false);
+            oled_write_P(PSTR("Symbs"), false);
+            oled_write_P(PSTR("Numbs"), false);
             break;
-        // case _BYO_ONOTE_VSC:
-        //     // oled_write_P(PSTR("Byobu"), false);
-        //     // oled_write_P(PSTR("ONote"), false);
-        //     // oled_write_P(PSTR("VCode"), false);
-        //     oled_write_P(PSTR("      OIM OTO OQS PDB"), false);
-        //     oled_write_P(PSTR("KL DSF VSP HSP CL FPN"), false);
-        //     break;
+        case _NUMPAD:
+            oled_write_P(PSTR("Numpd"), false);
+            break;
+        case _NAV:
+            oled_write_P(PSTR("Navig"), false);
+            break;
+        case _BYO_ONOTE_VSC:
+            oled_write_P(PSTR("Byobu"), false);
+            oled_write_P(PSTR("ONote"), false);
+            oled_write_P(PSTR("VCode"), false);
+            break;
         default:
             oled_write_P(PSTR("Undef"), false);
     }
-    // oled_write_P(PSTR("\n"), false);
-    // led_t led_usb_state = host_keyboard_led_state();
-    // oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
 }
 
-// static void print_mods(void) {
-//     int current_mods = get_mods();
-//     if (current_mods & MOD_MASK_SHIFT) {
-//         oled_write_P(PSTR("SHIFT"), false);
-//     }
-//     if (current_mods & MOD_MASK_CTRL) {
-//         oled_write_ln_P(PSTR("CTRL"), false);
-//     }
-//     if (current_mods & MOD_MASK_GUI) {
-//         oled_write_ln_P(PSTR("GUI"), false);
-//     }
-//     if (current_mods & MOD_MASK_ALT) {
-//         oled_write_ln_P(PSTR("ALT"), false);
-//     }
-// }
+static void print_mods(void) {
+    oled_write_P(PSTR("-----\nMods\n-----\n"), false);
+    int current_mods = get_mods();
+    if (current_mods & MOD_MASK_SHIFT) {
+        oled_write_P(PSTR("SHIFT"), false);
+    }
+    if (current_mods & MOD_MASK_CTRL) {
+        oled_write_ln_P(PSTR("CTRL"), false);
+    }
+    if (current_mods & MOD_MASK_GUI) {
+        oled_write_ln_P(PSTR("GUI"), false);
+    }
+    if (current_mods & MOD_MASK_ALT) {
+        oled_write_ln_P(PSTR("ALT"), false);
+    }
+
+    int oneshot_mods = get_oneshot_mods();
+    if (oneshot_mods & MOD_MASK_CTRL) {
+        oled_write_P(PSTR("OSCTL"), false);
+    }
+    if (oneshot_mods & MOD_MASK_GUI) {
+        oled_write_P(PSTR("OSGUI"), false);
+    }
+    if (oneshot_mods & MOD_MASK_ALT) {
+        oled_write_P(PSTR("OSALT"), false);
+    }
+}
+
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    if (!is_keyboard_master()) {
-        return OLED_ROTATION_180;
-    }
-    return rotation;
+    // if (!is_keyboard_master()) {
+    //     return OLED_ROTATION_180;
+    // }
+    return OLED_ROTATION_270;
 }
 
 bool oled_task_user(void) {
     oled_clear();
     if (is_keyboard_master()) {
         print_layers();
-        // print_mods();
     } else {
-        print_layers();
-        // render_logo();
-        // print_mods();
+        print_mods();
     }
     return false;
 }

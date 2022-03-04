@@ -13,7 +13,7 @@
 #define COMBO_STRICT_TIMER
 #define COMBO_TERM 20
 // #define NO_ACTION_ONESHOT
-// #define SPLIT_MODS_ENABLE
+#define SPLIT_MODS_ENABLE
 #define SPLIT_LAYER_STATE_ENABLE
 
 // to give CTL_T(KC_L/RPRN) for HRM

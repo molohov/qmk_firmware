@@ -99,7 +99,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 // }
 
 static void render_status(void) {
-  oled_write_P(PSTR("\n\n\n-----\nXENON\n-----\n\n"), false);
+  oled_write_P(PSTR("-----\nXENON\n-----\n"), false);
 
   // Host Keyboard Layer Status
   switch (get_highest_layer(layer_state)) {

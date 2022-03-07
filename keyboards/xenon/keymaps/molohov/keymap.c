@@ -81,10 +81,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (!is_keyboard_master()) {
-    return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
-  }
-
+//   if (!is_keyboard_master()) {
+//     return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
+//   }
   return OLED_ROTATION_270;
 }
 
@@ -98,40 +97,15 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 //   oled_write_raw_P(raw_logo, sizeof(raw_logo));
 // }
 
-static void render_status(void) {
-  oled_write_P(PSTR("-----\nXENON\n-----\n"), false);
-
-  // Host Keyboard Layer Status
-  switch (get_highest_layer(layer_state)) {
-  case _HANDS_DOWN:
-    oled_write_P(PSTR("Base \n"), false);
-    break;
-  case _NAV:
-    oled_write_P(PSTR("Nav  \n"), false);
-    break;
-  case _SYM_NUM:
-    oled_write_P(PSTR("SymNm\n"), false);
-    break;
-  case _NUMPAD:
-    oled_write_P(PSTR("Numpd\n"), false);
-    break;
-  case _BYO_ONOTE_VSC:
-    oled_write_P(PSTR("Macro\n"), false);
-    break;
-  default:
-    oled_write_P(PSTR("Undef\n"), false);
-  }
-  oled_write_P(PSTR("Layer\n"), false);
-}
-
 bool oled_task_user(void) {
-  if (is_keyboard_master()) {
-    render_status(); // Renders the current keyboard state (layer, lock, caps, scroll, etc)
-  } else {
-    // render_named_logo();
-  }
-
-  return true;
+    oled_clear();
+    if (is_keyboard_master()) {
+        oled_write_P(PSTR("-----\nXENON\n-----\n"), false);
+        print_layers();
+    } else {
+        print_mods();
+    }
+    return true;
 }
 #endif
 

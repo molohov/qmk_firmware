@@ -206,3 +206,5 @@ enum custom_keycodes {
 
 void my_custom_function(void);
 
+void print_layers(void);
+void print_mods(void);

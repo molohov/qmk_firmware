@@ -156,65 +156,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     oled_write_raw_P(gimli_face, sizeof(gimli_face));
 // }
 
-static void print_layers(void) {
-    oled_write_P(PSTR("-----\nAva62\n-----\n"), false);
-    switch (get_highest_layer(layer_state)) {
-        case _HANDS_DOWN:
-            oled_write_P(PSTR("Hands"), false);
-            oled_write_ln_P(PSTR("Down"), false);
-            oled_write_ln_P(PSTR("Neu"), false);
-            break;
-        case _QWERTY_GAME:
-            oled_write_P(PSTR("QWERT"), false);
-            oled_write_ln_P(PSTR("Game"), false);
-            break;
-        case _SYM_NUM:
-            oled_write_P(PSTR("Symbs"), false);
-            oled_write_P(PSTR("Numbs"), false);
-            break;
-        case _NUMPAD:
-            oled_write_P(PSTR("Numpd"), false);
-            break;
-        case _NAV:
-            oled_write_P(PSTR("Navig"), false);
-            break;
-        case _BYO_ONOTE_VSC:
-            oled_write_P(PSTR("Byobu"), false);
-            oled_write_P(PSTR("ONote"), false);
-            oled_write_P(PSTR("VCode"), false);
-            break;
-        default:
-            oled_write_P(PSTR("Undef"), false);
-    }
-}
-
-static void print_mods(void) {
-    oled_write_P(PSTR("-----\nMods\n-----\n"), false);
-    int current_mods = get_mods();
-    if (current_mods & MOD_MASK_SHIFT) {
-        oled_write_P(PSTR("SHIFT"), false);
-    }
-    if (current_mods & MOD_MASK_CTRL) {
-        oled_write_ln_P(PSTR("CTRL"), false);
-    }
-    if (current_mods & MOD_MASK_GUI) {
-        oled_write_ln_P(PSTR("GUI"), false);
-    }
-    if (current_mods & MOD_MASK_ALT) {
-        oled_write_ln_P(PSTR("ALT"), false);
-    }
-
-    int oneshot_mods = get_oneshot_mods();
-    if (oneshot_mods & MOD_MASK_CTRL) {
-        oled_write_P(PSTR("OSCTL"), false);
-    }
-    if (oneshot_mods & MOD_MASK_GUI) {
-        oled_write_P(PSTR("OSGUI"), false);
-    }
-    if (oneshot_mods & MOD_MASK_ALT) {
-        oled_write_P(PSTR("OSALT"), false);
-    }
-}
 
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -227,6 +168,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 bool oled_task_user(void) {
     oled_clear();
     if (is_keyboard_master()) {
+        oled_write_P(PSTR("-----\nAva62\n-----\n"), false);
         print_layers();
     } else {
         print_mods();

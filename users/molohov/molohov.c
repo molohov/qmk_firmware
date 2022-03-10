@@ -75,16 +75,16 @@ const uint16_t PROGMEM dlsim[]      = {KC_D, KC_L, COMBO_END};
 const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
 const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
 const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
 // linux combos
 // const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
-const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_COLN, COMBO_END};
+const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_SLSH, COMBO_END};
 
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // punctuation
-const uint16_t PROGMEM at[]     = {KC_DOT, KC_COLN, COMBO_END};
+const uint16_t PROGMEM at[]     = {KC_DOT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM dollar[] = {KC_COLN, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM asterisk[] = {KC_COLN, KC_A, COMBO_END};
+const uint16_t PROGMEM asterisk[] = {KC_SLSH, KC_A, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
 
@@ -152,9 +152,9 @@ const key_override_t period_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_
 // shift , gives :
 const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_EQL);
 // shift : gives ;
-const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_EXLM);
+const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
 // shift / gives -
-const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_SCLN);
+const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_EXLM);
 // shift - gives ;
 const key_override_t dash_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_GRV);
 

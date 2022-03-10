@@ -120,6 +120,8 @@ enum custom_keycodes {
 #define  LNX_RWD        A(KC_F)
 // reverse search
 #define  LNX_RSR        C(KC_R)
+
+// byobu macros
 // vertical split
 #define  BY_VSPL        C(KC_F2)
 // horizontal split
@@ -152,6 +154,8 @@ enum custom_keycodes {
 #define  BY_KSRV        KC_F6
 // rename window
 #define  BY_RNWN        KC_F8
+
+// vscode macros
 #define  VS_CTLP        C(KC_P)
 #define  VS_SCTP        S(C(KC_P))
 #define  VS_COMT        C(KC_SLSH)

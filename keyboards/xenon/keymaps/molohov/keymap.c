@@ -24,9 +24,9 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-    NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_COLN,    KC_COMM,    KC_Q,       RESET,
+    NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       RESET,
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
-    KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
+    KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             KC_MPLY,    KC_ESC,     GUIDEL,     BSPNAV,     TABSFT,     ENTSFT,     SPCNUM,     ESCBYO,     ON_TODO,    PC_LOCK,
                                         WINRUN,     PC_SCSH,    VS_COMT,    CAPSWD,     KC_UNDS,    PC_SLACK,   VS_CTLP,    PY_IPDB
     ),
@@ -60,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_BYO_ONOTE_VSC] = LAYOUT(
     KC_F11,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,
-    _______,    ON_QUES,    ON_IMPT,    ON_TODO,    PY_IPDB,    _______,                            BY_FPNE,    BY_CLYT,    BY_HSPL,    BY_VSPL,    BY_DISF,    BY_KPNE,
-    _______,    _______,    _______,    VS_PEDT,    VS_NEDT,    _______,                            BY_FSWL,    BY_FSWR,    BY_NWIN,    BY_MVWL,    BY_MVWR,    _______,
+    BY_FPNE,    ON_QUES,    ON_IMPT,    ON_TODO,    BY_FSWL,    PY_IPDB,                            BY_MVWL,    BY_MVWR,    BY_VSPL,    BY_DISF,    BY_KPNE,    _______,
+    BY_CLYT,    BY_RNWN,    BY_HSPL,    BY_NWIN,    BY_FSWR,    BY_VSPL,                            _______,    _______,    _______,    _______,    _______,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),

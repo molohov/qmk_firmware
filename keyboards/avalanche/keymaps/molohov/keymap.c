@@ -44,9 +44,9 @@ qmk flash -kb avalanche/rev2 -km default_rev2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
                 _______,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       RESET,
-                NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_SLSH,    KC_DOT,     KC_COLN,    KC_COMM,    KC_Q,       _______,
+                NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       _______,
     PC_SCSH,    KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,       PC_LOCK,    KC_MPLY,    KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,       ON_TODO,
-                KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       CAPSWD,     KC_UNDS,    KC_MINS,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
+                KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       CAPSWD,     KC_UNDS,    KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                                         WINRUN,     ALTESC,     GUIDEL,     BSPNAV,     TABSFT,     ENTSFT,     SPCNUM,     KC_ESC,     VS_COMT,    QWERTY
     ),
 

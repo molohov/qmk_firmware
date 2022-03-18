@@ -27,8 +27,9 @@ enum combo_events {
     COMBO_AT,
     COMBO_DOLLAR,
     COMBO_ASTERISK,
-    // COMBO_DEL_WORD,
     COMBO_SEMICOLON,
+    COMBO_PLUS,
+    // COMBO_DEL_WORD,
     // COMBO_ESC,
     COMBO_DLSIM,
     // COMBO_NEWTAB,
@@ -83,7 +84,8 @@ const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_SLSH, COMBO_END};
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // punctuation
 const uint16_t PROGMEM at[]     = {KC_DOT, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM dollar[] = {KC_COLN, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM dollar[] = {KC_MINS, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM plus[]   = {KC_COMM, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM asterisk[] = {KC_SLSH, KC_A, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
@@ -120,6 +122,7 @@ combo_t key_combos[] = {
     [COMBO_DOLLAR]          = COMBO(dollar,         KC_DLR),
     [COMBO_SEMICOLON]       = COMBO(semicolon,      KC_SCLN),
     [COMBO_ASTERISK]        = COMBO(asterisk,       KC_PAST),
+    [COMBO_PLUS]            = COMBO(plus,           KC_PPLS),
     // [COMBO_DEL_WORD]        = COMBO(del_word,       C(KC_DEL)),
     // [COMBO_ESC]             = COMBO(escape,         KC_ESC),
     [COMBO_DLSIM]           = COMBO(dlsim,          DLSIM),

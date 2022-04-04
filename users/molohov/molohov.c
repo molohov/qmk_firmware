@@ -337,6 +337,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("?" SS_DELAY(100) SS_LCTL(SS_TAP(X_V)) SS_TAP(X_ENTER));
             }
             break;
+        case Q_ENTER:
+            if (record->event.pressed) {
+                SEND_STRING("q" SS_DELAY(100) SS_TAP(X_ENTER));
+            }
+            break;
         case IMPORT_PDB:
             if (record->event.pressed) {
                 SEND_STRING("import pdb; pdb.set_trace()");

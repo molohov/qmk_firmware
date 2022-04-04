@@ -33,6 +33,7 @@ enum custom_keycodes {
     COPY_PASTE,
     VIM_FSEARCH_PASTE,
     VIM_RSEARCH_PASTE,
+    Q_ENTER,
     IMPORT_PDB,
     CAPSWD,
     SW_WIN,
@@ -167,7 +168,12 @@ enum custom_keycodes {
 #define  VS_NEDT        C(KC_PGDN)
 // go to prev editor
 #define  VS_PEDT        C(KC_PGUP)
+// change editor group (must be set as a shortcut in VSCode first)
 #define  VS_EGRP        C(A(KC_PGUP))
+// go to next change
+#define  VS_NCHG        A(KC_F3)
+// go to prev change
+#define  VS_PCHG        S(A(KC_F3))
 
 // vim forward/reverse search, paste, then enter
 #define  VIM_FSP        VIM_FSEARCH_PASTE

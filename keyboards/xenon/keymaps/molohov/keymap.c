@@ -38,16 +38,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                     PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     // ),
     [_SYM_NUM] = LAYOUT(
-    _______,    _______,    KC_PERC,    KC_HASH,    KC_LCBR,    KC_LABK,                            KC_RABK,    KC_RCBR,    KC_PIPE,    KC_AMPR,    _______,    _______,
-    KC_DLR,     KC_COLN,    HRM_MINS,   HRM_PAST,   HRM_LPRN,   KC_LBRC,                            KC_RBRC,    HRM_RPRN,   HRM_BSLS,   HRM_GRV,    KC_EQL,     KC_AT,
-    KC_DOT,     KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       _______,
+    _______,    KC_PERC,    KC_LABK,    KC_HASH,    KC_LCBR,    KC_PPLS,                            KC_DOT,     KC_RCBR,    KC_PIPE,    KC_RABK,    KC_AMPR,    _______,
+    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       KC_AT,
+    _______,    KC_COLN,    KC_LBRC,    HRM_PAST,   HRM_LPRN,   KC_GRV,                             KC_QUOT,    HRM_RPRN,   HRM_BSLS,   KC_RBRC,    KC_EQL,     _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
-    _______,    _______,    _______,    PC_FIND,    _______,    VIM_RSP,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,    PC_FIND,    _______,    VIM_RSP,                            _______,    VS_PCHG,    _______,    VS_NCHG,    _______,    _______,
     PC_SALL,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
-    PC_EXIT,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    SLKFPS,                             VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    _______,    _______,
+    PC_EXIT,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    SLKFPS,                             VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    Q_ENTER,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BYO_ONOTE_VSC] = LAYOUT(
     KC_F11,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,
     BY_FPNE,    ON_QUES,    ON_IMPT,    ON_TODO,    BY_FSWL,    PY_IPDB,                            BY_MVWL,    BY_MVWR,    BY_VSPL,    BY_DISF,    BY_KPNE,    _______,
-    BY_CLYT,    BY_RNWN,    BY_HSPL,    BY_NWIN,    BY_FSWR,    BY_VSPL,                            _______,    _______,    _______,    _______,    _______,    _______,
+    BY_CLYT,    BY_RNWN,    BY_NWIN,    BY_HSPL,    BY_FSWR,    BY_VSPL,                            _______,    _______,    _______,    _______,    _______,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
@@ -84,7 +84,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 //   if (!is_keyboard_master()) {
 //     return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
 //   }
-  return OLED_ROTATION_270;
+return OLED_ROTATION_270;
 }
 
 // static void render_named_logo(void) {

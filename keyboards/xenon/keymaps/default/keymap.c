@@ -62,6 +62,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
+<<<<<<< HEAD
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -135,3 +136,5 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
   return true;
 }
 #endif
+=======
+>>>>>>> upstream/master

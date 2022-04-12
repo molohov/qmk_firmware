@@ -24,10 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x3404
 #define DEVICE_VER      0x0001
 #define PRODUCT         Xenon
-<<<<<<< HEAD
-#define DESCRIPTION     60% columnar staggered keyboard
-=======
->>>>>>> upstream/master
 
 /* key matrix size */
 /* Rows are doubled up */
@@ -38,16 +34,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
 #define MATRIX_COL_PINS { B2, B3, B1, F7, F6, F5, F4 }
 
-<<<<<<< HEAD
-#define ENCODERS_PAD_A { B5 }
-#define ENCODERS_PAD_B { B6 }
-#define ENCODERS_PAD_A_RIGHT { B5 }
-#define ENCODERS_PAD_B_RIGHT { B6 }
-#define ENCODER_DIRECTION_FLIP
-=======
 #define ENCODERS_PAD_A { B6 }
 #define ENCODERS_PAD_B { B5 }
->>>>>>> upstream/master
 
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
@@ -67,8 +55,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
-<<<<<<< HEAD
-=======
 
 #ifdef OLED_ENABLE
   #define OLED_DISPLAY_128X32
@@ -77,4 +63,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
 // #define SPLIT_USB_DETECT
 // #define NO_USB_STARTUP_CHECK
->>>>>>> upstream/master

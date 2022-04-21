@@ -71,8 +71,8 @@ const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
 const uint16_t PROGMEM dlsim[]      = {KC_D, KC_L, COMBO_END};
 // const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
 // const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
-const uint16_t PROGMEM asterisk[] = {KC_S, KC_N, COMBO_END};
-const uint16_t PROGMEM hash[] = {HRM_S, KC_M, COMBO_END};
+const uint16_t PROGMEM hash[]     = {KC_M, HRM_T, COMBO_END};
+const uint16_t PROGMEM asterisk[] = {HRM_N, HRM_T, COMBO_END};
 
 // RIGHT HAND
 // vim combos rooted from right home row middle finger
@@ -155,7 +155,8 @@ combo_t key_combos[] = {
 // shift _ gives !
 // const key_override_t underscore_override = ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_EXLM);
 // shift . gives ?
-const key_override_t period_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_QUES);
+const key_override_t period_override = ko_make_basic(MOD_BIT(KC_LSFT), KC_DOT, KC_QUES);
+const key_override_t r_period_override = ko_make_basic(MOD_BIT(KC_RSFT), KC_DOT, KC_EXLM);
 // shift , gives :
 const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_EQL);
 // shift : gives ;
@@ -175,6 +176,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     // &shift_space_underscore,
     // &underscore_override,
     &period_override,
+    &r_period_override,
     &comma_override,
     &colon_override,
     &slash_override,
@@ -253,6 +255,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
 }
 
 bool sw_win_active = false;
+bool sw_tab_active = false;
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -265,6 +268,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     update_swapper(
         &sw_win_active, KC_LALT, KC_TAB, SW_WIN,
+        keycode, record
+    );
+    update_swapper(
+        &sw_tab_active, KC_LCTL, KC_TAB, SW_TAB,
         keycode, record
     );
     switch (keycode) {
@@ -431,6 +438,12 @@ void print_mods(void) {
     if (oneshot_mods & MOD_MASK_ALT) {
         oled_write_P(PSTR("OSALT"), false);
     }
+
+    // bool caps_word_active = caps_word_get();
+    // if (caps_word_active) {
+    //     oled_write_P(PSTR("CAPS"), false);
+    // }
+
 }
 
 

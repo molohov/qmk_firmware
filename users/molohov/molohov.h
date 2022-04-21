@@ -37,6 +37,7 @@ enum custom_keycodes {
     IMPORT_PDB,
     CAPSWD,
     SW_WIN,
+    SW_TAB,
 };
 
 #ifdef HRM

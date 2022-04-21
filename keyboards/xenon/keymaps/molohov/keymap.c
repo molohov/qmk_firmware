@@ -38,14 +38,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                     PC_SCSH,    VS_CTLP,    PC_BSWD,    KC_TAB,     VS_TERM,    PC_SLACK,   VS_NEDT,    LNX_RSR
     // ),
     [_SYM_NUM] = LAYOUT(
-    _______,    KC_PERC,    KC_LABK,    KC_HASH,    KC_LCBR,    KC_PPLS,                            KC_DOT,     KC_RCBR,    KC_BSLS,    KC_RABK,    KC_AMPR,    _______,
-    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,                               KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       KC_AT,
-    _______,    KC_COLN,    KC_LBRC,    HRM_PAST,   HRM_LPRN,   KC_TILD,                            KC_QUOT,    HRM_RPRN,   KC_PIPE,    KC_RBRC,    KC_EQL,     _______,
+    _______,    KC_PERC,    KC_AMPR,    KC_COLN,    KC_PERC,    KC_PPLS,                            KC_MINS,    KC_DOT,     KC_BSLS,    KC_PIPE,    KC_AMPR,    _______,
+    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_TILD,                            KC_QUOT,    KC_2,       KC_0,       KC_4,       KC_8,       KC_EQL,
+    _______,    KC_7,       KC_LBRC,    KC_LCBR,    KC_LPRN,    KC_LABK,                            KC_RABK,    KC_RPRN,    KC_RCBR,    KC_RBRC,    KC_6,       _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
-    _______,    _______,    _______,    PC_FIND,    _______,    VIM_RSP,                            _______,    VS_PCHG,    _______,    VS_NCHG,    _______,    _______,
+    _______,    _______,    SW_TAB,     PC_FIND,    _______,    VIM_RSP,                            _______,    VS_PCHG,    _______,    VS_NCHG,    _______,    _______,
     PC_SALL,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
     PC_EXIT,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    SLKFPS,                             VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    Q_ENTER,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,

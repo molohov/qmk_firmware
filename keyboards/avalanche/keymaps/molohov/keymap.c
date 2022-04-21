@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM_NUM] = LAYOUT(
                 _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-                _______,    KC_PERC,    KC_LABK,    KC_HASH,    KC_LCBR,    KC_PPLS,                            KC_DOT,     KC_RCBR,    KC_BSLS,    KC_RABK,    KC_AMPR,    _______,
-    _______,    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_7,       _______,    _______,    KC_8,       KC_2,       KC_0,       KC_4,       KC_6,       KC_AT,      _______,
-                _______,    KC_COLN,    KC_LBRC,    HRM_PAST,   HRM_LPRN,   KC_TILD,    KC_F11,     KC_F12,     KC_QUOT,    HRM_RPRN,   KC_PIPE,    KC_RBRC,    KC_EQL,     _______,
+                _______,    KC_PERC,    KC_AMPR,    KC_COLN,    KC_PERC,    KC_PPLS,                            KC_MINS,    KC_DOT,     KC_BSLS,    KC_PIPE,    KC_AMPR,    _______,
+    _______,    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_TILD,    _______,    _______,    KC_QUOT,    KC_2,       KC_0,       KC_4,       KC_8,       KC_EQL,     _______,
+                _______,    KC_7,       KC_LBRC,    KC_LCBR,    KC_LPRN,    KC_LABK,    KC_F11,     KC_F12,     KC_RABK,    KC_RPRN,    KC_RCBR,    KC_RBRC,    KC_6,       _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
 

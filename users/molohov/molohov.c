@@ -381,6 +381,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //     }
 // }
 
+#ifdef OLED_ENABLE
 void print_layers(void) {
     switch (get_highest_layer(layer_state)) {
         case _HANDS_DOWN:
@@ -445,6 +446,7 @@ void print_mods(void) {
     // }
 
 }
+#endif
 
 
 void my_custom_function(void) {

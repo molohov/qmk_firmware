@@ -33,6 +33,8 @@ enum combo_events {
     // COMBO_DEL_WORD,
     // COMBO_ESC,
     COMBO_DLSIM,
+    COMBO_J,
+    COMBO_Z,
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
     // COMBO_OS_LGUI,
@@ -83,6 +85,9 @@ const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
 // linux combos
 // const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM lnx_last[] = {HRM_I, KC_SLSH, COMBO_END};
+
+const uint16_t PROGMEM comboJ[]     = {HRM_N, KC_G, COMBO_END};
+const uint16_t PROGMEM comboZ[]     = {HRM_N, KC_V, COMBO_END};
 
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // punctuation
@@ -139,6 +144,8 @@ combo_t key_combos[] = {
     [COMBO_OS_LALT]             = COMBO(oneshot_lalt,     OS_ALT),
     [COMBO_OS_RCTL]             = COMBO(oneshot_rctl,     OS_CTL),
     [COMBO_OS_RALT]             = COMBO(oneshot_ralt,     OS_ALT),
+    [COMBO_J]             = COMBO(comboJ,     KC_J),
+    [COMBO_Z]             = COMBO(comboZ,     KC_Z),
 };
 
 // CUSTOM MODIFIER OVERRIDES

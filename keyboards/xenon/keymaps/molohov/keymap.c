@@ -1,26 +1,9 @@
-/* Copyright 2020 Kyrre Havik Eriksen
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 #include "molohov.h"
-
 
 // for HD Platinum
 #define  SPCSFT         SFT_T(KC_SPC)
 #define  L_NAV          LT(_NAV, KC_L)
 #define  CTLBSP         CTL_T(KC_BSPC)
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
@@ -48,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    PC_EXIT,    SW_TAB,     PC_FIND,    PC_SALL,    VIM_RSP,                            _______,    KC_HOME,    KC_UNDS,    KC_END,     _______,    _______,
     _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   VIM_FSP,                            VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
     _______,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    SLKFPS,                             VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    Q_ENTER,    _______,
-                            _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                            _______,    _______,    _______,    _______,    _______,    _______,    KC_UNDS,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NUMPAD] = LAYOUT(

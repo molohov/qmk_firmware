@@ -91,6 +91,11 @@ enum custom_keycodes {
 #define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
 // #define  SPCNAV         LT(_NAV_SYM_NUM, KC_SPC)
 
+#define  DELSFT         LSFT_T(KC_DEL)
+#define  ESCSFT         RSFT_T(KC_ESC)
+#define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)
+#define  TABGUI         GUI_T(KC_TAB)
+
 #define  CTLTAB         CTL_T(KC_TAB)
 #define  ALTENT         ALT_T(KC_ENT)
 

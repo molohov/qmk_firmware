@@ -119,6 +119,7 @@ enum custom_keycodes {
 #define  PC_RWRD        C(KC_RIGHT)
 #define  PC_EXIT        A(KC_F4)
 #define  PC_CLIP        G(KC_V)
+#define  SLKCPS         SLACK_CODE_PASTE
 #define  SLKFPS         SLACK_FUNC_PASTE
 #define  WINRUN         C(A(KC_K))
 

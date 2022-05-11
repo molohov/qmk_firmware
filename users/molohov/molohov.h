@@ -185,6 +185,7 @@ enum custom_keycodes {
 // vim forward/reverse search, paste, then enter
 #define  VIM_FSP        VIM_FSEARCH_PASTE
 #define  VIM_RSP        VIM_RSEARCH_PASTE
+#define  SHIFTV         S(KC_V)
 
 // to-do
 #define ON_TODO         C(KC_1)

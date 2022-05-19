@@ -23,6 +23,7 @@ enum combo_events {
     COMBO_Z,
     COMBO_SCREENSHOT,
     COMBO_VSCOMMENT,
+    COMBO_REFRESH,
     COMBO_OS_LCTL,
     COMBO_OS_LALT,
     COMBO_OS_RCTL,
@@ -58,6 +59,7 @@ const uint16_t PROGMEM comboJ[]     = {HRM_N, KC_G, COMBO_END};
 const uint16_t PROGMEM comboZ[]     = {HRM_N, KC_V, COMBO_END};
 const uint16_t PROGMEM screenshot[]     = {KC_P, KC_B, COMBO_END};
 const uint16_t PROGMEM vscomment[]     = {HRM_T, KC_G, COMBO_END};
+const uint16_t PROGMEM refresh[]     = {KC_M, KC_B, COMBO_END};
 
 // one shot mods
 const uint16_t PROGMEM oneshot_lctl[]     = {HRM_N, HRM_S, COMBO_END};
@@ -136,6 +138,7 @@ combo_t key_combos[] = {
     [COMBO_Z]               = COMBO(comboZ,         KC_Z),
     [COMBO_SCREENSHOT]      = COMBO(screenshot,     PC_SCSH),
     [COMBO_VSCOMMENT]       = COMBO(vscomment,      VS_COMT),
+    [COMBO_REFRESH]         = COMBO(refresh,        KC_F5),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
     // [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
     // [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),

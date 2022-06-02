@@ -489,7 +489,11 @@ void print_mods(void) {
 }
 #endif
 
-
-void my_custom_function(void) {
-
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SPCNUM:
+            return true;
+        default:
+            return false;
+    }
 }

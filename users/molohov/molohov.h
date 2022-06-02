@@ -38,6 +38,7 @@ enum custom_keycodes {
     CAPSWD,
     SW_WIN,
     SW_TAB,
+    SEND3D,
 };
 
 #ifdef HRM

@@ -25,9 +25,15 @@ enum combo_events {
     COMBO_VSCOMMENT,
     COMBO_REFRESH,
     COMBO_OS_LCTL,
+    COMBO_OS_LCTL_SYM,
     COMBO_OS_LALT,
     COMBO_OS_RCTL,
     COMBO_OS_RALT,
+    COMBO_LPRN,
+    COMBO_RPRN,
+    // COMBO_LCBR,
+    // COMBO_LBRC,
+    COMBO_SEND3D,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -60,10 +66,15 @@ const uint16_t PROGMEM comboZ[]     = {HRM_N, KC_V, COMBO_END};
 const uint16_t PROGMEM screenshot[]     = {KC_P, KC_B, COMBO_END};
 const uint16_t PROGMEM vscomment[]     = {HRM_T, KC_G, COMBO_END};
 const uint16_t PROGMEM refresh[]     = {KC_M, KC_B, COMBO_END};
+const uint16_t PROGMEM lprn[]     = {HRM_S, HRM_T, COMBO_END};
+const uint16_t PROGMEM send_3d[]       = {HRM_S, KC_D, COMBO_END};
+// const uint16_t PROGMEM lcbr[]     = {BSPNAV, HRM_S, COMBO_END};
+// const uint16_t PROGMEM lbrc[]     = {BSPNAV, HRM_T, COMBO_END};
 
 // one shot mods
 const uint16_t PROGMEM oneshot_lctl[]     = {HRM_N, HRM_S, COMBO_END};
 const uint16_t PROGMEM oneshot_lalt[]     = {KC_L, KC_C, COMBO_END};
+const uint16_t PROGMEM oneshot_lctl_sym[] = {PC_CUT, PC_COPY, COMBO_END};
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
 // const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
@@ -104,6 +115,7 @@ const uint16_t PROGMEM dollar[] = {KC_MINS, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM plus[]   = {KC_COMM, KC_SLSH, COMBO_END};
 // . + , = ;
 const uint16_t PROGMEM semicolon[]     = {KC_DOT, KC_COMM, COMBO_END};
+const uint16_t PROGMEM rprn[]     = {HRM_A, HRM_I, COMBO_END};
 // one shot mods
 const uint16_t PROGMEM oneshot_rctl[]     = {HRM_E, HRM_I, COMBO_END};
 const uint16_t PROGMEM oneshot_ralt[]     = {KC_O, KC_Y, COMBO_END};
@@ -132,6 +144,7 @@ combo_t key_combos[] = {
     [COMBO_DLSIM]           = COMBO(dlsim,          DLSIM),
     [COMBO_OS_LCTL]         = COMBO(oneshot_lctl,   OS_CTL),
     [COMBO_OS_LALT]         = COMBO(oneshot_lalt,   OS_ALT),
+    [COMBO_OS_LCTL_SYM]     = COMBO(oneshot_lctl_sym, OS_CTL),
     [COMBO_OS_RCTL]         = COMBO(oneshot_rctl,   OS_CTL),
     [COMBO_OS_RALT]         = COMBO(oneshot_ralt,   OS_ALT),
     [COMBO_J]               = COMBO(comboJ,         KC_J),
@@ -139,6 +152,11 @@ combo_t key_combos[] = {
     [COMBO_SCREENSHOT]      = COMBO(screenshot,     PC_SCSH),
     [COMBO_VSCOMMENT]       = COMBO(vscomment,      VS_COMT),
     [COMBO_REFRESH]         = COMBO(refresh,        KC_F5),
+    [COMBO_LPRN]            = COMBO(lprn,           KC_LPRN),
+    [COMBO_RPRN]            = COMBO(rprn,           KC_RPRN),
+    [COMBO_SEND3D]          = COMBO(send_3d,        SEND3D),
+    // [COMBO_LBRC]            = COMBO(lbrc,           KC_LBRC),
+    // [COMBO_LCBR]            = COMBO(lcbr,           KC_LCBR),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
     // [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
     // [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),
@@ -334,6 +352,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DLSIM:
             if (record->event.pressed) {
                 SEND_CAP_STRING("dlsim", "DLSim")
+            }
+            break;
+        case SEND3D:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("3d", "3D")
             }
             break;
         case SLACK_CODE:

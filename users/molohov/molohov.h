@@ -39,6 +39,7 @@ enum custom_keycodes {
     SW_WIN,
     SW_TAB,
     SEND3D,
+    SENDXLA,
 };
 
 #ifdef HRM

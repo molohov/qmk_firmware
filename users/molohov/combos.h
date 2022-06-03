@@ -2,7 +2,88 @@
 
 #include QMK_KEYBOARD_H
 
-// COMBOS
+// LEFT HAND
+// combos are defined from leftmost key to rightmost key
+// upper row
+const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
+const uint16_t PROGMEM refresh[]  = {KC_M, KC_B, COMBO_END};
+const uint16_t PROGMEM hash[]     = {KC_M, HRM_T, COMBO_END};
+// middle row
+const uint16_t PROGMEM screenshot[]       = {HRM_S, KC_M, COMBO_END};
+const uint16_t PROGMEM lprn[]             = {HRM_S, HRM_T, COMBO_END};
+const uint16_t PROGMEM send_3d[]          = {HRM_S, KC_D, COMBO_END};
+const uint16_t PROGMEM oneshot_lctl[]     = {HRM_S, HRM_N, COMBO_END};
+const uint16_t PROGMEM oneshot_lctl_sym[] = {PC_CUT, PC_COPY, COMBO_END};
+const uint16_t PROGMEM asterisk[]         = {HRM_N, HRM_T, COMBO_END};
+const uint16_t PROGMEM comboJ[]           = {HRM_N, KC_G, COMBO_END};
+const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
+// keep shift+V on the left side
+// const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
+// lower row
+const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
+const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
+// thumbs
+const uint16_t PROGMEM underscore[] = {SPCNUM, ENTSFT, COMBO_END};
+
+// vim combos rooted from left home row middle finger
+// const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
+// const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
+// const uint16_t PROGMEM vimquit[] =      {HRM_N, KC_G, COMBO_END};
+// const uint16_t PROGMEM vimquitall[] =   {HRM_N, KC_B, COMBO_END};
+// const uint16_t PROGMEM vimshiftv[] =    {HRM_T, KC_V, COMBO_END};
+
+// copy/paste combos on left bottom row
+// const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_D, COMBO_END};
+// const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
+// const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
+// const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
+// const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
+// const uint16_t PROGMEM pc_clip[]      = {KC_L, HRM_T, COMBO_END};
+// const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
+// const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
+
+// this combo mirrors the DW action in vim!
+// const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
+// const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
+// const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
+// const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
+// const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
+
+
+// RIGHT HAND
+// combos are defined from rightmost key to leftmost key
+// upper row
+// punctuation
+const uint16_t PROGMEM plus[]      = {KC_COMM, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM semicolon[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM at[]        = {KC_SLSH, KC_DOT, COMBO_END};
+const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_MINS, COMBO_END};
+// . + , = ;
+const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
+
+// middle row
+// vim combos rooted from right home row middle finger
+const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
+const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
+const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
+const uint16_t PROGMEM lnx_last[]     = {HRM_I, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
+const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
+
+// lower row
+const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
+
+// thumbs
+const uint16_t PROGMEM caps_word[] =  {BSPNAV, TABSFT, COMBO_END};
+
+// const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
+// const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
+// const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
+// const uint16_t PROGMEM oneshotsft[]     = {HRM_E, HRM_A, COMBO_END};
+// const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
+// const uint16_t PROGMEM asterisk[] = {KC_SLSH, KC_A, COMBO_END};
+
 enum combo_events {
     COMBO_VIM_WRITE,
     COMBO_VIM_WRITEQUIT,
@@ -55,88 +136,6 @@ enum combo_events {
     // COMBO_LNX_CLS,
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
-
-// LEFT HAND
-// combos are defined from leftmost key to rightmost key
-// upper row
-const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
-const uint16_t PROGMEM refresh[]  = {KC_M, KC_B, COMBO_END};
-const uint16_t PROGMEM hash[]     = {KC_M, HRM_T, COMBO_END};
-// middle row
-const uint16_t PROGMEM screenshot[]       = {HRM_S, KC_M, COMBO_END};
-const uint16_t PROGMEM lprn[]             = {HRM_S, HRM_T, COMBO_END};
-const uint16_t PROGMEM send_3d[]          = {HRM_S, KC_D, COMBO_END};
-const uint16_t PROGMEM oneshot_lctl[]     = {HRM_S, HRM_N, COMBO_END};
-const uint16_t PROGMEM oneshot_lctl_sym[] = {PC_CUT, PC_COPY, COMBO_END};
-const uint16_t PROGMEM asterisk[]         = {HRM_N, HRM_T, COMBO_END};
-const uint16_t PROGMEM comboJ[]           = {HRM_N, KC_G, COMBO_END};
-const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
-// keep shift+V on the left side
-// const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
-// lower row
-const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
-const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
-
-// vim combos rooted from left home row middle finger
-// const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
-// const uint16_t PROGMEM vimwritequit[] = {HRM_N, KC_D, COMBO_END};
-// const uint16_t PROGMEM vimquit[] =      {HRM_N, KC_G, COMBO_END};
-// const uint16_t PROGMEM vimquitall[] =   {HRM_N, KC_B, COMBO_END};
-// const uint16_t PROGMEM vimshiftv[] =    {HRM_T, KC_V, COMBO_END};
-
-// copy/paste combos on left bottom row
-// const uint16_t PROGMEM pc_undo[]      = {KC_W, KC_D, COMBO_END};
-// const uint16_t PROGMEM pc_copy[]      = {KC_C, KC_L, COMBO_END};
-// const uint16_t PROGMEM pc_cut[]       = {KC_C, HRM_N, COMBO_END};
-// const uint16_t PROGMEM pc_paste[]     = {KC_L, KC_D, COMBO_END};
-// const uint16_t PROGMEM pc_copypaste[] = {KC_C, KC_D, COMBO_END};
-// const uint16_t PROGMEM pc_clip[]      = {KC_L, HRM_T, COMBO_END};
-// const uint16_t PROGMEM pc_find[]      = {KC_L, HRM_T, COMBO_END};
-// const uint16_t PROGMEM pc_selectall[] = {KC_W, KC_L, COMBO_END};
-
-// this combo mirrors the DW action in vim!
-// const uint16_t PROGMEM del_word[] = {KC_W, KC_D, COMBO_END};
-// const uint16_t PROGMEM slack_code[] = {KC_F, KC_M, COMBO_END};
-// const uint16_t PROGMEM slack_code_paste[] = {KC_F, KC_M, KC_P, COMBO_END};
-// const uint16_t PROGMEM escape[]     = {KC_S, KC_M, COMBO_END};
-// const uint16_t PROGMEM newtab[]     = {HRM_T, KC_G, COMBO_END};
-
-
-// RIGHT HAND
-// combos are defined from rightmost key to leftmost key
-// upper row
-// punctuation
-const uint16_t PROGMEM plus[]      = {KC_COMM, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM semicolon[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM at[]        = {KC_SLSH, KC_DOT, COMBO_END};
-const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_MINS, COMBO_END};
-// . + , = ;
-const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
-
-// middle row
-// vim combos rooted from right home row middle finger
-const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
-const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
-const uint16_t PROGMEM lnx_last[]     = {HRM_I, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
-const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
-
-// lower row
-const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
-
-// const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
-// const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
-// const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
-// const uint16_t PROGMEM oneshotsft[]     = {HRM_E, HRM_A, COMBO_END};
-// const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
-// const uint16_t PROGMEM asterisk[] = {KC_SLSH, KC_A, COMBO_END};
-
-// THUMB
-
-const uint16_t PROGMEM underscore[] = {SPCNUM, ENTSFT, COMBO_END};
-const uint16_t PROGMEM caps_word[] =  {BSPNAV, TABSFT, COMBO_END};
 
 combo_t key_combos[] = {
     [COMBO_VIM_WRITE]     = COMBO(vimwrite, VIMWRITE),

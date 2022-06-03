@@ -13,7 +13,6 @@ const uint16_t PROGMEM screenshot[]       = {HRM_S, KC_M, COMBO_END};
 const uint16_t PROGMEM lprn[]             = {HRM_S, HRM_T, COMBO_END};
 const uint16_t PROGMEM send_3d[]          = {HRM_S, KC_D, COMBO_END};
 const uint16_t PROGMEM oneshot_lctl[]     = {HRM_S, HRM_N, COMBO_END};
-const uint16_t PROGMEM oneshot_lctl_sym[] = {PC_CUT, PC_COPY, COMBO_END};
 const uint16_t PROGMEM asterisk[]         = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboJ[]           = {HRM_N, KC_G, COMBO_END};
 const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
@@ -105,7 +104,6 @@ enum combo_events {
     COMBO_SCREENSHOT,
     COMBO_REFRESH,
     COMBO_OS_LCTL,
-    COMBO_OS_LCTL_SYM,
     COMBO_OS_LALT,
     COMBO_OS_RCTL,
     COMBO_OS_RALT,
@@ -152,7 +150,6 @@ combo_t key_combos[] = {
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
     [COMBO_OS_LCTL]       = COMBO(oneshot_lctl, OS_CTL),
     [COMBO_OS_LALT]       = COMBO(oneshot_lalt, OS_ALT),
-    [COMBO_OS_LCTL_SYM]   = COMBO(oneshot_lctl_sym, OS_CTL),
     [COMBO_OS_RCTL]       = COMBO(oneshot_rctl, OS_CTL),
     [COMBO_OS_RALT]       = COMBO(oneshot_ralt, OS_ALT),
     [COMBO_J]             = COMBO(comboJ, KC_J),

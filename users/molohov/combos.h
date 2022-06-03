@@ -33,6 +33,8 @@ enum combo_events {
     COMBO_SEND3D,
     COMBO_SENDXLA,
     COMBO_IPDB,
+    COMBO_UNDS,
+    COMBO_CAPS,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -131,6 +133,11 @@ const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 // const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
 // const uint16_t PROGMEM asterisk[] = {KC_SLSH, KC_A, COMBO_END};
 
+// THUMB
+
+const uint16_t PROGMEM underscore[] = {SPCNUM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM caps_word[] =  {BSPNAV, TABSFT, COMBO_END};
+
 combo_t key_combos[] = {
     [COMBO_VIM_WRITE]     = COMBO(vimwrite, VIMWRITE),
     [COMBO_VIM_WRITEQUIT] = COMBO(vimwritequit, VIMWRITEQUIT),
@@ -158,6 +165,8 @@ combo_t key_combos[] = {
     [COMBO_SEND3D]        = COMBO(send_3d, SEND3D),
     [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
+    [COMBO_UNDS]          = COMBO(underscore, KC_UNDS),
+    [COMBO_CAPS]          = COMBO(caps_word, CAPSWD),
     // [COMBO_LBRC]            = COMBO(lbrc,           KC_LBRC),
     // [COMBO_LCBR]            = COMBO(lcbr,           KC_LCBR),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),

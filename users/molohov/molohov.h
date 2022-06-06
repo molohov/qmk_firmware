@@ -40,6 +40,7 @@ enum custom_keycodes {
     SW_TAB,
     SEND3D,
     SENDXLA,
+    SENDONNX,
 };
 
 #ifdef HRM

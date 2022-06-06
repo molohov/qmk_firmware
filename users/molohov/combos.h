@@ -69,6 +69,7 @@ const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
 const uint16_t PROGMEM lnx_last[]     = {HRM_I, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
 const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
+const uint16_t PROGMEM send_onnx[] =  {HRM_E, KC_O, COMBO_END};
 
 // lower row
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
@@ -82,6 +83,9 @@ const uint16_t PROGMEM caps_word[] =  {BSPNAV, TABSFT, COMBO_END};
 // const uint16_t PROGMEM oneshotsft[]     = {HRM_E, HRM_A, COMBO_END};
 // const uint16_t PROGMEM oneshot_lgui[]     = {HRM_N, HRM_T, COMBO_END};
 // const uint16_t PROGMEM asterisk[] = {KC_SLSH, KC_A, COMBO_END};
+
+// BOTH hands
+
 
 enum combo_events {
     COMBO_VIM_WRITE,
@@ -114,6 +118,7 @@ enum combo_events {
     COMBO_IPDB,
     COMBO_UNDS,
     COMBO_CAPS,
+    COMBO_ONNX,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -163,6 +168,7 @@ combo_t key_combos[] = {
     [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
     [COMBO_UNDS]          = COMBO(underscore, KC_UNDS),
     [COMBO_CAPS]          = COMBO(caps_word, CAPSWD),
+    [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
     // [COMBO_LBRC]            = COMBO(lbrc,           KC_LBRC),
     // [COMBO_LCBR]            = COMBO(lcbr,           KC_LCBR),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),

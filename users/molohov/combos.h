@@ -5,7 +5,7 @@
 // LEFT HAND
 // combos are defined from leftmost key to rightmost key
 // upper row
-const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
+// const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM refresh[]  = {KC_M, KC_B, COMBO_END};
 const uint16_t PROGMEM hash[]     = {KC_M, HRM_T, COMBO_END};
 // middle row
@@ -22,7 +22,7 @@ const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
 // thumbs
-const uint16_t PROGMEM underscore[] = {SPCNUM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM slack[] = {SPCNUM, ENTSFT, COMBO_END};
 
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
@@ -114,9 +114,9 @@ enum combo_events {
     COMBO_LPRN,
     COMBO_RPRN,
     COMBO_SEND3D,
-    COMBO_SENDXLA,
+    // COMBO_SENDXLA,
     COMBO_IPDB,
-    COMBO_UNDS,
+    COMBO_SLACK,
     COMBO_CAPS,
     COMBO_ONNX,
     COMBO_LENGTH
@@ -164,9 +164,9 @@ combo_t key_combos[] = {
     [COMBO_LPRN]          = COMBO(lprn, KC_LPRN),
     [COMBO_RPRN]          = COMBO(rprn, KC_RPRN),
     [COMBO_SEND3D]        = COMBO(send_3d, SEND3D),
-    [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
+    // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
-    [COMBO_UNDS]          = COMBO(underscore, KC_UNDS),
+    [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
     [COMBO_CAPS]          = COMBO(caps_word, CAPSWD),
     [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
     // [COMBO_LBRC]            = COMBO(lbrc,           KC_LBRC),

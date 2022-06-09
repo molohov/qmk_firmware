@@ -80,6 +80,8 @@ enum custom_keycodes {
 #endif
 
 // #define  HRM_LPRN       ALT_T(KC_LPRN)
+#define  BSPSYM         LT(_SYM_NUM, KC_BSPC)
+#define  SPCNAV         LT(_NAV, KC_SPC)
 
 #define  BSPNAV         LT(_NAV, KC_BSPC)
 #define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)

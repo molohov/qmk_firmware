@@ -1,6 +1,8 @@
-# git aliases
+# alias aliases
 alias ea='vim ~/Downloads/qmk_firmware/qmk_aliases'
 alias ra='source ~/.bashrc'
+
+# git aliases
 alias gs='git status'
 alias gd='git diff'
 alias gad='git add'

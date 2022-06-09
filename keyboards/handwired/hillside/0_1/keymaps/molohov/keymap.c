@@ -11,13 +11,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    PC_EXIT,    SW_TAB,     PC_FIND,    PC_SALL,    SLKFPS,                             KC_PERC,    KC_RPRN,    KC_RCBR,    KC_RBRC,    KC_RABK,    _______,
     _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             KC_PIPE,    KC_0,       KC_1,       KC_2,       KC_3,       _______,
     _______,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    VIM_RSP,    _______,    _______,    KC_TILD,    KC_LPRN,    KC_LCBR,    KC_LBRC,    KC_LABK,    _______,
-                            _______,    _______,    _______,    _______,    _______,    KC_UNDS,    _______,    _______,    _______,    _______,
+                            _______,    _______,    _______,    _______,    _______,    KC_UNDS,    _______,    KC_COLN,    _______,    _______
     ),
     [_NAV] = LAYOUT(
     _______,    KC_LABK,    KC_HOME,    KC_RABK,    KC_END,     _______,                            _______,    _______,    _______,    _______,    _______,    _______,
     _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_EDIT,                            _______,    _______,    _______,    _______,    _______,    _______,
     _______,    Q_ENTER,    VS_PEDT,    KC_DOWN,    VS_NEDT,    VS_EGRP,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-                            _______,    _______,    VS_COMT,    SHIFTV,     _______,    _______,    _______,    _______,    _______,    _______,
+                            _______,    _______,    VS_COMT,    SHIFTV,     _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NUMPAD] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_7,       KC_8,       KC_9,       _______,    _______,

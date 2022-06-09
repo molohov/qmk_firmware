@@ -5,19 +5,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       RESET,
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       CAPSWD,     KC_UNDS,    KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                            KC_MPLY,    PC_SCSH,    GUIDEL,     BSPNAV,     TABSFT,     ENTSFT,     SPCNUM,     ESCBYO,     ON_TODO,    PC_SLACK
+                            KC_MPLY,    PC_SCSH,    GUIDEL,     BSPSYM,     ENTSFT,     TABSFT,     SPCNAV,     ESCBYO,     ON_TODO,    PC_SLACK
     ),
     [_SYM_NUM] = LAYOUT(
-    _______,    KC_TILD,    KC_PIPE,    KC_COLN,    KC_PERC,    KC_PPLS,                            KC_MINS,    KC_DOT,     KC_BSLS,    KC_AMPR,    _______,    _______,
-    _______,    KC_9,       KC_3,       KC_1,       KC_5,       KC_EQL,                             KC_QUOT,    KC_2,       KC_0,       KC_4,       KC_8,       _______,
-    _______,    KC_7,       KC_LBRC,    KC_LCBR,    KC_LPRN,    KC_LABK,    _______,    _______,    KC_RABK,    KC_RPRN,    KC_RCBR,    KC_RBRC,    KC_6,       _______,
-                            _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    _______,    PC_EXIT,    SW_TAB,     PC_FIND,    PC_SALL,    SLKFPS,                             KC_PERC,    KC_RPRN,    KC_RCBR,    KC_RBRC,    KC_RABK,    _______,
+    _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             KC_PIPE,    KC_0,       KC_1,       KC_2,       KC_3,       _______,
+    _______,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    VIM_RSP,    _______,    _______,    KC_TILD,    KC_LPRN,    KC_LCBR,    KC_LBRC,    KC_LABK,    _______,
+                            _______,    _______,    _______,    _______,    _______,    KC_UNDS,    _______,    _______,    _______,    _______,
     ),
     [_NAV] = LAYOUT(
-    _______,    PC_EXIT,    SW_TAB,     PC_FIND,    PC_SALL,    VIM_RSP,                            SHIFTV,     KC_HOME,    KC_UNDS,    KC_END,     RESET,      _______,
-    _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             VS_EDIT,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_TERM,    _______,
-    _______,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    SLKFPS,     _______,    _______,    VS_EGRP,    VS_PEDT,    KC_DOWN,    VS_NEDT,    Q_ENTER,    _______,
-                            _______,    _______,    _______,    _______,    _______,    _______,    KC_UNDS,    _______,    _______,    _______
+    _______,    KC_LABK,    KC_HOME,    KC_RABK,    KC_END,     _______,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_EDIT,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    Q_ENTER,    VS_PEDT,    KC_DOWN,    VS_NEDT,    VS_EGRP,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                            _______,    _______,    VS_COMT,    SHIFTV,     _______,    _______,    _______,    _______,    _______,    _______,
     ),
     [_NUMPAD] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_7,       KC_8,       KC_9,       _______,    _______,

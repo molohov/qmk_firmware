@@ -75,7 +75,7 @@ const uint16_t PROGMEM send_onnx[] =  {HRM_E, KC_O, COMBO_END};
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 
 // thumbs
-const uint16_t PROGMEM caps_word[] =  {BSPNAV, TABSFT, COMBO_END};
+const uint16_t PROGMEM numpad[] =  {BSPSYM, ENTSFT, COMBO_END};
 
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
@@ -117,7 +117,7 @@ enum combo_events {
     // COMBO_SENDXLA,
     COMBO_IPDB,
     COMBO_SLACK,
-    COMBO_CAPS,
+    COMBO_NUMP,
     COMBO_ONNX,
     COMBO_LENGTH
     // COMBO_NEWTAB,
@@ -167,7 +167,7 @@ combo_t key_combos[] = {
     // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
     [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
-    [COMBO_CAPS]          = COMBO(caps_word, CAPSWD),
+    [COMBO_NUMP]          = COMBO(numpad, NUMPAD),
     [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
     // [COMBO_LBRC]            = COMBO(lbrc,           KC_LBRC),
     // [COMBO_LCBR]            = COMBO(lcbr,           KC_LCBR),

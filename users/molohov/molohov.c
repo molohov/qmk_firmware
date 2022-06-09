@@ -187,6 +187,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("q" SS_DELAY(100) SS_TAP(X_ENTER));
             }
             break;
+        case VIM_LIND:
+            if (record->event.pressed) {
+                SEND_STRING("<<");
+            }
+            break;
+        case VIM_RIND:
+            if (record->event.pressed) {
+                SEND_STRING(">>");
+            }
+            break;
+        case LPRNS:
+            if (record->event.pressed) {
+                SEND_STRING("()");
+                tap_code(KC_LEFT);
+            }
+            break;
+        case LBRCS:
+            if (record->event.pressed) {
+                SEND_STRING("[]");
+                tap_code(KC_LEFT);
+            }
+            break;
+        case LCBRS:
+            if (record->event.pressed) {
+                SEND_STRING("{}");
+                tap_code(KC_LEFT);
+            }
+            break;
         case IMPORT_PDB:
             if (record->event.pressed) {
                 SEND_STRING("import pdb; pdb.set_trace()");
@@ -284,13 +312,13 @@ void print_mods(void) {
 
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case SPCNUM:
+        case SPCNAV:
             return true;
         default:
             return false;
     }
 }
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-   return update_tri_layer_state(state, _SYM_NUM, _NAV, _BYO_ONOTE_VSC);
-}
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//    return update_tri_layer_state(state, _SYM_NUM, _NAV, _BYO_ONOTE_VSC);
+// }

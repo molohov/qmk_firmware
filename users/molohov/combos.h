@@ -10,9 +10,10 @@ const uint16_t PROGMEM refresh[]  = {KC_M, KC_B, COMBO_END};
 const uint16_t PROGMEM hash[]     = {KC_M, HRM_T, COMBO_END};
 // middle row
 const uint16_t PROGMEM screenshot[]       = {HRM_S, KC_M, COMBO_END};
-const uint16_t PROGMEM lprn[]             = {HRM_S, HRM_T, COMBO_END};
-const uint16_t PROGMEM send_3d[]          = {HRM_S, KC_D, COMBO_END};
 const uint16_t PROGMEM oneshot_lctl[]     = {HRM_S, HRM_N, COMBO_END};
+const uint16_t PROGMEM lprn[]             = {HRM_S, HRM_T, COMBO_END};
+const uint16_t PROGMEM lcbr[]             = {HRM_S, KC_P,  COMBO_END};
+const uint16_t PROGMEM lbrc[]             = {HRM_S, KC_D,  COMBO_END};
 const uint16_t PROGMEM asterisk[]         = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboJ[]           = {HRM_N, KC_G, COMBO_END};
 const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
@@ -20,9 +21,10 @@ const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 // lower row
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
+const uint16_t PROGMEM send_3d[]          = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
 // thumbs
-const uint16_t PROGMEM slack[] = {SPCNUM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM numpad[] =  {BSPSYM, ENTSFT, COMBO_END};
 
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
@@ -54,10 +56,10 @@ const uint16_t PROGMEM slack[] = {SPCNUM, ENTSFT, COMBO_END};
 // upper row
 // punctuation
 const uint16_t PROGMEM plus[]      = {KC_COMM, KC_SLSH, COMBO_END};
+// . + , = ;
 const uint16_t PROGMEM semicolon[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM at[]        = {KC_SLSH, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_MINS, COMBO_END};
-// . + , = ;
 const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
 
 // middle row
@@ -69,13 +71,15 @@ const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
 const uint16_t PROGMEM lnx_last[]     = {HRM_I, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
 const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
-const uint16_t PROGMEM send_onnx[] =  {HRM_E, KC_O, COMBO_END};
+const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
+const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
+const uint16_t PROGMEM send_onnx[]    = {HRM_E, KC_O, COMBO_END};
 
 // lower row
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 
 // thumbs
-const uint16_t PROGMEM numpad[] =  {BSPSYM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM slack[] = {SPCNAV, TABSFT, COMBO_END};
 
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
@@ -112,7 +116,11 @@ enum combo_events {
     COMBO_OS_RCTL,
     COMBO_OS_RALT,
     COMBO_LPRN,
+    COMBO_LBRC,
+    COMBO_LCBR,
     COMBO_RPRN,
+    COMBO_RBRC,
+    COMBO_RCBR,
     COMBO_SEND3D,
     // COMBO_SENDXLA,
     COMBO_IPDB,
@@ -162,15 +170,17 @@ combo_t key_combos[] = {
     [COMBO_SCREENSHOT]    = COMBO(screenshot, PC_SCSH),
     [COMBO_REFRESH]       = COMBO(refresh, KC_F5),
     [COMBO_LPRN]          = COMBO(lprn, KC_LPRN),
+    [COMBO_LBRC]          = COMBO(lbrc, KC_LBRC),
+    [COMBO_LCBR]          = COMBO(lcbr, KC_LCBR),
     [COMBO_RPRN]          = COMBO(rprn, KC_RPRN),
+    [COMBO_RBRC]          = COMBO(rbrc, KC_RBRC),
+    [COMBO_RCBR]          = COMBO(rcbr, KC_RCBR),
     [COMBO_SEND3D]        = COMBO(send_3d, SEND3D),
     // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
     [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
     [COMBO_NUMP]          = COMBO(numpad, NUMPAD),
     [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
-    // [COMBO_LBRC]            = COMBO(lbrc,           KC_LBRC),
-    // [COMBO_LCBR]            = COMBO(lcbr,           KC_LCBR),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
     // [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
     // [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),

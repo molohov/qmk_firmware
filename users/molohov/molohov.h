@@ -87,6 +87,9 @@ enum custom_keycodes {
 // #define  HRM_LPRN       ALT_T(KC_LPRN)
 #define  BSPSYM         LT(_SYM_NUM, KC_BSPC)
 #define  SPCNAV         LT(_NAV, KC_SPC)
+#define  ENTSFT         LSFT_T(KC_ENT)
+#define  TABSFT         RSFT_T(KC_TAB)
+#define  SPCSFT         RSFT_T(KC_SPC)
 
 #define  BSPNAV         LT(_NAV, KC_BSPC)
 #define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)
@@ -96,8 +99,6 @@ enum custom_keycodes {
 #define  BSPSFT         SFT_T(KC_BSPC)
 #define  TABNAV         LT(_NAV, KC_TAB)
 
-#define  TABSFT         LSFT_T(KC_TAB)
-#define  ENTSFT         RSFT_T(KC_ENT)
 #define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
 // #define  SPCNAV         LT(_NAV_SYM_NUM, KC_SPC)
 

@@ -16,6 +16,7 @@
 // #define RGBLIGHT_EFFECT_BREATHE_MAX 125
 // #define RGBLIGHT_EFFECT_BREATHE_CENTER 1.7
 #define RGBLIGHT_SLEEP
+#define MASTER_RIGHT
 
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
 // #define SPLIT_USB_DETECT

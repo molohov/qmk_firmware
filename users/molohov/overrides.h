@@ -21,7 +21,7 @@ const key_override_t r_period_override = ko_make_basic(MOD_BIT(KC_RSFT), KC_DOT,
 // shift , gives :
 const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_EQL);
 // shift : gives ;
-const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
+const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_PIPE);
 // shift / gives -
 const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_EXLM);
 // shift - gives ;

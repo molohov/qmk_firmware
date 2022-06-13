@@ -15,17 +15,12 @@
 // const key_override_t shift_space_underscore = ko_make_basic(MOD_MASK_SHIFT, SPCNAV, KC_UNDS);
 // shift _ gives !
 // const key_override_t underscore_override = ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_EXLM);
-// shift . gives ?
-const key_override_t period_override = ko_make_basic(MOD_BIT(KC_LSFT), KC_DOT, KC_QUES);
-const key_override_t r_period_override = ko_make_basic(MOD_BIT(KC_RSFT), KC_DOT, KC_EXLM);
-// shift , gives :
-const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_EQL);
-// shift : gives ;
-const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_PIPE);
-// shift / gives -
-const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_EXLM);
-// shift - gives ;
-const key_override_t dash_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_GRV);
+// const key_override_t r_period_override = ko_make_basic(MOD_BIT(KC_RSFT), KC_DOT, KC_EXLM);
+const key_override_t period_override = ko_make_basic(MOD_BIT(KC_LSFT), KC_DOT, KC_AT);
+const key_override_t comma_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_DLR);
+const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
+const key_override_t slash_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
+const key_override_t dash_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PIPE);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
@@ -36,8 +31,8 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     // &asterisk_override,
     // &shift_space_underscore,
     // &underscore_override,
+    // &r_period_override,
     &period_override,
-    &r_period_override,
     &comma_override,
     &colon_override,
     &slash_override,

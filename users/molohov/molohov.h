@@ -35,6 +35,7 @@ enum custom_keycodes {
     VIM_RSEARCH_PASTE,
     VIM_LIND,
     VIM_RIND,
+    QUOTS,
     LPRNS,
     LBRCS,
     LCBRS,
@@ -46,6 +47,7 @@ enum custom_keycodes {
     SEND3D,
     SENDXLA,
     SENDONNX,
+    SENDSMILE,
 };
 
 #ifdef HRM

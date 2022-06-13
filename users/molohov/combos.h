@@ -77,6 +77,7 @@ const uint16_t PROGMEM send_onnx[]    = {HRM_E, KC_O, COMBO_END};
 
 // lower row
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
+const uint16_t PROGMEM smiley[] = {KC_COLN, KC_U, COMBO_END};
 
 // thumbs
 const uint16_t PROGMEM slack[] = {SPCNAV, TABSFT, COMBO_END};
@@ -127,6 +128,7 @@ enum combo_events {
     COMBO_SLACK,
     COMBO_NUMP,
     COMBO_ONNX,
+    COMBO_SMILE,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -154,12 +156,12 @@ combo_t key_combos[] = {
     [COMBO_VIM_QUIT]      = COMBO(vimquit, VIMQUIT),
     [COMBO_VIM_QUITALL]   = COMBO(vimquitall, VIMQUITALL),
     [COMBO_LNX_LAST]      = COMBO(lnx_last, LNX_LAST),
-    [COMBO_AT]            = COMBO(at, KC_AT),
-    [COMBO_DOLLAR]        = COMBO(dollar, KC_DLR),
-    [COMBO_SEMICOLON]     = COMBO(semicolon, KC_SCLN),
+    // [COMBO_AT]            = COMBO(at, KC_AT),
+    // [COMBO_DOLLAR]        = COMBO(dollar, KC_DLR),
+    // [COMBO_SEMICOLON]     = COMBO(semicolon, KC_SCLN),
     [COMBO_ASTERISK]      = COMBO(asterisk, KC_PAST),
     [COMBO_HASH]          = COMBO(hash, KC_HASH),
-    [COMBO_PLUS]          = COMBO(plus, KC_PPLS),
+    // [COMBO_PLUS]          = COMBO(plus, KC_PPLS),
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
     [COMBO_OS_LCTL]       = COMBO(oneshot_lctl, OS_CTL),
     [COMBO_OS_LALT]       = COMBO(oneshot_lalt, OS_ALT),
@@ -177,10 +179,11 @@ combo_t key_combos[] = {
     [COMBO_RCBR]          = COMBO(rcbr, KC_RCBR),
     [COMBO_SEND3D]        = COMBO(send_3d, SEND3D),
     // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
-    [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
+    // [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
     [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
     [COMBO_NUMP]          = COMBO(numpad, NUMPAD),
-    [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
+    [COMBO_SMILE]          = COMBO(smiley, SENDSMILE),
+    // [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),
     // [COMBO_PC_CUT]          = COMBO(pc_cut,         PC_CUT),
     // [COMBO_PC_PASTE]        = COMBO(pc_paste,       PC_PASTE),

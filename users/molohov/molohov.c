@@ -152,6 +152,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING("onnx", "ONNX")
             }
             break;
+        case SENDSMILE:
+            if (record->event.pressed) {
+                SEND_CAP_STRING(":)", ":(")
+            }
+            break;
         case SLACK_CODE:
             if (record->event.pressed) {
                 SEND_STRING("```");
@@ -195,6 +200,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case VIM_RIND:
             if (record->event.pressed) {
                 SEND_STRING(">>");
+            }
+            break;
+        case QUOTS:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("''", "\"\"");
+                tap_code(KC_LEFT);
             }
             break;
         case LPRNS:

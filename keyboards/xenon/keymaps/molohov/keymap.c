@@ -10,9 +10,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SYM_NUM] = LAYOUT(
     _______,    PC_EXIT,    SW_TAB,     PC_FIND,    PC_SALL,    SLKFPS,                             KC_GRV,     KC_QUES,    KC_EXLM,    KC_EQL,     KC_TILD,    _______,
-    _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             KC_DQT,     KC_0,       KC_1,       KC_2,       KC_3,       _______,
-    _______,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    VIM_RSP,                            KC_PIPE,    LPRNS,      LBRCS,      LCBRS,      KC_LABK,    _______,
-                            _______,    _______,    _______,    _______,    _______,    KC_UNDS,    SPCSFT,     KC_COLN,    _______,    _______,
+    _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             QUOTS,      KC_0,       KC_1,       KC_2,       KC_3,       _______,
+    _______,    KC_SLSH,    KC_QUES,    SW_WIN,     PC_CLIP,    VIM_RSP,                            KC_PPLS,    LPRNS,      LBRCS,      LCBRS,      KC_LABK,    _______,
+                            _______,    _______,    _______,    _______,    _______,    KC_UNDS,    SPCSFT,     KC_DOT,     _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
@@ -23,9 +23,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NUMPAD] = LAYOUT(
-    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_7,       KC_8,       KC_9,       _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,                            _______,    KC_4,       KC_5,       KC_6,       _______,    _______,
     _______,    _______,    KC_EQL,     KC_PAST,    KC_PPLS,    _______,                            _______,    KC_0,       KC_1,       KC_2,       KC_3,       _______,
-    _______,    _______,    _______,    KC_PSLS,    KC_PMNS,    _______,                            _______,    KC_4,       KC_5,       KC_6,       KC_COMM,    _______,
+    _______,    _______,    _______,    KC_PSLS,    KC_PMNS,    _______,                            _______,    KC_7,       KC_8,       KC_9,       KC_COMM,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_DOT,     _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),

@@ -19,6 +19,7 @@
 #ifdef OLED_DRIVER_ENABLE
   #define OLED_DISPLAY_128X32
 #endif
+#define MASTER_RIGHT
 
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
 // #define SPLIT_USB_DETECT

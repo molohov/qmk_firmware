@@ -6,25 +6,25 @@
 // combos are defined from leftmost key to rightmost key
 // upper row
 // const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
-const uint16_t PROGMEM refresh[]  = {KC_M, KC_B, COMBO_END};
-const uint16_t PROGMEM hash[]     = {KC_M, HRM_T, COMBO_END};
+const uint16_t PROGMEM refresh[] = {KC_M, KC_B, COMBO_END};
+const uint16_t PROGMEM hash[]    = {KC_M, HRM_T, COMBO_END};
 // middle row
-const uint16_t PROGMEM screenshot[]       = {HRM_S, KC_M, COMBO_END};
-const uint16_t PROGMEM oneshot_lctl[]     = {HRM_S, HRM_N, COMBO_END};
-const uint16_t PROGMEM lprn[]             = {HRM_S, HRM_T, COMBO_END};
-const uint16_t PROGMEM lcbr[]             = {HRM_S, KC_P,  COMBO_END};
-const uint16_t PROGMEM lbrc[]             = {HRM_S, KC_D,  COMBO_END};
-const uint16_t PROGMEM asterisk[]         = {HRM_N, HRM_T, COMBO_END};
-const uint16_t PROGMEM comboJ[]           = {HRM_N, KC_G, COMBO_END};
-const uint16_t PROGMEM comboZ[]           = {HRM_N, KC_V, COMBO_END};
+const uint16_t PROGMEM screenshot[]   = {HRM_S, KC_M, COMBO_END};
+const uint16_t PROGMEM oneshot_lctl[] = {HRM_S, HRM_N, COMBO_END};
+const uint16_t PROGMEM lprn[]         = {HRM_S, HRM_T, COMBO_END};
+const uint16_t PROGMEM lcbr[]         = {HRM_S, KC_P, COMBO_END};
+const uint16_t PROGMEM lbrc[]         = {HRM_S, KC_D, COMBO_END};
+const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
+const uint16_t PROGMEM comboJ[]       = {HRM_N, KC_G, COMBO_END};
+const uint16_t PROGMEM comboZ[]       = {HRM_N, KC_V, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 // lower row
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
-const uint16_t PROGMEM send_3d[]          = {KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM send_3d[]      = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
 // thumbs
-const uint16_t PROGMEM numpad[] =  {BSPSYM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM slack[] = {BSPSYM, ENTSFT, COMBO_END};
 
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
@@ -80,7 +80,6 @@ const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM smiley[] = {KC_COLN, KC_U, COMBO_END};
 
 // thumbs
-const uint16_t PROGMEM slack[] = {SPCNAV, TABSFT, COMBO_END};
 
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
@@ -181,7 +180,6 @@ combo_t key_combos[] = {
     // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     // [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
     [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
-    [COMBO_NUMP]          = COMBO(numpad, NUMPAD),
     [COMBO_SMILE]          = COMBO(smiley, SENDSMILE),
     // [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),

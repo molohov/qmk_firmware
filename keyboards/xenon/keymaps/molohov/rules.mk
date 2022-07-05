@@ -1,3 +1,9 @@
+# MCU name
+MCU = RP2040
+# Bootloader selection
+BOOTLOADER = rp2040
+SERIAL_DRIVER = vendor
+
 OLED_ENABLE = yes
 RGBLIGHT_ENABLE = no
 EXTRAKEY_ENABLE = yes

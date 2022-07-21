@@ -1,6 +1,8 @@
 #pragma once
 
-#define TAPPING_TERM 220
+#define TAPPING_TERM 150
+#define TAPPING_TERM_PER_KEY
+// #define HOLD_ON_OTHER_KEY_PRESS
 #define PERMISSIVE_HOLD
 // #define PERMISSIVE_HOLD_PER_KEY
 // #define BILATERAL_COMBINATIONS

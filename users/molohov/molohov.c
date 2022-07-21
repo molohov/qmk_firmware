@@ -157,6 +157,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING(":)", ":(")
             }
             break;
+        case SENDARROW:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("->", "<-")
+            }
+            break;
         case SLACK_CODE:
             if (record->event.pressed) {
                 SEND_STRING("```");
@@ -321,14 +326,23 @@ void print_mods(void) {
 }
 #endif
 
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case SPCNAV:
-            return true;
+            return TAPPING_TERM + 50;
         default:
-            return false;
+            return TAPPING_TERM;
     }
 }
+
+// bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case SPCNAV:
+//             return true;
+//         default:
+//             return false;
+//     }
+// }
 
 // layer_state_t layer_state_set_user(layer_state_t state) {
 //    return update_tri_layer_state(state, _SYM_NUM, _NAV, _BYO_ONOTE_VSC);

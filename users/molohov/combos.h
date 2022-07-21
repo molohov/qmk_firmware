@@ -14,6 +14,7 @@ const uint16_t PROGMEM oneshot_lctl[] = {HRM_S, HRM_N, COMBO_END};
 const uint16_t PROGMEM lprn[]         = {HRM_S, HRM_T, COMBO_END};
 const uint16_t PROGMEM lcbr[]         = {HRM_S, KC_P, COMBO_END};
 const uint16_t PROGMEM lbrc[]         = {HRM_S, KC_D, COMBO_END};
+const uint16_t PROGMEM labk[]         = {HRM_S, KC_B, COMBO_END};
 const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboJ[]       = {HRM_N, KC_G, COMBO_END};
 const uint16_t PROGMEM comboZ[]       = {HRM_N, KC_V, COMBO_END};
@@ -57,9 +58,11 @@ const uint16_t PROGMEM slack[] = {BSPSYM, ENTSFT, COMBO_END};
 // punctuation
 const uint16_t PROGMEM plus[]      = {KC_COMM, KC_SLSH, COMBO_END};
 // . + , = ;
-const uint16_t PROGMEM semicolon[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM at[]        = {KC_SLSH, KC_DOT, COMBO_END};
-const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_MINS, COMBO_END};
+// const uint16_t PROGMEM semicolon[] = {KC_COMM, KC_DOT, COMBO_END};
+// const uint16_t PROGMEM at[]        = {KC_SLSH, KC_DOT, COMBO_END};
+// const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_MINS, COMBO_END};
+const uint16_t PROGMEM percent[]   = {KC_SLSH, KC_DOT, COMBO_END};
+const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
 const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
 
 // middle row
@@ -73,6 +76,7 @@ const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
 const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
 const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
+const uint16_t PROGMEM rabk[]         = {HRM_I, KC_MINS, COMBO_END};
 const uint16_t PROGMEM send_onnx[]    = {HRM_E, KC_O, COMBO_END};
 
 // lower row
@@ -100,12 +104,14 @@ enum combo_events {
     COMBO_LNX_LAST,
     COMBO_SLACK_CODE,
     COMBO_SLACK_CODE_PASTE,
-    COMBO_AT,
-    COMBO_DOLLAR,
+    // COMBO_AT,
+    // COMBO_DOLLAR,
+    // COMBO_SEMICOLON,
     COMBO_ASTERISK,
     COMBO_HASH,
-    COMBO_SEMICOLON,
     COMBO_PLUS,
+    COMBO_PERCENT,
+    COMBO_ARROW,
     COMBO_DLSIM,
     COMBO_J,
     COMBO_Z,
@@ -118,9 +124,11 @@ enum combo_events {
     COMBO_LPRN,
     COMBO_LBRC,
     COMBO_LCBR,
+    COMBO_LABK,
     COMBO_RPRN,
     COMBO_RBRC,
     COMBO_RCBR,
+    COMBO_RABK,
     COMBO_SEND3D,
     // COMBO_SENDXLA,
     COMBO_IPDB,
@@ -160,7 +168,9 @@ combo_t key_combos[] = {
     // [COMBO_SEMICOLON]     = COMBO(semicolon, KC_SCLN),
     [COMBO_ASTERISK]      = COMBO(asterisk, KC_PAST),
     [COMBO_HASH]          = COMBO(hash, KC_HASH),
-    // [COMBO_PLUS]          = COMBO(plus, KC_PPLS),
+    [COMBO_PLUS]          = COMBO(plus, KC_PPLS),
+    [COMBO_PERCENT]       = COMBO(percent, KC_PERC),
+    [COMBO_ARROW]         = COMBO(arrow, SENDARROW),
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
     [COMBO_OS_LCTL]       = COMBO(oneshot_lctl, OS_CTL),
     [COMBO_OS_LALT]       = COMBO(oneshot_lalt, OS_ALT),
@@ -173,9 +183,11 @@ combo_t key_combos[] = {
     [COMBO_LPRN]          = COMBO(lprn, KC_LPRN),
     [COMBO_LBRC]          = COMBO(lbrc, KC_LBRC),
     [COMBO_LCBR]          = COMBO(lcbr, KC_LCBR),
+    [COMBO_LABK]          = COMBO(labk, KC_LABK),
     [COMBO_RPRN]          = COMBO(rprn, KC_RPRN),
     [COMBO_RBRC]          = COMBO(rbrc, KC_RBRC),
     [COMBO_RCBR]          = COMBO(rcbr, KC_RCBR),
+    [COMBO_RABK]          = COMBO(rabk, KC_RABK),
     [COMBO_SEND3D]        = COMBO(send_3d, SEND3D),
     // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     // [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),

@@ -48,6 +48,7 @@ enum custom_keycodes {
     SENDXLA,
     SENDONNX,
     SENDSMILE,
+    SENDARROW,
 };
 
 #ifdef HRM

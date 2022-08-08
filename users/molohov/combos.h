@@ -81,7 +81,7 @@ const uint16_t PROGMEM send_onnx[]    = {HRM_E, KC_O, COMBO_END};
 
 // lower row
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
-const uint16_t PROGMEM smiley[] = {KC_COLN, KC_U, COMBO_END};
+const uint16_t PROGMEM smiley[]       = {KC_COLN, KC_U, COMBO_END};
 
 // thumbs
 

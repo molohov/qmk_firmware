@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    _______,    VS_PEDT,    VIM_LIND,   VS_NEDT,    VIM_RIND,                           BY_MVWL,    BY_MVWR,    ON_QUES,    BY_VSPL,    BY_KPNE,    _______,
     _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_EDIT,                            _______,    PY_IPDB,    ON_TODO,    BY_HSPL,    BY_FPNE,    _______,
     _______,    Q_ENTER,    KC_HOME,    KC_DOWN,    KC_END,     VS_EGRP,                            BY_FSWL,    BY_FSWR,    ON_IMPT,    BY_NWIN,    BY_CLYT,    _______,
-                            _______,    _______,    VS_COMT,    PC_BSWD,    SHIFTV,     _______,    _______,    _______,    _______,    _______,
+                            _______,    VS_COMT,    PC_DLWD,    PC_BSWD,    SHIFTV,     _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NUMPAD] = LAYOUT(

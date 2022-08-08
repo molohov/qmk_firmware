@@ -127,6 +127,7 @@ enum custom_keycodes {
 #define  PC_FIND        C(KC_F)
 #define  PC_LOCK        G(KC_L)
 #define  PC_BSWD        C(KC_BSPC)
+#define  PC_DLWD        C(KC_DEL)
 #define  PC_SLACK       A(KC_Q)
 #define  PC_SCSH        G(S(KC_S))
 #define  PC_LWRD        C(KC_LEFT)

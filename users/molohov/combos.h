@@ -4,28 +4,29 @@
 
 // LEFT HAND
 // combos are defined from leftmost key to rightmost key
-// upper row
+// UPPER ROW
 // const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM refresh[] = {KC_M, KC_B, COMBO_END};
 const uint16_t PROGMEM hash[]    = {KC_M, HRM_T, COMBO_END};
-// middle row
+// MIDDLE ROW
 const uint16_t PROGMEM screenshot[]   = {HRM_S, KC_M, COMBO_END};
 const uint16_t PROGMEM oneshot_lctl[] = {HRM_S, HRM_N, COMBO_END};
 const uint16_t PROGMEM lprn[]         = {HRM_S, HRM_T, COMBO_END};
 const uint16_t PROGMEM lcbr[]         = {HRM_S, KC_P, COMBO_END};
 const uint16_t PROGMEM lbrc[]         = {HRM_S, KC_D, COMBO_END};
-const uint16_t PROGMEM labk[]         = {HRM_S, KC_B, COMBO_END};
+const uint16_t PROGMEM labk[]         = {HRM_S, KC_G, COMBO_END};
 const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboJ[]       = {HRM_N, KC_G, COMBO_END};
 const uint16_t PROGMEM comboZ[]       = {HRM_N, KC_V, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
-// lower row
+// LOWER ROW
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
 const uint16_t PROGMEM send_3d[]      = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
-// thumbs
+// THUMBS
 const uint16_t PROGMEM slack[] = {BSPSYM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
 
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
@@ -76,7 +77,7 @@ const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
 const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
 const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
-const uint16_t PROGMEM rabk[]         = {HRM_I, KC_MINS, COMBO_END};
+const uint16_t PROGMEM rabk[]         = {HRM_I, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM send_onnx[]    = {HRM_E, KC_O, COMBO_END};
 
 // lower row
@@ -119,6 +120,7 @@ enum combo_events {
     COMBO_REFRESH,
     COMBO_OS_LCTL,
     COMBO_OS_LALT,
+    COMBO_OS_LSFT,
     COMBO_OS_RCTL,
     COMBO_OS_RALT,
     COMBO_LPRN,
@@ -174,6 +176,7 @@ combo_t key_combos[] = {
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
     [COMBO_OS_LCTL]       = COMBO(oneshot_lctl, OS_CTL),
     [COMBO_OS_LALT]       = COMBO(oneshot_lalt, OS_ALT),
+    [COMBO_OS_LSFT]       = COMBO(oneshot_lsft, OS_SFT),
     [COMBO_OS_RCTL]       = COMBO(oneshot_rctl, OS_CTL),
     [COMBO_OS_RALT]       = COMBO(oneshot_ralt, OS_ALT),
     [COMBO_J]             = COMBO(comboJ, KC_J),

@@ -18,8 +18,8 @@
 // const key_override_t r_period_override = ko_make_basic(MOD_BIT(KC_RSFT), KC_DOT, KC_EXLM);
 const key_override_t dash_override   = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PIPE);
 const key_override_t colon_override  = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
-const key_override_t period_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_AT);
-const key_override_t slash_override  = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
+const key_override_t period_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_QUES);
+const key_override_t slash_override  = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_EXLM);
 const key_override_t comma_override  = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_DLR);
 
 // This globally defines all key overrides to be used

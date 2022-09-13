@@ -1,8 +1,10 @@
 # MCU name
-MCU = RP2040
-# Bootloader selection
-BOOTLOADER = rp2040
-SERIAL_DRIVER = vendor
+# MCU = RP2040
+# # Bootloader selection
+# BOOTLOADER = rp2040
+# SERIAL_DRIVER = vendor
+MCU = atmega32u4
+BOOTLOADER = caterina
 
 OLED_ENABLE = yes
 RGBLIGHT_ENABLE = no

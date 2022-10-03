@@ -1,8 +1,8 @@
 #pragma once
 #include "config_common.h"
 
-// USB device descriptor parameter
-#define PRODUCT         ursula
+// // USB device descriptor parameter
+// #define PRODUCT         ursula
 
 // key matrix size
 // rows are doubled for split keyboards

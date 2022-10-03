@@ -2,6 +2,7 @@
 MCU = RP2040
 # Bootloader selection
 BOOTLOADER = rp2040
+NO_USB_STARTUP_CHECK = yes
 SERIAL_DRIVER = vendor
 
 OLED_ENABLE = yes

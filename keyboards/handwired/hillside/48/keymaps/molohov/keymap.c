@@ -2,13 +2,13 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_HANDS_DOWN] = LAYOUT(
-    NUMPAD,     KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       RESET,
+    KC_MPLY,    KC_X,       KC_F,       KC_M,       KC_P,       KC_B,                               KC_MINS,    KC_DOT,     KC_SLSH,    KC_COMM,    KC_Q,       QK_BOOT,
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,       PC_SLACK,   CAPSWD,     KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
-                            KC_MPLY,    PC_SCSH,    GUIDEL,     BSPSYM,     ENTSFT,     TABSFT,     SPCNAV,     ESCBYO,     ON_TODO,    PC_SLACK
+                            KC_UP,      KC_DOWN,    GUIDEL,     BSPSYM,     ENTSFT,     TABSFT,     SPCNAV,     ESCBYO,     ON_TODO,    PC_LOCK
     ),
     [_SYM_NUM] = LAYOUT(
-    _______,    PC_EXIT,    KC_QUES,    PC_FIND,    PC_SALL,    SLKFPS,                             KC_GRV,     KC_AT,      KC_BSLS,    KC_EQL,     KC_TILD,    _______,
+    _______,    PC_EXIT,    KC_QUES,    PC_FIND,    PC_SALL,    SLKFPS,                             KC_AT,      KC_GRV,     KC_BSLS,    KC_EQL,     KC_TILD,    _______,
     _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             KC_9,       KC_0,       KC_1,       KC_2,       KC_3,       KC_4,
     _______,    KC_SLSH,    SW_TAB,     SW_WIN,     PC_CLIP,    VIM_RSP,    _______,    _______,    KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    KC_UNDS,    KC_DOT,     _______,    _______

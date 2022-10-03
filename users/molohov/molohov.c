@@ -213,19 +213,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_LEFT);
             }
             break;
-        case LPRNS:
+        case PRNS:
             if (record->event.pressed) {
                 SEND_STRING("()");
                 tap_code(KC_LEFT);
             }
             break;
-        case LBRCS:
+        case BRCS:
             if (record->event.pressed) {
                 SEND_STRING("[]");
                 tap_code(KC_LEFT);
             }
             break;
-        case LCBRS:
+        case CBRS:
             if (record->event.pressed) {
                 SEND_STRING("{}");
                 tap_code(KC_LEFT);

@@ -36,9 +36,9 @@ enum custom_keycodes {
     VIM_LIND,
     VIM_RIND,
     QUOTS,
-    LPRNS,
-    LBRCS,
-    LCBRS,
+    PRNS,
+    BRCS,
+    CBRS,
     Q_ENTER,
     IMPORT_PDB,
     CAPSWD,
@@ -204,6 +204,7 @@ enum custom_keycodes {
 
 // to-do
 #define ON_TODO         C(KC_1)
+#define OB_TODO         C(KC_ENT)
 // important
 #define ON_IMPT         C(KC_2)
 // question

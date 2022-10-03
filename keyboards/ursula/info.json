@@ -2,10 +2,11 @@
   "keyboard_name": "Ursula",
   "url": "https://github.com/jimmerricks/ursula",
   "maintainer": "jmnw",
+  "manufacturer": "jmnw",
   "usb": {
     "vid": "0x1804",
     "pid": "0x3048",
-    "device_ver": "0x0001"
+    "device_version": "0.0.1"
   },
   "width": 12,
   "height": 4.55,

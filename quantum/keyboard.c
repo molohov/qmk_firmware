@@ -66,9 +66,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef JOYSTICK_ENABLE
 #    include "process_joystick.h"
 #endif
-#ifdef PROGRAMMABLE_BUTTON_ENABLE
-#    include "programmable_button.h"
-#endif
 #ifdef HD44780_ENABLE
 #    include "hd44780.h"
 #endif
@@ -92,9 +89,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 #if defined(CRC_ENABLE)
 #    include "crc.h"
-#endif
-#ifdef DIGITIZER_ENABLE
-#    include "digitizer.h"
 #endif
 #ifdef VIRTSER_ENABLE
 #    include "virtser.h"
@@ -360,6 +354,9 @@ void keyboard_init(void) {
 #ifdef SPLIT_KEYBOARD
     split_pre_init();
 #endif
+#ifdef ENCODER_ENABLE
+    encoder_init();
+#endif
     matrix_init();
     quantum_init();
 #if defined(CRC_ENABLE)
@@ -379,9 +376,6 @@ void keyboard_init(void) {
 #endif
 #ifdef RGBLIGHT_ENABLE
     rgblight_init();
-#endif
-#ifdef ENCODER_ENABLE
-    encoder_init();
 #endif
 #ifdef STENO_ENABLE_ALL
     steno_init();
@@ -586,6 +580,10 @@ void keyboard_task(void) {
 
     quantum_task();
 
+#if defined(SPLIT_WATCHDOG_ENABLE)
+    split_watchdog_task();
+#endif
+
 #if defined(RGBLIGHT_ENABLE)
     rgblight_task();
 #endif
@@ -659,14 +657,6 @@ void keyboard_task(void) {
 
 #ifdef JOYSTICK_ENABLE
     joystick_task();
-#endif
-
-#ifdef DIGITIZER_ENABLE
-    digitizer_task();
-#endif
-
-#ifdef PROGRAMMABLE_BUTTON_ENABLE
-    programmable_button_send();
 #endif
 
 #ifdef BLUETOOTH_ENABLE

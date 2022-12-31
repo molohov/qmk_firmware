@@ -96,25 +96,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case VIMWRITE:
             if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_ENTER));
+                // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_ENTER));
+                tap_code(KC_ESC);
+                SEND_STRING(":w");
+                tap_code(KC_ENT);
+
             }
             break;
 
         case VIMWRITEQUIT:
             if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_ENTER));
+                // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_ENTER));
+                tap_code(KC_ESC);
+                SEND_STRING(":x");
+                tap_code(KC_ENT);
             }
             break;
 
         case VIMQUIT:
             if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_TAP(X_ENTER));
+                // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_TAP(X_ENTER));
+                tap_code(KC_ESC);
+                SEND_STRING(":q!");
+                tap_code(KC_ENT);
             }
             break;
 
         case VIMQUITALL:
             if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_TAP(X_A) SS_DELAY(100) SS_TAP(X_ENTER));
+                // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_TAP(X_A) SS_DELAY(100) SS_TAP(X_ENTER));
+                tap_code(KC_ESC);
+                SEND_STRING(":qa");
+                tap_code(KC_ENT);
             }
             break;
 
@@ -238,7 +251,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case CAPSWD:
             if (record->event.pressed) {
-                caps_word_set(true);  // Activate Caps Word!
+                // caps_word_set(true);  // Activate Caps Word!
+                caps_word_on();
             }
             break;
     }

@@ -137,6 +137,7 @@ enum custom_keycodes {
 #define  SLKCPS         SLACK_CODE_PASTE
 #define  SLKFPS         SLACK_FUNC_PASTE
 #define  WINRUN         C(A(KC_K))
+#define  PC_CTLW        C(KC_W)
 
 #define  LNX_PASTE      S(C(KC_V))
 #define  LNX_LWD        A(KC_B)
@@ -218,7 +219,7 @@ enum custom_keycodes {
 #define OS_GUI          OSM(MOD_LGUI)
 
 
-#define MODS_SHIFT (get_mods() & MOD_BIT(KC_LSHIFT) || get_mods() & MOD_BIT(KC_RSHIFT))
+#define MODS_SHIFT (get_mods() & MOD_BIT(KC_LSFT) || get_mods() & MOD_BIT(KC_RSFT))
 #define SEND_CAP_STRING(str, capitalized) if (MODS_SHIFT) { \
                                             clear_mods(); \
                                             SEND_STRING(capitalized); \

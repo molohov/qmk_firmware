@@ -58,10 +58,6 @@ const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
 // upper row
 // punctuation
 const uint16_t PROGMEM plus[]      = {KC_COMM, KC_SLSH, COMBO_END};
-// . + , = ;
-// const uint16_t PROGMEM semicolon[] = {KC_COMM, KC_DOT, COMBO_END};
-// const uint16_t PROGMEM at[]        = {KC_SLSH, KC_DOT, COMBO_END};
-// const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_DOT, COMBO_END};
 const uint16_t PROGMEM percent[]   = {KC_SLSH, KC_MINS, COMBO_END};
 const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
 const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};

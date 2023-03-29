@@ -6,6 +6,9 @@
         "rows": ["GP5"]
     },
     "rgblight": {
-        "pin": "A1"
+        "pin": "GP17"
+    },
+    "ws2812": {
+        "driver": "vendor"
     }
 }

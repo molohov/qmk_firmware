@@ -1,7 +1,3 @@
-# MCU name
-MCU = RP2040
-# Bootloader selection
-BOOTLOADER = rp2040
 # Build Options
 #   change yes to no to disable
 #
@@ -18,7 +14,6 @@ AUDIO_ENABLE = no           # Audio output
 ENCODER_ENABLE = yes
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
-WS2812_DRIVER = vendor
 OLED_ENABLE = yes
 OLED_DRIVER = custom
 # Project specific files

@@ -5,7 +5,6 @@
     "maintainer": "leon-anavi",
     "processor": "RP2040",
     "bootloader": "rp2040",
-    "debounce": 5,
     "features": {
         "bootmagic": false,
         "command": false,
@@ -35,6 +34,9 @@
 		"twinkle": true
         }
     },
+    "ws2812": {
+        "driver": "vendor"
+    },
     "encoder": {
 	"enabled": true,
         "rotary": [
@@ -45,10 +47,15 @@
 	    }
         ]
     },
+    "matrix_pins": {
+        "direct": [
+            ["GP26"]
+        ]
+    },
     "layouts": {
         "LAYOUT_k1": {
             "layout": [
-                { "label":"Mute", "x": 0, "y": 0 }
+                { "x": 0, "y": 0, "matrix": [0, 0] }
             ]
         }
     },

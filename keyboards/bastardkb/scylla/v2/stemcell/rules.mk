@@ -1,8 +1,3 @@
-# MCU name
-MCU = STM32F411
-
-# Bootloader selection
-BOOTLOADER = stm32-dfu
 CONVERT_TO = stemcell
 
 # Build Options
@@ -27,6 +22,5 @@ RGB_MATRIX_DRIVER = WS2812
 SPLIT_KEYBOARD = yes
 
 SERIAL_DRIVER = usart
-WS2812_DRIVER = pwm
 
 DEBOUNCE_TYPE = asym_eager_defer_pk

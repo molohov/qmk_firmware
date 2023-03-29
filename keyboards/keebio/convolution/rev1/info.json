@@ -6,7 +6,6 @@
     },
     "processor": "RP2040",
     "bootloader": "rp2040",
-    "debounce": 5,
     "diode_direction": "COL2ROW",
     "features": {
         "console": true,
@@ -24,6 +23,9 @@
             {"pin_a": "GP19", "pin_b": "GP18" },
             {"pin_a": "GP14", "pin_b": "GP15" }
         ]
+    },
+    "ws2812": {
+        "driver": "vendor"
     },
     "rgb_matrix": {
         "driver": "WS2812",

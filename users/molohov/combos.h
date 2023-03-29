@@ -102,7 +102,7 @@ enum combo_events {
     COMBO_SLACK_CODE,
     COMBO_SLACK_CODE_PASTE,
     // COMBO_AT,
-    COMBO_DOLLAR,
+    // COMBO_DOLLAR,
     // COMBO_SEMICOLON,
     COMBO_ASTERISK,
     COMBO_HASH,

@@ -1,7 +1,5 @@
 #pragma once
 
-// #include "config_common.h"
-
 #define SPLIT_USB_DETECT
 
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET

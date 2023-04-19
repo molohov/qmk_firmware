@@ -6,8 +6,8 @@
 // combos are defined from leftmost key to rightmost key
 // UPPER ROW
 // const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
-const uint16_t PROGMEM refresh[] = {KC_M, KC_B, COMBO_END};
-const uint16_t PROGMEM hash[]    = {KC_M, HRM_T, COMBO_END};
+const uint16_t PROGMEM refresh[]      = {KC_M, KC_B, COMBO_END};
+const uint16_t PROGMEM hash[]         = {KC_M, HRM_T, COMBO_END};
 // MIDDLE ROW
 const uint16_t PROGMEM screenshot[]   = {HRM_S, KC_M, COMBO_END};
 const uint16_t PROGMEM oneshot_lctl[] = {HRM_S, HRM_N, COMBO_END};
@@ -25,7 +25,7 @@ const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
 // const uint16_t PROGMEM send_3d[]      = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
 // THUMBS
-const uint16_t PROGMEM slack[] = {BSPSYM, ENTSFT, COMBO_END};
+const uint16_t PROGMEM slack[]        = {BSPSYM, ENTSFT, COMBO_END};
 const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
 
 // vim combos rooted from left home row middle finger
@@ -57,10 +57,14 @@ const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
 // combos are defined from rightmost key to leftmost key
 // upper row
 // punctuation
-const uint16_t PROGMEM plus[]      = {KC_COMM, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM percent[]   = {KC_SLSH, KC_MINS, COMBO_END};
+const uint16_t PROGMEM equal[]      = {KC_COMM, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM at[]         = {KC_COMM, KC_DOT, COMBO_END};
+// const uint16_t PROGMEM UNUSED[]         = {KC_COMM, KC_MINS, COMBO_END};
+const uint16_t PROGMEM plus[]       = {KC_SLSH, KC_DOT, COMBO_END};
+const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
+// const uint16_t PROGMEM UNUSED[]    = {KC_SLSH, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
-const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
+// const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
 
 // middle row
 // vim combos rooted from right home row middle finger
@@ -74,11 +78,11 @@ const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
 const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
 const uint16_t PROGMEM rabk[]         = {HRM_I, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM send_onnx[]    = {HRM_E, KC_O, COMBO_END};
 
 // lower row
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
-const uint16_t PROGMEM smiley[]       = {KC_COLN, KC_U, COMBO_END};
+// const uint16_t PROGMEM send_onnx[]    = {KC_COLN, KC_O, COMBO_END};
+const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
 
 // thumbs
 
@@ -101,11 +105,12 @@ enum combo_events {
     COMBO_LNX_LAST,
     COMBO_SLACK_CODE,
     COMBO_SLACK_CODE_PASTE,
-    // COMBO_AT,
+    COMBO_AT,
     // COMBO_DOLLAR,
     // COMBO_SEMICOLON,
     COMBO_ASTERISK,
     COMBO_HASH,
+    COMBO_EQUAL,
     COMBO_PLUS,
     COMBO_PERCENT,
     COMBO_ARROW,
@@ -161,11 +166,12 @@ combo_t key_combos[] = {
     [COMBO_VIM_QUIT]      = COMBO(vimquit, VIMQUIT),
     [COMBO_VIM_QUITALL]   = COMBO(vimquitall, VIMQUITALL),
     [COMBO_LNX_LAST]      = COMBO(lnx_last, LNX_LAST),
-    // [COMBO_AT]            = COMBO(at, KC_AT),
+    [COMBO_AT]            = COMBO(at, KC_AT),
     // [COMBO_DOLLAR]        = COMBO(dollar, KC_DLR),
     // [COMBO_SEMICOLON]     = COMBO(semicolon, KC_SCLN),
     [COMBO_ASTERISK]      = COMBO(asterisk, KC_PAST),
     [COMBO_HASH]          = COMBO(hash, KC_HASH),
+    [COMBO_EQUAL]         = COMBO(equal, KC_EQL),
     [COMBO_PLUS]          = COMBO(plus, KC_PPLS),
     [COMBO_PERCENT]       = COMBO(percent, KC_PERC),
     [COMBO_ARROW]         = COMBO(arrow, SENDARROW),

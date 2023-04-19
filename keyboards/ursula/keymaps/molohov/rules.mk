@@ -1,7 +1,3 @@
-# MCU name
-# MCU = RP2040
-# Bootloader selection
-# BOOTLOADER = rp2040
 CONVERT_TO = kb2040
 OPT_DEFS += -DHAL_USE_I2C=TRUE
 NO_USB_STARTUP_CHECK = yes

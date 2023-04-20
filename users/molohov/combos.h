@@ -8,6 +8,7 @@
 // const uint16_t PROGMEM send_xla[] = {KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM refresh[]      = {KC_M, KC_B, COMBO_END};
 const uint16_t PROGMEM hash[]         = {KC_M, HRM_T, COMBO_END};
+
 // MIDDLE ROW
 const uint16_t PROGMEM screenshot[]   = {HRM_S, KC_M, COMBO_END};
 const uint16_t PROGMEM oneshot_lctl[] = {HRM_S, HRM_N, COMBO_END};
@@ -20,13 +21,15 @@ const uint16_t PROGMEM comboJ[]       = {HRM_N, KC_G, COMBO_END};
 const uint16_t PROGMEM comboZ[]       = {HRM_N, KC_V, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
+
 // LOWER ROW
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
 // const uint16_t PROGMEM send_3d[]      = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
+
 // THUMBS
-const uint16_t PROGMEM slack[]        = {BSPSYM, ENTSFT, COMBO_END};
-const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
+// const uint16_t PROGMEM slack[]        = {BSPSYM, ENTSFT, COMBO_END};
+// const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
 
 // vim combos rooted from left home row middle finger
 // const uint16_t PROGMEM vimwrite[] =     {HRM_N, HRM_T, COMBO_END};
@@ -55,7 +58,7 @@ const uint16_t PROGMEM oneshot_lsft[] = {BSPSYM, HRM_T, COMBO_END};
 
 // RIGHT HAND
 // combos are defined from rightmost key to leftmost key
-// upper row
+// UPPER ROW
 // punctuation
 const uint16_t PROGMEM equal[]      = {KC_COMM, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM at[]         = {KC_COMM, KC_DOT, COMBO_END};
@@ -66,25 +69,25 @@ const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
 const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
 // const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
 
-// middle row
+// MIDDLE ROW
 // vim combos rooted from right home row middle finger
-const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
-const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
 const uint16_t PROGMEM lnx_last[]     = {HRM_I, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM oneshot_rctl[] = {HRM_I, HRM_E, COMBO_END};
 const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
 const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
 const uint16_t PROGMEM rabk[]         = {HRM_I, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
+const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
+const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
 
-// lower row
+// LOWER ROW
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 // const uint16_t PROGMEM send_onnx[]    = {KC_COLN, KC_O, COMBO_END};
 const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
 
-// thumbs
+// THUMBS
 
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
@@ -178,7 +181,7 @@ combo_t key_combos[] = {
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
     [COMBO_OS_LCTL]       = COMBO(oneshot_lctl, OS_CTL),
     [COMBO_OS_LALT]       = COMBO(oneshot_lalt, OS_ALT),
-    [COMBO_OS_LSFT]       = COMBO(oneshot_lsft, OS_SFT),
+    // [COMBO_OS_LSFT]       = COMBO(oneshot_lsft, OS_SFT),
     [COMBO_OS_RCTL]       = COMBO(oneshot_rctl, OS_CTL),
     [COMBO_OS_RALT]       = COMBO(oneshot_ralt, OS_ALT),
     [COMBO_J]             = COMBO(comboJ, KC_J),
@@ -196,7 +199,7 @@ combo_t key_combos[] = {
     // [COMBO_SEND3D]        = COMBO(send_3d, SEND3D),
     // [COMBO_SENDXLA]       = COMBO(send_xla, SENDXLA),
     // [COMBO_IPDB]          = COMBO(send_ipdb, PY_IPDB),
-    [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
+    // [COMBO_SLACK]          = COMBO(slack, PC_SLACK),
     [COMBO_SMILE]          = COMBO(smiley, SENDSMILE),
     // [COMBO_ONNX]          = COMBO(send_onnx, SENDONNX),
     // [COMBO_PC_COPY]         = COMBO(pc_copy,        PC_COPY),

@@ -129,14 +129,16 @@ enum custom_keycodes {
 #define  PC_BSWD        C(KC_BSPC)
 #define  PC_DLWD        C(KC_DEL)
 #define  PC_SLACK       A(KC_Q)
+#define  PC_OBSD        A(KC_Z)
 #define  PC_SCSH        G(S(KC_S))
 #define  PC_LWRD        C(KC_LEFT)
 #define  PC_RWRD        C(KC_RIGHT)
 #define  PC_EXIT        A(KC_F4)
 #define  PC_CLIP        G(KC_V)
+#define  WIN_MIN        G(KC_DOWN)
 #define  SLKCPS         SLACK_CODE_PASTE
 #define  SLKFPS         SLACK_FUNC_PASTE
-#define  WINRUN         C(A(KC_K))
+#define  WINRUN         A(KC_SPC)
 #define  PC_CTLW        C(KC_W)
 
 #define  LNX_PASTE      S(C(KC_V))

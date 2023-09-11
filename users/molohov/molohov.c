@@ -21,6 +21,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                         case KC_X: // XM -> XL
                             tap_code(KC_L);
                             return_state = false; // done.
+                            break;
                     }
                     break;
                 case KC_F:
@@ -28,20 +29,26 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                         case KC_X: //XF -> XC
                             tap_code(KC_C);
                             return_state = false; // done.
-                    }
-                    break;
-                case KC_C:
-                    switch (prior_keycode) {
-                        case KC_L: //LC -> LF
-                            tap_code(KC_F);
+                            break;
+                        case KC_M: // MF -> LF
+                            SEND_STRING(SS_TAP(X_BSPC)"lf");
                             return_state = false; // done.
+                            break;
                     }
                     break;
+                // case KC_C:
+                //     switch (prior_keycode) {
+                //         case KC_L: //LC -> LF
+                //             tap_code(KC_F);
+                //             return_state = false; // done.
+                //     }
+                //     break;
                 case KC_DOT:
                     switch (prior_keycode) {
                         case KC_Q: //Q. -> QU
                             tap_code(KC_U);
                             return_state = false; // done.
+                            break;
                     }
                     break;
                 // case KC_A:

@@ -26,6 +26,7 @@ const uint16_t PROGMEM comboZ[]       = {HRM_N, KC_V, COMBO_END};
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
 // const uint16_t PROGMEM send_3d[]      = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
+const uint16_t PROGMEM trtllm[]       = {KC_L, KC_T, COMBO_END};
 
 // THUMBS
 // const uint16_t PROGMEM slack[]        = {BSPSYM, ENTSFT, COMBO_END};
@@ -62,10 +63,10 @@ const uint16_t PROGMEM dlsim[]        = {KC_L, KC_D, COMBO_END};
 // punctuation
 const uint16_t PROGMEM equal[]      = {KC_COMM, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM at[]         = {KC_COMM, KC_DOT, COMBO_END};
-// const uint16_t PROGMEM UNUSED[]         = {KC_COMM, KC_MINS, COMBO_END};
+const uint16_t PROGMEM tilde[]      = {KC_COMM, KC_MINS, COMBO_END};
 const uint16_t PROGMEM plus[]       = {KC_SLSH, KC_DOT, COMBO_END};
 const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
-// const uint16_t PROGMEM UNUSED[]    = {KC_SLSH, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
 // const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
 
@@ -81,8 +82,10 @@ const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
 const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
 const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
+const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCBYO, COMBO_END};
 
 // LOWER ROW
+const uint16_t PROGMEM dtype[]        = {KC_Y, KC_D, COMBO_END};
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 // const uint16_t PROGMEM send_onnx[]    = {KC_COLN, KC_O, COMBO_END};
 const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
@@ -109,7 +112,8 @@ enum combo_events {
     COMBO_SLACK_CODE,
     COMBO_SLACK_CODE_PASTE,
     COMBO_AT,
-    // COMBO_DOLLAR,
+    COMBO_TILDE,
+    COMBO_DOLLAR,
     // COMBO_SEMICOLON,
     COMBO_ASTERISK,
     COMBO_HASH,
@@ -118,6 +122,7 @@ enum combo_events {
     COMBO_PERCENT,
     COMBO_ARROW,
     COMBO_DLSIM,
+    COMBO_TRTLLM,
     COMBO_J,
     COMBO_Z,
     COMBO_SCREENSHOT,
@@ -142,6 +147,8 @@ enum combo_events {
     COMBO_NUMP,
     COMBO_ONNX,
     COMBO_SMILE,
+    COMBO_ONEHUNDRED,
+    COMBO_DTYPE,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -170,7 +177,8 @@ combo_t key_combos[] = {
     [COMBO_VIM_QUITALL]   = COMBO(vimquitall, VIMQUITALL),
     [COMBO_LNX_LAST]      = COMBO(lnx_last, LNX_LAST),
     [COMBO_AT]            = COMBO(at, KC_AT),
-    // [COMBO_DOLLAR]        = COMBO(dollar, KC_DLR),
+    [COMBO_TILDE]         = COMBO(tilde, HOMEDIR),
+    [COMBO_DOLLAR]        = COMBO(dollar, KC_DLR),
     // [COMBO_SEMICOLON]     = COMBO(semicolon, KC_SCLN),
     [COMBO_ASTERISK]      = COMBO(asterisk, KC_PAST),
     [COMBO_HASH]          = COMBO(hash, KC_HASH),
@@ -179,6 +187,7 @@ combo_t key_combos[] = {
     [COMBO_PERCENT]       = COMBO(percent, KC_PERC),
     [COMBO_ARROW]         = COMBO(arrow, SENDARROW),
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
+    [COMBO_TRTLLM]        = COMBO(trtllm, TRTLLM),
     [COMBO_OS_LCTL]       = COMBO(oneshot_lctl, OS_CTL),
     [COMBO_OS_LALT]       = COMBO(oneshot_lalt, OS_ALT),
     // [COMBO_OS_LSFT]       = COMBO(oneshot_lsft, OS_SFT),
@@ -223,4 +232,6 @@ combo_t key_combos[] = {
     // [COMBO_ESC]             = COMBO(escape,         KC_ESC),
     // [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
     // [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
+    [COMBO_ONEHUNDRED]    = COMBO(onehundred, ONEHUNDRED),
+    [COMBO_DTYPE]         = COMBO(dtype, DTYPE),
 };

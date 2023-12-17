@@ -18,9 +18,9 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                         case KC_F: // FM -> FL
                         case KC_P: // PM -> PL
                         case KC_B: // BM -> BL
-                        case KC_X: // XM -> XL
                             tap_code(KC_L);
                             return_state = false; // done.
+                            break;
                     }
                     break;
                 case KC_F:
@@ -28,20 +28,26 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                         case KC_X: //XF -> XC
                             tap_code(KC_C);
                             return_state = false; // done.
-                    }
-                    break;
-                case KC_C:
-                    switch (prior_keycode) {
-                        case KC_L: //LC -> LF
-                            tap_code(KC_F);
+                            break;
+                        case KC_M: // MF -> LF
+                            SEND_STRING(SS_TAP(X_BSPC)"lf");
                             return_state = false; // done.
+                            break;
                     }
                     break;
+                // case KC_C:
+                //     switch (prior_keycode) {
+                //         case KC_L: //LC -> LF
+                //             tap_code(KC_F);
+                //             return_state = false; // done.
+                //     }
+                //     break;
                 case KC_DOT:
                     switch (prior_keycode) {
                         case KC_Q: //Q. -> QU
                             tap_code(KC_U);
                             return_state = false; // done.
+                            break;
                     }
                     break;
                 // case KC_A:
@@ -150,21 +156,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING("dlsim", "DLSim")
             }
             break;
-        case SEND3D:
+        case TRTLLM:
             if (record->event.pressed) {
-                SEND_CAP_STRING("3d", "3D")
+                SEND_CAP_STRING("trt-llm", "TRT-LLM")
             }
             break;
-        case SENDXLA:
+        case HOMEDIR:
             if (record->event.pressed) {
-                SEND_CAP_STRING("xla", "XLA")
+                SEND_STRING("~/");
             }
             break;
-        case SENDONNX:
-            if (record->event.pressed) {
-                SEND_CAP_STRING("onnx", "ONNX")
-            }
-            break;
+        // case SEND3D:
+        //     if (record->event.pressed) {
+        //         SEND_CAP_STRING("3d", "3D")
+        //     }
+        //     break;
+        // case SENDXLA:
+        //     if (record->event.pressed) {
+        //         SEND_CAP_STRING("xla", "XLA")
+        //     }
+        //     break;
+        // case SENDONNX:
+        //     if (record->event.pressed) {
+        //         SEND_CAP_STRING("onnx", "ONNX")
+        //     }
+        //     break;
         case SENDSMILE:
             if (record->event.pressed) {
                 SEND_CAP_STRING(":)", ":(")
@@ -253,6 +269,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 // caps_word_set(true);  // Activate Caps Word!
                 caps_word_on();
+            }
+            break;
+        case ONEHUNDRED:
+            if (record->event.pressed) {
+                SEND_STRING("100");
+            }
+            break;
+        case DTYPE:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("dtype", "DTYPE");
             }
             break;
     }

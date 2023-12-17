@@ -26,6 +26,7 @@ enum custom_keycodes {
     VIPASTE,
     LNX_LAST,
     KU_QU,
+    TRTLLM,
     DLSIM,
     SLACK_CODE,
     SLACK_CODE_PASTE,
@@ -49,6 +50,9 @@ enum custom_keycodes {
     SENDONNX,
     SENDSMILE,
     SENDARROW,
+    HOMEDIR,
+    ONEHUNDRED,
+    DTYPE,
 };
 
 #ifdef HRM
@@ -116,7 +120,7 @@ enum custom_keycodes {
 #define  ALTENT         ALT_T(KC_ENT)
 
 #define  GUIDEL         GUI_T(KC_DEL)
-#define  ALTESC         ALT_T(KC_ESC)
+#define  ESCALT         ALT_T(KC_ESC)
 
 #define  ALT_UP         ALT_T(KC_UP)
 #define  NUMPAD         TG(_NUMPAD)

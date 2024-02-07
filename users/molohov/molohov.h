@@ -112,6 +112,8 @@ enum custom_keycodes {
 
 #define  ESCOTH         LT(_OTHER, KC_ESC)
 // #define  SPCNAV         LT(_NAV_SYM_NUM, KC_SPC)
+#define  QWERTY         TG(_QWERTY_GAME)
+#define  HANDSD         TG(_HANDS_DOWN)
 
 #define  DELSFT         LSFT_T(KC_DEL)
 #define  ESCSFT         RSFT_T(KC_ESC)
@@ -148,6 +150,8 @@ enum custom_keycodes {
 #define  SLKFPS         SLACK_FUNC_PASTE
 #define  WINRUN         A(KC_Q)
 #define  PC_CTLW        C(KC_W)
+#define  PC_BLTH        G(KC_K)
+#define  PC_HDR         A(G((KC_B)))
 
 #define  LNX_PASTE      S(C(KC_V))
 #define  LNX_LWD        A(KC_B)

@@ -6,7 +6,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z,       KC_R,       HRM_S,      HRM_N,      HRM_T,      KC_G,                               KC_QUOT,    HRM_A,      HRM_E,      HRM_I,      KC_H,       KC_J,
     KC_HOME,    KC_W,       KC_C,       KC_L,       KC_D,       KC_V,                               KC_COLN,    KC_U,       KC_O,       KC_Y,       KC_K,       KC_END,
                             KC_MPLY,    KC_ESC,     GUIDEL,     BSPSYM,     ENTSFT,     TABSFT,     SPCNAV,     ESCBYO,     ON_TODO,    PC_LOCK,
-                                        WINRUN,     PC_SCSH,    VS_COMT,    CW_TOGG,    KC_UNDS,    PC_SLACK,   VS_CTLP,    PY_IPDB
+                                        WINRUN,     PC_SCSH,    VS_COMT,    CW_TOGG,    KC_UNDS,    PC_BLTH,    PC_HDR,     XXXXXXX
     ),
     [_SYM_NUM] = LAYOUT(
     _______,    PC_EXIT,    PC_OBSD,    PC_FIND,    PC_SALL,    SLKFPS,                             KC_SLSH,    KC_7,       KC_8,       KC_9,       KC_DLR,     _______,
@@ -16,11 +16,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_NAV] = LAYOUT(
-    _______,    _______,    VIM_LIND,   VS_COMT,    VIM_RIND,   PY_IPDB,                            _______,    BY_MVWL,    BY_MVWR,    BY_VSPL,    BY_KPNE,    _______,
+    QWERTY,     _______,    VIM_LIND,   VS_COMT,    VIM_RIND,   PY_IPDB,                            _______,    BY_MVWL,    BY_MVWR,    BY_VSPL,    BY_KPNE,    _______,
     _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    VS_EDIT,                            BY_RNWN,    PY_IPDB,    OB_TODO,    BY_HSPL,    BY_FPNE,    _______,
-    _______,    Q_ENTER,    KC_HOME,    KC_DOWN,    KC_END,     VS_EGRP,                            _______,    BY_FSWL,    BY_FSWR,    BY_NWIN,    BY_CLYT,    _______,
+    _______,    Q_ENTER,    PC_LWRD,    KC_DOWN,    PC_RWRD,    VS_EGRP,                            _______,    BY_FSWL,    BY_FSWR,    BY_NWIN,    BY_CLYT,    _______,
                             _______,    VS_COMT,    PC_DLWD,    PC_BSWD,    SHIFTV,     _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+    ),
+    [_QWERTY_GAME] = LAYOUT(
+    KC_ESC,     KC_T,       KC_Q,       KC_W,       KC_E,       KC_R,                               XXXXXXX,    KC_7,       KC_8,       KC_9,       XXXXXXX,    QK_BOOT,
+    KC_TAB,     KC_G,       KC_A,       KC_S,       KC_D,       KC_F,                               XXXXXXX,    KC_1,       KC_2,       KC_3,       XXXXXXX,    KC_J,
+    KC_LCTL,    KC_V,       KC_Z,       KC_X,       KC_C,       KC_V,                               XXXXXXX,    KC_4,       KC_5,       KC_6,       XXXXXXX,    KC_END,
+                            XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_SPC,     KC_LSFT,    HANDSD,     CM_TOGG,    XXXXXXX,    XXXXXXX,    XXXXXXX,
+                                        KC_4,       KC_3,       KC_2,       KC_1,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX
     ),
     [_BYO_ONOTE_VSC] = LAYOUT(
     KC_F11,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,

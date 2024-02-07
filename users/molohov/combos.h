@@ -17,8 +17,8 @@ const uint16_t PROGMEM lcbr[]         = {HRM_S, KC_P, COMBO_END};
 const uint16_t PROGMEM lbrc[]         = {HRM_S, KC_D, COMBO_END};
 const uint16_t PROGMEM labk[]         = {HRM_S, KC_G, COMBO_END};
 const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
-const uint16_t PROGMEM comboJ[]       = {HRM_N, KC_G, COMBO_END};
-const uint16_t PROGMEM comboZ[]       = {HRM_N, KC_V, COMBO_END};
+const uint16_t PROGMEM comboJ[]       = {HRM_R, HRM_T, COMBO_END};
+const uint16_t PROGMEM comboZ[]       = {HRM_R, KC_D, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 
@@ -63,11 +63,13 @@ const uint16_t PROGMEM trtllm[]       = {KC_L, KC_T, COMBO_END};
 // punctuation
 const uint16_t PROGMEM equal[]      = {KC_COMM, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM at[]         = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM tilde[]      = {KC_COMM, KC_MINS, COMBO_END};
+const uint16_t PROGMEM homedir[]      = {KC_COMM, KC_MINS, COMBO_END};
 const uint16_t PROGMEM plus[]       = {KC_SLSH, KC_DOT, COMBO_END};
-const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
+// const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
+const uint16_t PROGMEM backtick[]  = {KC_SLSH, HRM_A, COMBO_END};
 const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
+const uint16_t PROGMEM e2e[]       = {KC_SLSH, HRM_E, COMBO_END};
 // const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
 
 // MIDDLE ROW
@@ -82,11 +84,12 @@ const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
 const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
 const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
-const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCBYO, COMBO_END};
+const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCOTH, COMBO_END};
 
 // LOWER ROW
 const uint16_t PROGMEM dtype[]        = {KC_Y, KC_D, COMBO_END};
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
+const uint16_t PROGMEM ytseng[]       = {KC_Y, KC_U, COMBO_END};
 // const uint16_t PROGMEM send_onnx[]    = {KC_COLN, KC_O, COMBO_END};
 const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
 
@@ -112,14 +115,14 @@ enum combo_events {
     COMBO_SLACK_CODE,
     COMBO_SLACK_CODE_PASTE,
     COMBO_AT,
-    COMBO_TILDE,
+    COMBO_HOMEDIR,
     COMBO_DOLLAR,
     // COMBO_SEMICOLON,
     COMBO_ASTERISK,
     COMBO_HASH,
     COMBO_EQUAL,
     COMBO_PLUS,
-    COMBO_PERCENT,
+    COMBO_GRV,
     COMBO_ARROW,
     COMBO_DLSIM,
     COMBO_TRTLLM,
@@ -149,6 +152,8 @@ enum combo_events {
     COMBO_SMILE,
     COMBO_ONEHUNDRED,
     COMBO_DTYPE,
+    COMBO_E2E,
+    COMBO_YTSENG,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -177,14 +182,14 @@ combo_t key_combos[] = {
     [COMBO_VIM_QUITALL]   = COMBO(vimquitall, VIMQUITALL),
     [COMBO_LNX_LAST]      = COMBO(lnx_last, LNX_LAST),
     [COMBO_AT]            = COMBO(at, KC_AT),
-    [COMBO_TILDE]         = COMBO(tilde, HOMEDIR),
+    [COMBO_HOMEDIR]       = COMBO(homedir, HOMEDIR),
     [COMBO_DOLLAR]        = COMBO(dollar, KC_DLR),
     // [COMBO_SEMICOLON]     = COMBO(semicolon, KC_SCLN),
     [COMBO_ASTERISK]      = COMBO(asterisk, KC_PAST),
     [COMBO_HASH]          = COMBO(hash, KC_HASH),
     [COMBO_EQUAL]         = COMBO(equal, KC_EQL),
     [COMBO_PLUS]          = COMBO(plus, KC_PPLS),
-    [COMBO_PERCENT]       = COMBO(percent, KC_PERC),
+    [COMBO_GRV]           = COMBO(backtick, KC_GRV),
     [COMBO_ARROW]         = COMBO(arrow, SENDARROW),
     [COMBO_DLSIM]         = COMBO(dlsim, DLSIM),
     [COMBO_TRTLLM]        = COMBO(trtllm, TRTLLM),
@@ -234,4 +239,6 @@ combo_t key_combos[] = {
     // [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
     [COMBO_ONEHUNDRED]    = COMBO(onehundred, ONEHUNDRED),
     [COMBO_DTYPE]         = COMBO(dtype, DTYPE),
+    [COMBO_E2E]         = COMBO(e2e, SENDE2E),
+    [COMBO_YTSENG]         = COMBO(ytseng, SENDYTSENG),
 };

@@ -198,7 +198,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case SLACK_CODE_PASTE:
             if (record->event.pressed) {
-                SEND_STRING("```" SS_DELAY(100) SS_LCTL(SS_TAP(X_V)));
+                SEND_STRING("```" SS_DELAY(400) SS_TAP(X_ENTER) SS_LCTL(SS_TAP(X_V)));
             }
             break;
         case SLACK_FUNC_PASTE:
@@ -242,6 +242,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_LEFT);
             }
             break;
+        case GRVS:
+            if (record->event.pressed) {
+                SEND_STRING("``");
+                tap_code(KC_LEFT);
+            }
+            break;
         case PRNS:
             if (record->event.pressed) {
                 SEND_STRING("()");
@@ -279,6 +285,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DTYPE:
             if (record->event.pressed) {
                 SEND_CAP_STRING("dtype", "DTYPE");
+            }
+            break;
+        case SENDE2E:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("e2e", "E2E");
+            }
+            break;
+        case SENDYTSENG:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("yu-hsuan", "Yu-Hsuan");
+            }
+            break;
+        case PC_SLACK:
+            if (record->event.pressed) {
+                SEND_STRING(SS_LALT("q") SS_DELAY(50) "< slack" SS_DELAY(50) SS_TAP(X_ENTER));
             }
             break;
     }
@@ -321,10 +342,8 @@ void print_layers(void) {
         case _NAV:
             oled_write_P(PSTR("Navig"), false);
             break;
-        case _BYO_ONOTE_VSC:
-            oled_write_P(PSTR("Byobu"), false);
-            oled_write_P(PSTR("ONote"), false);
-            oled_write_P(PSTR("VCode"), false);
+        case _OTHER:
+            oled_write_P(PSTR("Other"), false);
             break;
         default:
             oled_write_P(PSTR("Undef"), false);

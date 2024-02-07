@@ -12,7 +12,7 @@ enum layer {
     _NUMPAD,
     _SYM_NUM,
     _NAV,
-    _BYO_ONOTE_VSC,
+    _OTHER,
     _QWERTY_GAME,
 };
 
@@ -37,6 +37,7 @@ enum custom_keycodes {
     VIM_LIND,
     VIM_RIND,
     QUOTS,
+    GRVS,
     PRNS,
     BRCS,
     CBRS,
@@ -53,6 +54,9 @@ enum custom_keycodes {
     HOMEDIR,
     ONEHUNDRED,
     DTYPE,
+    SENDE2E,
+    SENDYTSENG,
+    PC_SLACK
 };
 
 #ifdef HRM
@@ -106,7 +110,7 @@ enum custom_keycodes {
 #define  BSPSFT         SFT_T(KC_BSPC)
 #define  TABNAV         LT(_NAV, KC_TAB)
 
-#define  ESCBYO         LT(_BYO_ONOTE_VSC, KC_ESC)
+#define  ESCOTH         LT(_OTHER, KC_ESC)
 // #define  SPCNAV         LT(_NAV_SYM_NUM, KC_SPC)
 
 #define  DELSFT         LSFT_T(KC_DEL)
@@ -132,7 +136,7 @@ enum custom_keycodes {
 #define  PC_LOCK        G(KC_L)
 #define  PC_BSWD        C(KC_BSPC)
 #define  PC_DLWD        C(KC_DEL)
-#define  PC_SLACK       A(KC_Q)
+// #define  PC_SLACK       A(KC_Q)
 #define  PC_OBSD        A(KC_Z)
 #define  PC_SCSH        G(S(KC_S))
 #define  PC_LWRD        C(KC_LEFT)
@@ -142,7 +146,7 @@ enum custom_keycodes {
 #define  WIN_MIN        G(KC_DOWN)
 #define  SLKCPS         SLACK_CODE_PASTE
 #define  SLKFPS         SLACK_FUNC_PASTE
-#define  WINRUN         A(KC_SPC)
+#define  WINRUN         A(KC_Q)
 #define  PC_CTLW        C(KC_W)
 
 #define  LNX_PASTE      S(C(KC_V))

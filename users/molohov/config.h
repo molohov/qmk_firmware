@@ -10,7 +10,7 @@
 //#define HRM
 // #define IGNORE_MOD_TAP_INTERRUPT
 
-#define ADAPTIVE_TERM 300
+#define ADAPTIVE_TERM 150
 
 #define COMBO_STRICT_TIMER
 #define COMBO_TERM 20

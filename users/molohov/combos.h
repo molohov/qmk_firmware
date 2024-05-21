@@ -66,6 +66,7 @@ const uint16_t PROGMEM at[]         = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM homedir[]      = {KC_COMM, KC_MINS, COMBO_END};
 const uint16_t PROGMEM plus[]       = {KC_SLSH, KC_DOT, COMBO_END};
 // const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
+const uint16_t PROGMEM hyphen[]    = {KC_SLSH, KC_MINS, COMBO_END};
 const uint16_t PROGMEM backtick[]  = {KC_SLSH, HRM_A, COMBO_END};
 const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
@@ -95,6 +96,7 @@ const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
 
 // THUMBS
 
+const uint16_t PROGMEM underscore[]    = {SPCNAV, TABSFT, COMBO_END};
 // const uint16_t PROGMEM ku_qu[]    = {KC_U, KC_K, COMBO_END};
 // const uint16_t PROGMEM win_bluetooth[] = {KC_K, KC_Y, COMBO_END};
 // const uint16_t PROGMEM lnx_cls[]  = {KC_Y, KC_O, COMBO_END};
@@ -154,6 +156,8 @@ enum combo_events {
     COMBO_DTYPE,
     COMBO_E2E,
     COMBO_YTSENG,
+    COMBO_UNDERSCORE,
+    COMBO_HYPHEN,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -237,8 +241,10 @@ combo_t key_combos[] = {
     // [COMBO_ESC]             = COMBO(escape,         KC_ESC),
     // [COMBO_LNX_CLS]         = COMBO(lnx_cls,        C(KC_L)),
     // [COMBO_KU_QU]           = COMBO(ku_qu,          KU_QU),
-    [COMBO_ONEHUNDRED]    = COMBO(onehundred, ONEHUNDRED),
-    [COMBO_DTYPE]         = COMBO(dtype, DTYPE),
-    [COMBO_E2E]         = COMBO(e2e, SENDE2E),
-    [COMBO_YTSENG]         = COMBO(ytseng, SENDYTSENG),
+    [COMBO_ONEHUNDRED]      = COMBO(onehundred, ONEHUNDRED),
+    [COMBO_DTYPE]           = COMBO(dtype, DTYPE),
+    [COMBO_E2E]             = COMBO(e2e, SENDE2E),
+    [COMBO_YTSENG]          = COMBO(ytseng, SENDYTSENG),
+    [COMBO_UNDERSCORE]      = COMBO(underscore, KC_UNDS),
+    [COMBO_HYPHEN]         = COMBO(hyphen, KC_MINS),
 };

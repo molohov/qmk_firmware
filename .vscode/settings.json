@@ -29,5 +29,5 @@
 	    "editor.formatOnSave": false
     },
     "cmake.configureOnOpen": false,
-    "workbench.colorTheme": "Rosé Pine Moon"
+    "workbench.colorTheme": "Rosé Pine Moon",
 }

@@ -56,7 +56,8 @@ enum custom_keycodes {
     DTYPE,
     SENDE2E,
     SENDYTSENG,
-    PC_SLACK
+    PC_SLACK,
+    MD_TODO,
 };
 
 #ifdef HRM
@@ -101,6 +102,7 @@ enum custom_keycodes {
 #define  ENTSFT         LSFT_T(KC_ENT)
 #define  TABSFT         RSFT_T(KC_TAB)
 #define  SPCSFT         RSFT_T(KC_SPC)
+#define  UNDSFT         RSFT_T(KC_UNDS)
 
 #define  BSPNAV         LT(_NAV, KC_BSPC)
 #define  ENTBYO         LT(_BYO_ONOTE_VSC, KC_ENT)

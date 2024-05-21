@@ -302,6 +302,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LALT("q") SS_DELAY(50) "< slack" SS_DELAY(50) SS_TAP(X_ENTER));
             }
             break;
+        case MD_TODO:
+            if (record->event.pressed) {
+                SEND_STRING("- [ ] ");
+            }
+            break;
     }
     return true;
 }

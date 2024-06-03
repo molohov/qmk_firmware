@@ -1,0 +1,28 @@
+# alias aliases
+alias ea='vim ~/Downloads/qmk_firmware/qmk_aliases'
+alias ra='source ~/.bashrc'
+
+# git aliases
+alias gs='git status'
+alias gd='git diff'
+alias gad='git add'
+alias gadu='git add -u'
+alias gadp='git add -p'
+alias gcom='git commit'
+alias gch='git checkout'
+alias gchb='git checkout -b'
+alias gpush='git push -u origin HEAD'
+alias gpull='git pull'
+alias gmerge='git merge'
+
+# build aliases
+alias makeava='make avalanche/v2:molohov'
+alias makeavaflash='make avalanche/v2:molohov:flash'
+alias makexen='make xenon:molohov'
+alias makexenflash='make xenon:molohov:flash'
+alias makeabsolem='make absolem:molohov'
+alias makeabsolemflash='make absolem:molohov:flash'
+alias makehill='make handwired/hillside/48:molohov'
+alias makehillflash='make handwired/hillside/48:molohov:flash'
+alias makeursula='make ursula:molohov'
+alias makeursulaflash='make ursula:molohov:flash'

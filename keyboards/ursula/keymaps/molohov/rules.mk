@@ -1,0 +1,18 @@
+CONVERT_TO = kb2040
+OPT_DEFS += -DHAL_USE_I2C=TRUE
+NO_USB_STARTUP_CHECK = yes
+SERIAL_DRIVER = vendor
+
+OLED_ENABLE = yes
+RGBLIGHT_ENABLE = no
+EXTRAKEY_ENABLE = yes
+LTO_ENABLE = yes
+COMBO_ENABLE = yes
+KEY_OVERRIDE_ENABLE = yes
+
+# Disable unsupported hardware, maybe it reduces firmware size?
+AUDIO_SUPPORTED = no
+BACKLIGHT_SUPPORTED = no
+CONSOLE_ENABLE = no
+MOUSEKEY_ENABLE = no
+VIA_ENABLE = no

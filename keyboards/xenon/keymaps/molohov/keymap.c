@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         WINRUN,     PC_SCSH,    VS_COMT,    CW_TOGG,    KC_UNDS,    PC_BLTH,    PC_HDR,     KC_INS
     ),
     [_SYM_NUM] = LAYOUT(
-    _______,    PC_EXIT,    PC_OBSD,    PC_FIND,    PC_SALL,    SLKFPS,                             KC_SLSH,    KC_7,       KC_8,       KC_9,       KC_DLR,     _______,
+    _______,    PC_EXIT,    _______,    PC_FIND,    PC_SALL,    SLKFPS,                             KC_SLSH,    KC_7,       KC_8,       KC_9,       KC_DLR,     _______,
     _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             KC_PERC,    KC_1,       KC_2,       KC_3,       KC_DOT,     _______,
     _______,    WIN_MIN,    SW_TAB,     SW_WIN,     PC_CLIP,    VIM_RSP,                            _______,    KC_4,       KC_5,       KC_6,       KC_COMM,    _______,
                             _______,    _______,    _______,    _______,    _______,    _______,    KC_UNDS,    KC_0,       _______,    _______,
@@ -70,70 +70,12 @@ bool oled_task_user(void) {
 }
 #endif
 
-// bool is_alt_tab_active = false;
-// uint16_t alt_tab_timer = 0;
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        // left side
-        switch(biton32(layer_state)) {
-        case _HANDS_DOWN:
-            // alt_tab_timer = timer_read();
-            // if (!is_alt_tab_active) {
-            //     is_alt_tab_active = true;
-            //     register_code(KC_LALT);
-            // }
-            // volume rocker
-            if (clockwise) {
-                tap_code(KC_VOLD);
-            } else {
-                tap_code(KC_VOLU);
-            }
-            break;
-        case _NAV:
-            // same hand as toggle, hard to use
-            break;
-        case _SYM_NUM:
-            // TODO
-            break;
-        }
-
-    } else if (index == 1) {
-        // right side
-        switch(biton32(layer_state)) {
-        case _HANDS_DOWN:
-            // vscode tab switching
-            if (clockwise) {
-                tap_code16(VS_NEDT);
-            } else {
-                tap_code16(VS_PEDT);
-            }
-            break;
-        case _NAV:
-            // virtual desktop switching
-            if (clockwise) {
-                tap_code16(C(G(KC_RIGHT)));
-            } else {
-                tap_code16(C(G(KC_LEFT)));
-            }
-            break;
-        case _SYM_NUM:
-            // same hand as layer toggle, hard to use
-            break;
-        }
-    }
-    return true;
-}
-
-// Runs just one time when the keyboard initializes.
-void matrix_scan_user(void) {
-    static bool has_ran_yet = false;
-    if (!has_ran_yet) {
-        has_ran_yet = true;
-    }
-    // if (is_alt_tab_active) {
-    //   if (timer_elapsed(alt_tab_timer) > 1000) {
-    //     unregister_code(KC_LALT);
-    //     is_alt_tab_active = false;
-    //   }
-    // }
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [_HANDS_DOWN]   = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [_SYM_NUM]      = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [_NAV]          = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [_QWERTY_GAME]  = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [_OTHER]        = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
 };
+#endif

@@ -28,7 +28,7 @@ enum custom_keycodes {
     KU_QU,
     TRTLLM,
     DLSIM,
-    SLACK_CODE,
+    MD_CODE,
     SLACK_CODE_PASTE,
     SLACK_FUNC_PASTE,
     COPY_PASTE,
@@ -59,6 +59,7 @@ enum custom_keycodes {
     PC_SLACK,
     MD_TODO,
     SENDVLLM,
+    SENDJUST,
 };
 
 #ifdef HRM
@@ -229,7 +230,6 @@ enum custom_keycodes {
 #define ON_QUES         C(KC_3)
 
 #define PY_IPDB         IMPORT_PDB
-#define SLK_CDP         SLACK_CODE_PASTE
 #define OS_SFT          OSM(MOD_LSFT)
 #define OS_CTL          OSM(MOD_LCTL)
 #define OS_ALT          OSM(MOD_LALT)

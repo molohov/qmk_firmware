@@ -84,8 +84,8 @@ const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
 const uint16_t PROGMEM rabk[]         = {HRM_I, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
 const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {HRM_E, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_COLN, COMBO_END};
+const uint16_t PROGMEM vimquit[]      = {HRM_E, SPCNAV, COMBO_END};
+const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
 const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCOTH, COMBO_END};
 
 // LOWER ROW
@@ -93,6 +93,7 @@ const uint16_t PROGMEM dtype[]        = {KC_Y, KC_D, COMBO_END};
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM ytseng[]       = {KC_Y, KC_U, COMBO_END};
 // const uint16_t PROGMEM send_onnx[]    = {KC_COLN, KC_O, COMBO_END};
+const uint16_t PROGMEM just[]         = {SPCNAV, KC_U, COMBO_END};
 const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
 
 // THUMBS
@@ -160,6 +161,7 @@ enum combo_events {
     COMBO_UNDERSCORE,
     COMBO_HYPHEN,
     COMBO_VLLM,
+    COMBO_JUST,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -250,4 +252,5 @@ combo_t key_combos[] = {
     [COMBO_UNDERSCORE]      = COMBO(underscore, KC_UNDS),
     [COMBO_HYPHEN]         = COMBO(hyphen, KC_MINS),
     [COMBO_VLLM]          = COMBO(vllm, SENDVLLM),
+    [COMBO_JUST]          = COMBO(just, SENDJUST),
 };

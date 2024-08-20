@@ -191,7 +191,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING("->", "<-")
             }
             break;
-        case SLACK_CODE:
+        case MD_CODE:
             if (record->event.pressed) {
                 SEND_STRING("```");
             }
@@ -300,6 +300,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case SENDVLLM:
             if (record->event.pressed) {
                 SEND_CAP_STRING("vllm", "vLLM");
+            }
+            break;
+        case SENDJUST:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("just", "Just");
             }
             break;
         case PC_SLACK:

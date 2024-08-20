@@ -19,7 +19,6 @@
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
 #define SERIAL_USE_MULTI_TRANSACTION
-#define EE_HANDS
 
 // encoders
 #define ENCODERS_PAD_A {B5}
@@ -31,6 +30,8 @@
   #define OLED_DISPLAY_128X64
   #define OLED_TIMEOUT 30000
 #endif
+
+#define MASTER_RIGHT
 
 /*
 // RGB underglow and per key

@@ -28,14 +28,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
     _______,    PC_EXIT,    WINRUN,     PC_FIND,    PC_SALL,    SLKFPS,                             KC_SLSH,    KC_7,       KC_8,       KC_9,       KC_DLR,     _______,
     _______,    PC_UNDO,    PC_CUT,     PC_COPY,    PC_PASTE,   SLKCPS,                             KC_PERC,    KC_1,       KC_2,       KC_3,       KC_DOT,     _______,
-    _______,    WIN_MIN,    SW_TAB,     SW_WIN,     PC_CLIP,    VIM_RSP,    _______,    _______,    KC_COLN,    KC_4,       KC_5,       KC_6,       KC_COMM,    _______,
-                            _______,    _______,    _______,    _______,    _______,    _______,    KC_UNDS,    KC_0,       _______,    _______
+    _______,    WIN_MIN,    SW_TAB,     SW_WIN,     PC_CLIP,    CW_TOGG,    _______,    _______,    KC_COLN,    KC_4,       KC_5,       KC_6,       KC_COMM,    _______,
+                            _______,    _______,    _______,    _______,    _______,    BSPSFT,     KC_UNDS,    KC_0,       _______,    _______
     ),
     [_NAV] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    VS_EDIT,    VIM_LIND,   VS_COMT,    VIM_RIND,   KC_HOME,                            BY_DISF,    BY_MVWL,    BY_MVWR,    BY_VSPL,    BY_KPNE,    _______,
-    _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    SHIFTV,                             BY_RNWN,    GRVS,       MD_TODO,    BY_HSPL,    BY_NWIN,    _______,
-    _______,    VS_EGRP,    PC_LWRD,    KC_DOWN,    PC_RWRD,    KC_END,     SHIFTV,     _______,    PY_IPDB,    BY_FSWL,    BY_FSWR,    BY_FPNE,    BY_CLYT,    _______,
+    _______,    VS_EDIT,    VIM_LIND,   VS_COMT,    VIM_RIND,   KC_HOME,                            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    SHIFTV,                             _______,    GRVS,       MD_TODO,    MD_CODE,    _______,    _______,
+    _______,    VS_EGRP,    PC_LWRD,    KC_DOWN,    PC_RWRD,    KC_END,     SHIFTV,     _______,    PY_IPDB,    _______,    _______,    _______,    _______,    _______,
                             _______,    _______,    PC_DLWD,    PC_BSWD,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_OTHER] = LAYOUT(

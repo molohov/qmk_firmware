@@ -60,6 +60,7 @@ enum custom_keycodes {
     MD_TODO,
     SENDVLLM,
     SENDJUST,
+    SENDSUCCESS,
 };
 
 #ifdef HRM

@@ -19,6 +19,7 @@ const uint16_t PROGMEM labk[]         = {HRM_S, KC_G, COMBO_END};
 const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboJ[]       = {HRM_R, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboZ[]       = {HRM_R, KC_D, COMBO_END};
+const uint16_t PROGMEM success[]       = {HRM_S, KC_C, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 
@@ -64,15 +65,12 @@ const uint16_t PROGMEM vllm[]         = {KC_L, KC_V, COMBO_END};
 // punctuation
 const uint16_t PROGMEM equal[]      = {KC_COMM, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM at[]         = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM homedir[]      = {KC_COMM, KC_MINS, COMBO_END};
+const uint16_t PROGMEM homedir[]    = {KC_COMM, KC_MINS, COMBO_END};
 const uint16_t PROGMEM plus[]       = {KC_SLSH, KC_DOT, COMBO_END};
-// const uint16_t PROGMEM percent[]    = {KC_SLSH, KC_MINS, COMBO_END};
-const uint16_t PROGMEM hyphen[]    = {KC_SLSH, KC_MINS, COMBO_END};
-const uint16_t PROGMEM backtick[]  = {KC_SLSH, HRM_A, COMBO_END};
-const uint16_t PROGMEM dollar[]    = {KC_SLSH, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM arrow[]     = {KC_DOT, KC_MINS, COMBO_END};
-const uint16_t PROGMEM e2e[]       = {KC_SLSH, HRM_E, COMBO_END};
-// const uint16_t PROGMEM send_ipdb[] = {KC_SLSH, HRM_A, COMBO_END};
+const uint16_t PROGMEM dollar[]     = {KC_SLSH, HRM_A, COMBO_END};
+const uint16_t PROGMEM backtick[]   = {KC_SLSH, KC_MINS, COMBO_END};
+const uint16_t PROGMEM arrow[]      = {KC_DOT, KC_MINS, COMBO_END};
+const uint16_t PROGMEM e2e[]        = {KC_SLSH, HRM_E, COMBO_END};
 
 // MIDDLE ROW
 // vim combos rooted from right home row middle finger
@@ -87,6 +85,7 @@ const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
 const uint16_t PROGMEM vimquit[]      = {HRM_E, SPCNAV, COMBO_END};
 const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
 const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCOTH, COMBO_END};
+const uint16_t PROGMEM ampersand[]    = {HRM_A, KC_QUOT, COMBO_END};
 
 // LOWER ROW
 const uint16_t PROGMEM dtype[]        = {KC_Y, KC_D, COMBO_END};
@@ -162,6 +161,8 @@ enum combo_events {
     COMBO_HYPHEN,
     COMBO_VLLM,
     COMBO_JUST,
+    COMBO_SUCCESS,
+    COMBO_AMPERSAND,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -250,7 +251,9 @@ combo_t key_combos[] = {
     [COMBO_E2E]             = COMBO(e2e, SENDE2E),
     [COMBO_YTSENG]          = COMBO(ytseng, SENDYTSENG),
     [COMBO_UNDERSCORE]      = COMBO(underscore, KC_UNDS),
-    [COMBO_HYPHEN]         = COMBO(hyphen, KC_MINS),
+    // [COMBO_HYPHEN]         = COMBO(hyphen, KC_MINS),
     [COMBO_VLLM]          = COMBO(vllm, SENDVLLM),
     [COMBO_JUST]          = COMBO(just, SENDJUST),
+    [COMBO_SUCCESS]       = COMBO(success, SENDSUCCESS),
+    [COMBO_AMPERSAND]       = COMBO(ampersand, KC_AMPR),
 };

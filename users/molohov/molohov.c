@@ -322,6 +322,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING("success", "Success");
             }
             break;
+        case SENDTRTLLMBENCH:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("trtllm-bench", "TRTLLM-BENCH");
+            }
+            break;
     }
     return true;
 }

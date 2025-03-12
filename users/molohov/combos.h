@@ -19,9 +19,10 @@ const uint16_t PROGMEM labk[]         = {HRM_S, KC_G, COMBO_END};
 const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboJ[]       = {HRM_R, HRM_T, COMBO_END};
 const uint16_t PROGMEM comboZ[]       = {HRM_R, KC_D, COMBO_END};
-const uint16_t PROGMEM success[]       = {HRM_S, KC_C, COMBO_END};
+// const uint16_t PROGMEM success[]       = {HRM_S, KC_C, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
+const uint16_t PROGMEM trtllmbench[]       = {HRM_T, KC_B, COMBO_END};
 
 // LOWER ROW
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
@@ -92,7 +93,7 @@ const uint16_t PROGMEM dtype[]        = {KC_Y, KC_D, COMBO_END};
 const uint16_t PROGMEM oneshot_ralt[] = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM ytseng[]       = {KC_Y, KC_U, COMBO_END};
 // const uint16_t PROGMEM send_onnx[]    = {KC_COLN, KC_O, COMBO_END};
-const uint16_t PROGMEM just[]         = {SPCNAV, KC_U, COMBO_END};
+// const uint16_t PROGMEM just[]         = {SPCNAV, KC_U, COMBO_END};
 const uint16_t PROGMEM smiley[]       = {KC_U, KC_COLN, COMBO_END};
 
 // THUMBS
@@ -161,8 +162,9 @@ enum combo_events {
     COMBO_HYPHEN,
     COMBO_VLLM,
     COMBO_JUST,
-    COMBO_SUCCESS,
+    // COMBO_SUCCESS,
     COMBO_AMPERSAND,
+    COMBO_TRTLLMBENCH,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -253,7 +255,8 @@ combo_t key_combos[] = {
     [COMBO_UNDERSCORE]      = COMBO(underscore, KC_UNDS),
     // [COMBO_HYPHEN]         = COMBO(hyphen, KC_MINS),
     [COMBO_VLLM]          = COMBO(vllm, SENDVLLM),
-    [COMBO_JUST]          = COMBO(just, SENDJUST),
-    [COMBO_SUCCESS]       = COMBO(success, SENDSUCCESS),
+    // [COMBO_JUST]          = COMBO(just, SENDJUST),
+    // [COMBO_SUCCESS]       = COMBO(success, SENDSUCCESS),
     [COMBO_AMPERSAND]       = COMBO(ampersand, KC_AMPR),
+    [COMBO_TRTLLMBENCH]       = COMBO(trtllmbench, SENDTRTLLMBENCH),
 };

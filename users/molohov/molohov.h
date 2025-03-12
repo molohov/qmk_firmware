@@ -61,6 +61,7 @@ enum custom_keycodes {
     SENDVLLM,
     SENDJUST,
     SENDSUCCESS,
+    SENDTRTLLMBENCH,
 };
 
 #ifdef HRM

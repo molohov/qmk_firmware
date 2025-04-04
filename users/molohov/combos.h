@@ -81,10 +81,10 @@ const uint16_t PROGMEM rprn[]         = {HRM_I, HRM_A, COMBO_END};
 const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
 const uint16_t PROGMEM rabk[]         = {HRM_I, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
-const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
-const uint16_t PROGMEM vimquit[]      = {HRM_E, SPCNAV, COMBO_END};
-const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
+// const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
+// const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
+// const uint16_t PROGMEM vimquit[]      = {HRM_E, SPCNAV, COMBO_END};
+// const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
 const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCOTH, COMBO_END};
 const uint16_t PROGMEM ampersand[]    = {HRM_A, KC_QUOT, COMBO_END};
 
@@ -187,10 +187,10 @@ enum combo_events {
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
 combo_t key_combos[] = {
-    [COMBO_VIM_WRITE]     = COMBO(vimwrite, VIMWRITE),
-    [COMBO_VIM_WRITEQUIT] = COMBO(vimwritequit, VIMWRITEQUIT),
-    [COMBO_VIM_QUIT]      = COMBO(vimquit, VIMQUIT),
-    [COMBO_VIM_QUITALL]   = COMBO(vimquitall, VIMQUITALL),
+    // [COMBO_VIM_WRITE]     = COMBO(vimwrite, VIMWRITE),
+    // [COMBO_VIM_WRITEQUIT] = COMBO(vimwritequit, VIMWRITEQUIT),
+    // [COMBO_VIM_QUIT]      = COMBO(vimquit, VIMQUIT),
+    // [COMBO_VIM_QUITALL]   = COMBO(vimquitall, VIMQUITALL),
     [COMBO_LNX_LAST]      = COMBO(lnx_last, LNX_LAST),
     [COMBO_AT]            = COMBO(at, KC_AT),
     [COMBO_HOMEDIR]       = COMBO(homedir, HOMEDIR),

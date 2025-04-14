@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,                            _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    VS_EDIT,    VIM_LIND,   VS_COMT,    VIM_RIND,   KC_HOME,                            BY_FSWL,    BY_FSWR,    VIMQUIT,    MD_TODO,    QK_BOOT,    _______,
+    _______,    VS_EDIT,    VIM_LIND,   VS_COMT,    VIM_RIND,   WINRUN,                             BY_FSWL,    BY_FSWR,    VIMQUIT,    MD_TODO,    QK_BOOT,    _______,
     _______,    VS_TERM,    KC_LEFT,    KC_UP,      KC_RGHT,    SHIFTV,                             BY_RNWN,    BY_NWIN,    VIMWRITE,   GRVS,       CW_TOGG,    _______,
-    _______,    VS_EGRP,    PC_LWRD,    KC_DOWN,    PC_RWRD,    KC_END,     SHIFTV,     _______,    BY_KSRV,    BY_HSPL,    VIMWRITEQUIT, MD_CODE,  PY_IPDB,    _______,
+    _______,    KC_HOME,    PC_LWRD,    KC_DOWN,    PC_RWRD,    KC_END,     SHIFTV,     _______,    BY_KSRV,    BY_HSPL,    VIMWRITEQUIT, MD_CODE,  PY_IPDB,    _______,
                             _______,    _______,    PC_DLWD,    PC_BSWD,    _______,    _______,    _______,    _______,    _______,    _______
     ),
     [_OTHER] = LAYOUT(

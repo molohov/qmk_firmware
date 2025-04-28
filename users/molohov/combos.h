@@ -17,8 +17,8 @@ const uint16_t PROGMEM lcbr[]         = {HRM_S, KC_P, COMBO_END};
 const uint16_t PROGMEM lbrc[]         = {HRM_S, KC_D, COMBO_END};
 const uint16_t PROGMEM labk[]         = {HRM_S, KC_G, COMBO_END};
 const uint16_t PROGMEM asterisk[]     = {HRM_N, HRM_T, COMBO_END};
-const uint16_t PROGMEM comboJ[]       = {HRM_R, HRM_T, COMBO_END};
-const uint16_t PROGMEM comboZ[]       = {HRM_R, KC_D, COMBO_END};
+const uint16_t PROGMEM comboJ[]       = {HRM_T, KC_G, COMBO_END};
+const uint16_t PROGMEM comboZ[]       = {KC_D, KC_V, COMBO_END};
 // const uint16_t PROGMEM success[]       = {HRM_S, KC_C, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
@@ -82,7 +82,7 @@ const uint16_t PROGMEM rcbr[]         = {HRM_I, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rbrc[]         = {HRM_I, KC_U, COMBO_END};
 const uint16_t PROGMEM rabk[]         = {HRM_I, KC_QUOT, COMBO_END};
 // const uint16_t PROGMEM vimwrite[]     = {HRM_E, HRM_A, COMBO_END};
-// const uint16_t PROGMEM vimwritequit[] = {HRM_E, KC_U, COMBO_END};
+// const uint16_t PROGMEM vim_x[] = {HRM_E, KC_U, COMBO_END};
 // const uint16_t PROGMEM vimquit[]      = {HRM_E, SPCNAV, COMBO_END};
 // const uint16_t PROGMEM vimquitall[]   = {HRM_E, KC_MINS, COMBO_END};
 const uint16_t PROGMEM onehundred[]   = {HRM_A, ESCOTH, COMBO_END};
@@ -110,9 +110,9 @@ const uint16_t PROGMEM underscore[]    = {SPCNAV, TABSFT, COMBO_END};
 
 
 enum combo_events {
-    COMBO_VIM_WRITE,
-    COMBO_VIM_WRITEQUIT,
-    COMBO_VIM_QUIT,
+    // COMBO_VIM_W,
+    // COMBO_VIM_X,
+    // COMBO_VIM_QUIT,
     COMBO_VIM_QUITALL,
     COMBO_VIM_SHIFTV,
     COMBO_LNX_LAST,
@@ -259,4 +259,44 @@ combo_t key_combos[] = {
     // [COMBO_JUST]          = COMBO(just, SENDJUST),
     // [COMBO_SUCCESS]       = COMBO(success, SENDSUCCESS),
     [COMBO_AMPERSAND]       = COMBO(ampersand, KC_AMPR),
+};
+
+// CUSTOM MODIFIER OVERRIDES
+// shift () gives {}
+// const key_override_t left_paran_override  = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LCBR);
+// const key_override_t right_paran_override = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RCBR);
+// // shift [] gives <>
+// const key_override_t left_squarebracket_override  = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_LABK);
+// const key_override_t right_squarebracket_override = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, KC_RABK);
+// shift * gives #
+// const key_override_t asterisk_override = ko_make_basic(MOD_MASK_SHIFT, KC_PAST, KC_HASH);
+// shift space gives _
+// const key_override_t shift_space_underscore = ko_make_basic(MOD_MASK_SHIFT, SPCNAV, KC_UNDS);
+// shift _ gives !
+// const key_override_t underscore_override = ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_EXLM);
+// const key_override_t r_period_override = ko_make_basic(MOD_BIT(KC_RSFT), KC_DOT, KC_EXLM);
+const key_override_t mins_override          = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PIPE);
+// const key_override_t underscore_override    = ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_PIPE);
+const key_override_t colon_override         = ko_make_basic(MOD_MASK_SHIFT, KC_COLN, KC_SCLN);
+const key_override_t period_override        = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_QUES);
+const key_override_t slash_override         = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_EXLM);
+const key_override_t comma_override         = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_BSLS);
+
+// This globally defines all key overrides to be used
+const key_override_t *key_overrides[] = {
+    // &left_paran_override,
+    // &right_paran_override,
+    // &left_squarebracket_override,
+    // &right_squarebracket_override,
+    // &asterisk_override,
+    // &shift_space_underscore,
+    // &underscore_override,
+    // &r_period_override,
+    &period_override,
+    &comma_override,
+    &colon_override,
+    &slash_override,
+    &mins_override,
+    // &underscore_override,
+    NULL // Null terminate the array of overrides!
 };

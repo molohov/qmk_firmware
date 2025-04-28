@@ -24,7 +24,7 @@ const key_override_t slash_override         = ko_make_basic(MOD_MASK_SHIFT, KC_S
 const key_override_t comma_override         = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_BSLS);
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
+const key_override_t *key_overrides[] = {
     // &left_paran_override,
     // &right_paran_override,
     // &left_squarebracket_override,

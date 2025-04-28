@@ -19,9 +19,9 @@ enum layer {
 enum custom_keycodes {
     KC_HANDS_DOWN = SAFE_RANGE,
     KC_QWERTY_GAME,
-    VIMWRITE,
-    VIMWRITEQUIT,
-    VIMQUIT,
+    VIM_W,
+    VIM_X,
+    VIM_Q,
     VIMQUITALL,
     VIPASTE,
     LNX_LAST,

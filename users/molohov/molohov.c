@@ -2,7 +2,7 @@
 #include "swapper.h"
 #include "caps_word.h"
 // #include "combos.h"
-#include "overrides.h"
+// #include "overrides.h"
 
 // CUSTOM KEYSTROKES
 bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
@@ -100,26 +100,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         keycode, record
     );
     switch (keycode) {
-        case VIMWRITE:
+        case VIM_W:
             if (record->event.pressed) {
                 // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_ENTER));
                 tap_code(KC_ESC);
-                SEND_STRING(":w");
+                SEND_STRING(":w\n");
                 tap_code(KC_ENT);
-
             }
             break;
 
-        case VIMWRITEQUIT:
+        case VIM_X:
             if (record->event.pressed) {
                 // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_ENTER));
                 tap_code(KC_ESC);
-                SEND_STRING(":x");
+                SEND_STRING(":x\n");
                 tap_code(KC_ENT);
             }
             break;
 
-        case VIMQUIT:
+        case VIM_Q:
             if (record->event.pressed) {
                 // SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(200) SS_LSFT(SS_TAP(X_SCOLON)) SS_DELAY(100) SS_TAP(X_Q) SS_DELAY(100) SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_TAP(X_ENTER));
                 tap_code(KC_ESC);

@@ -23,7 +23,7 @@ const uint16_t PROGMEM comboZ[]       = {KC_D, KC_V, COMBO_END};
 // keep shift+V on the left side
 // const uint16_t PROGMEM vimshiftv[]  = {HRM_N, KC_D, COMBO_END};
 const uint16_t PROGMEM trtllmbench[]       = {HRM_T, KC_B, COMBO_END};
-
+const uint16_t PROGMEM trtllmserve[]       = {HRM_T, KC_V, COMBO_END};
 // LOWER ROW
 const uint16_t PROGMEM oneshot_lalt[] = {KC_C, KC_L, COMBO_END};
 // const uint16_t PROGMEM send_3d[]      = {KC_C, KC_D, COMBO_END};
@@ -165,6 +165,7 @@ enum combo_events {
     // COMBO_SUCCESS,
     COMBO_AMPERSAND,
     COMBO_TRTLLMBENCH,
+    COMBO_TRTLLMSERVE,
     COMBO_LENGTH
     // COMBO_NEWTAB,
     // COMBO_OS_SFT,
@@ -255,7 +256,8 @@ combo_t key_combos[] = {
     [COMBO_UNDERSCORE]      = COMBO(underscore, KC_UNDS),
     // [COMBO_HYPHEN]         = COMBO(hyphen, KC_MINS),
     [COMBO_VLLM]            = COMBO(vllm, SENDVLLM),
-    [COMBO_TRTLLMBENCH]       = COMBO(trtllmbench, SENDTRTLLMBENCH),
+    [COMBO_TRTLLMBENCH]       = COMBO(trtllmbench, TL_BENCH),
+    [COMBO_TRTLLMSERVE]       = COMBO(trtllmserve, TL_SERVE),
     // [COMBO_JUST]          = COMBO(just, SENDJUST),
     // [COMBO_SUCCESS]       = COMBO(success, SENDSUCCESS),
     [COMBO_AMPERSAND]       = COMBO(ampersand, KC_AMPR),

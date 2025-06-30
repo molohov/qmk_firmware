@@ -155,11 +155,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING("dlsim", "DLSim")
             }
             break;
-        case TRTLLM:
-            if (record->event.pressed) {
-                SEND_CAP_STRING("trt-llm", "TRT-LLM")
-            }
-            break;
         case HOMEDIR:
             if (record->event.pressed) {
                 SEND_STRING("~/");
@@ -321,9 +316,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_CAP_STRING("success", "Success");
             }
             break;
-        case SENDTRTLLMBENCH:
+        case TRTLLM:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("trtllm", "TRTLLM")
+            }
+            break;
+        case TRT_LLM:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("trt-llm", "TRT-LLM")
+            }
+            break;
+        case TL_BENCH:
             if (record->event.pressed) {
                 SEND_CAP_STRING("trtllm-bench", "TRTLLM-BENCH");
+            }
+            break;
+        case TL_SERVE:
+            if (record->event.pressed) {
+                SEND_CAP_STRING("trtllm-serve", "TRTLLM-SERVE");
             }
             break;
     }

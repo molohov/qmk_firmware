@@ -26,7 +26,6 @@ enum custom_keycodes {
     VIPASTE,
     LNX_LAST,
     KU_QU,
-    TRTLLM,
     DLSIM,
     MD_CODE,
     SLACK_CODE_PASTE,
@@ -61,7 +60,10 @@ enum custom_keycodes {
     SENDVLLM,
     SENDJUST,
     SENDSUCCESS,
-    SENDTRTLLMBENCH,
+    TRTLLM,
+    TRT_LLM,
+    TL_BENCH,
+    TL_SERVE,
 };
 
 #ifdef HRM

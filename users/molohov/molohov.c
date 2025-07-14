@@ -44,33 +44,28 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                 //     break;
                 case KC_DOT:
                     switch (prior_keycode) {
-                        case KC_Q: //Q. -> QU
+                        case KC_J: //J. -> JU
                             tap_code(KC_U);
                             return_state = false; // done.
                             break;
                     }
                     break;
-                // case KC_A:
-                //     switch (prior_keycode) {
-                //         case KC_K: // KA -> CA
-                //             SEND_STRING(SS_TAP(X_BSPC)"ca");
-                //             return_state = false; // done.
-                //     }
-                //     break;
-                // case KC_O:
-                //     switch (prior_keycode) {
-                //         case KC_K: // KO -> CO
-                //             SEND_STRING(SS_TAP(X_BSPC)"co");
-                //             return_state = false; // done.
-                //     }
-                //     break;
-                // case KC_U:
-                //     switch (prior_keycode) {
-                //         case KC_K: // KU -> CU
-                //             SEND_STRING(SS_TAP(X_BSPC)"qu");
-                //             return_state = false; // done.
-                //     }
-                //     break;
+                case KC_SLSH:
+                    switch (prior_keycode) {
+                        case KC_J: //J/ -> JO
+                            tap_code(KC_O);
+                            return_state = false; // done.
+                            break;
+                    }
+                    break;
+                case KC_COMM:
+                    switch (prior_keycode) {
+                        case KC_J: //J, -> JI
+                            tap_code(KC_I);
+                            return_state = false; // done.
+                            break;
+                    }
+                    break;
             }
         }
         prior_keycode = keycode;
